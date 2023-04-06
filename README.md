@@ -8,3 +8,4 @@
    - Con Precios y personalización.
    
    Miembro 1: Sebastian Gonzalez
+   miembro: Omar Maldonado
