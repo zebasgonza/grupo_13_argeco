@@ -11,7 +11,7 @@
    miembro: Omar Maldonado,Argentino ,conocimiento en capinteria y decoracion
 
 Listado de Referentes:
-1.
+1.https://ar.pinterest.com/ : elegimos este sitio porque tiene mucha variedad de lo que uno busca ,separandolo sectores 
 2.
 3.
 4.
