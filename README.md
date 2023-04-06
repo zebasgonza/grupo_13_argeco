@@ -1,13 +1,11 @@
 # grupo_13_argeco
 
 ¿Qué productos o servicios brindará nuestro sitio?
-   -Venta muebles
-
+   -Venta muebles 
 ¿Quién será nuestra audiencia objetivo?
-  -Personas jovenes (escritorios,sillas,accesorios,estantes y bases para pc flotantes, resina con madera lamparas, relojes, etc.)
-
+   -Padres, abuelos, gamers (escritorios, accesorios) y personas interesadas en adquirir o cambiar sus muebles.
 ¿Cómo ajustaremos nuestra oferta a ese público?
-   - Precios, personalización y guía para el tipo de madera.
+   - Con Precios y personalización.
    
-   Miembro 1: Sebastian Gonzalez, con conocimientos en diseño e interesado en el desarrollo web.
-   miembro: Omar Maldonado
+   Miembro 1: Sebastian Gonzalez
+   miembro: Omar Maldonado,Argentino ,conocimiento en capinteria y decoracion
