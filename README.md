@@ -1,5 +1,6 @@
-grupo_13_argeco
+Nombre: grupo_13_argeco
 
+Descripción del marketplace:
 ¿Qué productos o servicios brindará nuestro sitio?
    -Venta muebles 
 ¿Quién será nuestra audiencia objetivo?
