@@ -11,6 +11,7 @@ Descripción del marketplace:
    Integrantes: 
    - Sebastian Gonzalez, Soy Colombiano con conocimientos en gestión de negocios sin embargo, he centrado mi perfil profesional hacia el campo del diseño ux/ui      y        branding. 
    - Omar Maldonado,Argentino ,conocimiento en capinteria y decoracion
+   - Nahuel Alejandro Borda, Argentino, con conocimiento en finanzas y psicología.
 
 Listado de Referentes:
 1.https://ar.pinterest.com/ : elegimos este sitio porque tiene mucha variedad de lo que uno busca ,separandolo sectores 
