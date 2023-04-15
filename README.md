@@ -24,4 +24,4 @@ Listado de Referentes:
 4. https://www.natura.com.co/?gad=1&gclid=EAIaIQobChMIlrWO0Nqq_gIVUyyzAB3BogAlEAAYASAAEgJyW_D_BwE : nos interesó este sitio por:
    - El carro de compra no aparece cada vez que uno agrega un producto.
    - El home nos parece interesante por todas las secciones.
-   -El menú desplegable consideramos que sería un acierto en nuestro eCommerce.
+   - El menú desplegable consideramos que sería un acierto en nuestro eCommerce.
