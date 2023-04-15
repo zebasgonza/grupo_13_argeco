@@ -21,4 +21,7 @@ Listado de Referentes:
    - Filtros de busqueda por marca, precio. ubicación y velocidad de entrega.
    - Muestra comparación del precio regular con el descuento.
    - Boton de agregar al carro con buena jerarquia.
-4. 
+4. https://www.natura.com.co/?gad=1&gclid=EAIaIQobChMIlrWO0Nqq_gIVUyyzAB3BogAlEAAYASAAEgJyW_D_BwE : nos interesó este sitio por:
+   - El carro de compra no aparece cada vez que uno agrega un producto.
+   - El home nos parece interesante por todas las secciones. 
+   -El menú desplegable consideramos que sería un acierto en nuestro eCommerce.
