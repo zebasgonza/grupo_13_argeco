@@ -1,4 +1,4 @@
-Nombre: grupo_13_furni
+Nombre: grupo_13_furnihouse
 
 Descripción del marketplace:
 - ¿Qué productos o servicios brindará nuestro sitio?
