@@ -13,7 +13,7 @@ Descripción del marketplace:
 Integrantes: 
    - Sebastian Gonzalez, Soy Colombiano con conocimientos en gestión de negocios sin embargo, he centrado mi perfil profesional hacia el campo del diseño ux/ui      y        branding. 
    - Omar Maldonado,Argentino ,conocimiento en capinteria y decoracion.
-   - Rosa Mina,
+   - Rosa Mina, soy colombiana en conocimientos en biología. A mi carrera la he direccionado a la bioinformática por lo que también he tenido contacto con lenguajes como R y Python.
    - Mawensy Pamplona,
 
 Listado de Referentes:
