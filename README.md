@@ -11,10 +11,10 @@
    Promoción en precios y personalización del producto.
    
 ### Integrantes: 
-   - Sebastian Gonzalez, Soy Colombiano con conocimientos en gestión de negocios sin embargo, he centrado mi perfil profesional hacia el campo del diseño ux/ui      y        branding. 
-   - Omar Maldonado,Argentino ,conocimiento en capinteria y decoracion.
-   - Rosa Mina, soy colombiana en conocimientos en biología. A mi carrera la he direccionado a la bioinformática por lo que también he tenido contacto con lenguajes como R y Python.
-   - Mawensy Pamplona, Soy Colombiana, con conocimiento en area de gestión Logistica, administrativa, ventas, actualmente me desempeño como analista de licitaciones publicas con el estado colombiano.
+   - **Sebastian Gonzalez**, Soy Colombiano con conocimientos en gestión de negocios sin embargo, he centrado mi perfil profesional hacia el campo del diseño ux/ui      y        branding. 
+   - **Omar Maldonado**,Argentino ,conocimiento en capinteria y decoracion.
+   - **Rosa Mina**, soy colombiana en conocimientos en biología. A mi carrera la he direccionado a la bioinformática por lo que también he tenido contacto con lenguajes como R y Python.
+   - **Mawensy Pamplona**, Soy Colombiana, con conocimiento en area de gestión Logistica, administrativa, ventas, actualmente me desempeño como analista de licitaciones publicas con el estado colombiano.
 
 ### Listado de Referentes:
 1. [Pinterest](https://ar.pinterest.com/) : elegimos este sitio porque tiene mucha variedad de lo que uno busca ,separandolo sectores 
