@@ -18,8 +18,6 @@ Paleta de colores
     - Cafe: #CE8E4E
     - Cafe claro: #D1A77D
     - Ocre: #F3E8CC
-    
+   
     Se adjunta el ejemplo visual de la paleta de colores:
     - https://drive.google.com/file/d/13SRf_ii4CTJ0qOecEnZz1H3Y1gCBdeYb/view?usp=sharing
-    
-    
