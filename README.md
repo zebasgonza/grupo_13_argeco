@@ -33,3 +33,6 @@
       -El sitio web de ikea es muy variado en cuanto a sus variedad de secciones de los productos los cuales nos ayudan a ver un panorama de esto algo clasica pero a  la      hora de aplicar nos resalta por ees tipo de organización de estos productos.
       - Tenemos una lista de deseos donde el cliente puede dejar vistas sus productos preferidos listos para la compra.
       - En la parte inferior observamos que nos dan ideas e inspiraciones con imagenes que ayudan a generar movimiento en el sitio.
+      
+### Acceso al tablero de trabajo:
+   - https://trello.com/b/Jbo40ydq/grupo-13-tablero-de-trabajo
