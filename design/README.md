@@ -4,9 +4,10 @@ Tipografía ROBOTO
     al ser una fuente legible en cualquier tipo de pantalla.
     
     Codigo de los 3 estilos de Roboto:
-    - Roboto bold (titulos): @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
-    - Roboto regular (texto): @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
-    - Roboto light (texto liviano): @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    - Roboto bold 700 (titulos): @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+    - Roboto regular 400 (texto): @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+    - Roboto light 300 (texto liviano): @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+    - Roboto italic 100 (texto de advertencia): @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
 
 Paleta de colores
   - Para la web se seleccinó una paleta de colores que representara elegancia y se pudiera relacionar con los  
