@@ -4,15 +4,11 @@
     grupal para el siguiente sprint.
 
 ## Resultado
-    **¿Qué ha ido bien durante el sprint?**
-        -
-        -
-        - 
-    **¿Qué ha fallado?**
-        -
-        -
-        -
-    **¿Qué se puede mejorar?**
-        -
-        -
-        - 
+    ¿Qué ha ido bien durante el sprint?
+        - El apoyo y responsabilidad para hacer las actividades.
+    ¿Qué ha fallado?
+        - Distraernos en las reuniones.
+    ¿Qué se puede mejorar?
+        - Aplicar las 3 preguntas ¿Qué hiciste ayer? ¿Qué harás hoy? ¿Hay impedimentos en tu camino? para orientar y optimizar 
+        el tiempo de la reunión.
+    
