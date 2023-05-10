@@ -4,7 +4,7 @@ const path = require('path');
 
 app.use(express.static("public"));
 
-app.get("/home",function (req, res) {
+app.get("/index",function (req, res) {
     console.log("entraron a la ruta home")
 
     const rutaAlArchivo = path.join(__dirname, './views/index.html')
