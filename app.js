@@ -12,4 +12,12 @@ app.get("/home",function (req, res) {
     res.sendFile(rutaAlArchivo);
 });
 
+app.get("/productCard",function (req, res) {
+    console.log("entraron a la ruta Carrito de compras")
+
+    const rutaAlArchivo = path.join(__dirname, './views/productCard.html')
+
+    res.sendFile(rutaAlArchivo);
+});
+
 app.listen(3060,() => console.log("servidor corriendo en el puerto 3060"));
