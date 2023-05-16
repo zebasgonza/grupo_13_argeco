@@ -12,18 +12,19 @@ app.get("/index",function (req, res) {
     res.sendFile(rutaAlArchivo);
 });
 
-app.get("/productCard",function (req, res) {
-    console.log("entraron a la ruta Carrito de compras")
+app.get("/register",function (req, res) {
+    console.log("entraron a la ruta home")
 
-    const rutaAlArchivo = path.join(__dirname, './views/productCard.html')
+    const rutaAlArchivo = path.join(__dirname, './views/register.html')
 
     res.sendFile(rutaAlArchivo);
 });
 
-app.get("/register",function (req, res) {
-    console.log("entraron a la ruta register")
 
-    const rutaAlArchivo = path.join(__dirname, './views/register.html')
+app.get("/productCard",function (req, res) {
+    console.log("entraron a la ruta Carrito de compras")
+
+    const rutaAlArchivo = path.join(__dirname, './views/productCard.html')
 
     res.sendFile(rutaAlArchivo);
 });
