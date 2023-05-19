@@ -8,21 +8,127 @@
     <title>Detalle del producto</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
 </head>
+
 <body>
-    
     <header>
+        <nav>
+            <div class="left-navbar">
+                <a href="#" class="container-hamburguer-button">
+                    <i class="material-symbols-outlined hamburguer-button">menu</i>
+                </a>
+            </div>
 
+            <div class="center-navbar">
+                <img src="./img/img-furni-house-logo.svg" alt="logo" class="logo">
+            </div>
+
+            <ul class="right-navbar">
+                <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+                <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
+                <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+            </ul>
+        </nav>
     </header>
-
     <main>
+        <section class="container">
+            <article class="container-product">
+                <div class="container-product-mainpicture">
+                    <img src="./img/img-mesa-unity1.jpg" alt="Imagen de una mesa familiar que esta en venta">
+                </div>
+                <div class="container-product-smallpicture">
+                    <div class="container-smallpicture">
+                        <img id="image-1" src="./img/img-mesa-unity1.jpg"
+                            alt="Imagen de una mesa familiar que esta en venta">
+                    </div>
+                    <div class="container-smallpicture">
+                        <img id="image-2" src="./img/img-mesa-unity2.jpg"
+                            alt="Imagen de una mesa familiar que esta en venta">
+                    </div>
+                    <div class="container-smallpicture">
+                        <img id="image-3" src="./img/img-mesa-unity3.jpg"
+                            alt="Imagen de una mesa familiar que esta en venta">
+                    </div>
+                    <div class="container-smallpicture">
+                        <img id="image-4" src="./img/img-mesa-unity4.jpg"
+                            alt="Imagen de una mesa familiar que esta en venta">
+                    </div>
+                </div>
+                <div class="container-productDetail-info">
+                    <h2>Unity</h2>
+                    <p class="categoria">Mesa</p>
+                    <p class="descripcion">Diseñada y desarrollada con madera de roble, es una obra de arte funcional y duradera. Su diseño
+                        clásico, el tallado a mano en la superficie y sus bases metalicas con forma geométrica la convierten en una pieza
+                        destacada en cualquier hogar. Es el lugar perfecto para que la familia se reúna, comparta comidas y cree recuerdos 
+                        preciosos durante generaciones.</p>
+                    <div class="container-icon-start">
+                        <i class="material-symbols-outlined icon-start-rate">
+                            star_rate
+                        </i>
+                        <i class="material-symbols-outlined icon-start-rate">
+                            star_rate
+                        </i>
+                        <i class="material-symbols-outlined icon-start-rate">
+                            star_rate
+                        </i>
+                        <i class="material-symbols-outlined icon-start-rate">
+                            star_rate
+                        </i>
+                        <i class="material-symbols-outlined icon-start-rate-half">
+                            star_rate_half
+                        </i>
+                    </div>
+                    <div class="container-precio">
+                        <p class="precio">$600.000</p>
+                        <p class="descuento">10% OFF</p>
+                    </div>
+                    <form action="#" method="POST">
+                        <div class="cantidad">
+                            <label for="cantidad">Cantidad</label>
+                            <input type="number" id="cantidad" name="cantidad" min="0" value="1" class="cantidad-input">
+                        </div>
+                        <input class="boton-comprar" type="submit" value="Comprar">
+                        <input class="boton-shoppingcart" type="submit" value="Agregar al carrito">
+                    </form>
+                </div>
+            </article>
+
+        </section>
 
     </main>
 
     <footer>
-
+        <section class="main-footer">
+            <article class="main-container-footer">
+                <i class="material-symbols-outlined container-footer-icon">star</i>
+                <h3 class="foooter-text-align">Diseños exclusivos</h3>
+                <p class="foooter-text-align">En Furni House encontrarás diseños exclusivos y vanguardistas para que
+                    tus muebles y accesorios resalten por su calidad y elegancia.
+                </p>
+            </article>
+            <article class="main-container-footer">
+                <i class="material-symbols-outlined container-footer-icon">partner_exchange</i>
+                <h3 class="foooter-text-align">Asesoría personalizada</h3>
+                <p class="foooter-text-align">un asesor te brindará las recomendaciones de estilo para que se adapten
+                    a tus espacios según a tus preferencias y necesidades.
+                </p>
+            </article>
+            <article class="main-container-footer">
+                <i class="material-symbols-outlined container-footer-icon">design_services</i>
+                <h3 class="foooter-text-align">Crea tu producto</h3>
+                <p class="foooter-text-align">Nuestro equipo de diseñadores y artesanos trabajará contigo para crear un
+                    producto que se adapte perfectamente a tus gustos, necesidades y estilo personal.
+                </p>
+            </article>
+        </section>
+        <section class="bottom-footer">
+            <article class="bottom-footer-text">
+                <p>Copyright © 2023 Furni House</p>
+            </article>
+        </section>
     </footer>
 
 </body>
+
 </html>
