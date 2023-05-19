@@ -8,68 +8,132 @@
     <title>Home</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/productCard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="left-navbar">
-                <a href="#" class="container-hamburguer-button">
-                    <i class="material-symbols-outlined hamburguer-button">menu</i>
-                </a>
+
+    <body>
+        <header>
+            <nav>
+                <div class="left-navbar">
+                    <a href="#" class="container-hamburguer-button">
+                        <i class="material-symbols-outlined hamburguer-button">menu</i>
+                    </a>
+                </div>
+
+                <div class="center-navbar">
+                    <img src="./img/img-furni-house-logo.svg" alt="logo" class="logo">
+                </div>
+
+                <ul class="right-navbar">
+                    <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+                    <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
+                    <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main class="fondo-carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="subtitulos-carrito">            
+                <div>Producto</div>
+                <div>Cantidad</div>
+                <div>Precio</div>
             </div>
 
-            <div class="center-navbar">
-                <img src="./img/img-furni-house-logo.svg" alt="logo" class="logo">
+            <div class="product1">
+                <div class="productoContenido">
+                    <img src="./img/descarga.jpg" alt="Imagen de 1er producto">
+                </div>
+                <div>Descripción producto uno</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$50.000</p>
+                </div>
             </div>
+            <div class="product2">
+                <div>
+                    <img src="./img/descarga.jpg" alt="Imagen de 1er producto">
+                </div>
+                <div>Descripción producto uno</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$50.000</p>
+                </div>
+            </div>
+            <div class="product3">
+                <div>
+                    <img src="./img/descarga.jpg" alt="Imagen de 1er producto">
+                </div>
+                <div>Descripción producto uno</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$50.000</p>
+                </div>
+            </div>
+            <div class="seguirComprando">
+                <a href="/index" class="textoBoton">Seguir comprando</a>
+            </div>
+        </main>
 
-            <ul class="right-navbar">
-                <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
-                <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
-                <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
-            </ul>
-        </nav>
-    </header>
+        <footer>
+            <section class="main-footer">
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">star</i>
+                    <h3 class="foooter-text-align">Diseños exclusivos</h3>
+                    <p class="foooter-text-align">En Furni House encontrarás diseños exclusivos y vanguardistas para que
+                        tus muebles y accesorios resalten por su calidad y elegancia.
+                    </p>
+                </article>
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">partner_exchange</i>
+                    <h3 class="foooter-text-align">Asesoría personalizada</h3>
+                    <p class="foooter-text-align">un asesor te brindará las recomendaciones de estilo para que se
+                        adapten
+                        a tus espacios según a tus preferencias y necesidades.
+                    </p>
+                </article>
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">design_services</i>
+                    <h3 class="foooter-text-align">Crea tu producto</h3>
+                    <p class="foooter-text-align">Nuestro equipo de diseñadores y artesanos trabajará contigo para crear
+                        un
+                        producto
+                        que se adapte perfectamente a tus gustos, necesidades y estilo personal.
+                    </p>
+                </article>
+            </section>
+            <section class="bottom-footer">
+                <article class="bottom-footer-text">
+                    <p>Copyright © 2023 Furni House</p>
+                </article>
+            </section>
 
-    <main>
-        <h3 class="titulo"> Carrito de Compras</h3>
-        <p>hola mundo</p>
-    </main>
+        </footer>
 
-    <footer>
-        <section class="main-footer">
-            <article class="main-container-footer">
-                <i class="material-symbols-outlined container-footer-icon">star</i>
-                <h3 class="foooter-text-align">Diseños exclusivos</h3>
-                <p class="foooter-text-align">En Furni House encontrarás diseños exclusivos y vanguardistas para que
-                    tus muebles y accesorios resalten por su calidad y elegancia.
-                </p>
-            </article>
-            <article class="main-container-footer">
-                <i class="material-symbols-outlined container-footer-icon">partner_exchange</i>
-                <h3 class="foooter-text-align">Asesoría personalizada</h3>
-                <p class="foooter-text-align">un asesor te brindará las recomendaciones de estilo para que se adapten
-                    a tus espacios según a tus preferencias y necesidades.
-                </p>
-            </article>
-            <article class="main-container-footer">
-                <i class="material-symbols-outlined container-footer-icon">design_services</i>
-                <h3 class="foooter-text-align">Crea tu producto</h3>
-                <p class="foooter-text-align">Nuestro equipo de diseñadores y artesanos trabajará contigo para crear un
-                    producto
-                    que se adapte perfectamente a tus gustos, necesidades y estilo personal.
-                </p>
-            </article>
-        </section>
-        <section class="bottom-footer">
-            <article class="bottom-footer-text">
-                <p>Copyright © 2023 Furni House</p>
-            </article>
-        </section>
-
-    </footer>
-
-</body>
+    </body>
 
 </html>
