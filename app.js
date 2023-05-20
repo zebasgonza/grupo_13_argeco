@@ -1,33 +1,12 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mainRoutes = require('./routes/mainRoutes');
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.get("/index",function (req, res) {
-    console.log("entraron a la ruta home")
+app.use(mainRoutes);
 
-    const rutaAlArchivo = path.join(__dirname, './views/index.html')
-
-    res.sendFile(rutaAlArchivo);
-});
-
-app.get("/register",function (req, res) {
-    console.log("entraron a la ruta home")
-
-    const rutaAlArchivo = path.join(__dirname, './views/register.html')
-
-    res.sendFile(rutaAlArchivo);
-});
-
-
-app.get("/productCard",function (req, res) {
-    console.log("entraron a la ruta Carrito de compras")
-
-    const rutaAlArchivo = path.join(__dirname, './views/productCard.html')
-
-    res.sendFile(rutaAlArchivo);
-});
 
 app.get("/productDetail",function (req, res) {
     console.log("entraron a la ruta Carrito de compras")
