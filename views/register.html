@@ -8,21 +8,82 @@
     <title>Registro</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="/css/register.css">
+    <link rel="stylesheet" href="/css/register.css">
 </head>
+<title>Registro</title>
+</head>
+
 <body>
-    
     <header>
+        <nav>
+            <div class="left-navbar">
+                <a href="#" class="container-hamburguer-button">
+                    <i class="material-symbols-outlined hamburguer-button">menu</i>
+                </a>
+            </div>
 
+            <div class="center-navbar">
+                <img src="./img/img-furni-house-logo.svg" alt="logo" class="logo">
+            </div>
+
+            <ul class="right-navbar">
+                <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+                <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
+                <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+            </ul>
+        </nav>
     </header>
+    <main>
 
-    <main> <!-- aca va el registro-->
-        
-    </main>
+        <h1>Registro</h1>
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
 
-    <footer>
-        
-    </footer>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
 
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <label for="confirmar-contrasena">Confirmar Contraseña:</label>
+            <input type="password" id="confirmar-contrasena" name="confirmar-contrasena" required>
+
+            <input type="submit" value="Registrarse">
+        </form>
 </body>
+
+</main>
+<footer>
+    <section class="main-footer">
+        <article class="main-container-footer">
+            <i class="material-symbols-outlined container-footer-icon">star</i>
+            <h3 class="foooter-text-align">Diseños exclusivos</h3>
+            <p class="foooter-text-align">En Furni House encontrarás diseños exclusivos y vanguardistas para que
+                tus muebles y accesorios resalten por su calidad y elegancia.
+            </p>
+        </article>
+        <article class="main-container-footer">
+            <i class="material-symbols-outlined container-footer-icon">partner_exchange</i>
+            <h3 class="foooter-text-align">Asesoría personalizada</h3>
+            <p class="foooter-text-align">un asesor te brindará las recomendaciones de estilo para que se adapten
+                a tus espacios según a tus preferencias y necesidades.
+            </p>
+        </article>
+        <article class="main-container-footer">
+            <i class="material-symbols-outlined container-footer-icon">design_services</i>
+            <h3 class="foooter-text-align">Crea tu producto</h3>
+            <p class="foooter-text-align">Nuestro equipo de diseñadores y artesanos trabajará contigo para crear un
+                producto
+                que se adapte perfectamente a tus gustos, necesidades y estilo personal.
+            </p>
+        </article>
+    </section>
+    <section class="bottom-footer">
+        <article class="bottom-footer-text">   
+            <p>Copyright © 2023 Furni House</p>
+        </article>
+    </section>
+
+</footer>
 </html>

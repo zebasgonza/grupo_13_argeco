@@ -1,23 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mainRoutes = require('./routes/mainRoutes');
 
-app.use(express.static("public"));
+app.use(express.static('public'));
 
-app.get("/index",function (req, res) {
-    console.log("entraron a la ruta home")
+app.use(mainRoutes);
 
-    const rutaAlArchivo = path.join(__dirname, './views/index.html')
 
-    res.sendFile(rutaAlArchivo);
-});
+// app.get("/productDetail",function (req, res) {
+//     console.log("entraron a la ruta Carrito de compras")
 
-app.get("/productCard",function (req, res) {
-    console.log("entraron a la ruta Carrito de compras")
+//     const rutaAlArchivo = path.join(__dirname, './views/productDetail.html')
 
-    const rutaAlArchivo = path.join(__dirname, './views/productCard.html')
-
-    res.sendFile(rutaAlArchivo);
-});
+//     res.sendFile(rutaAlArchivo);
+// });
 
 app.listen(3060,() => console.log("servidor corriendo en el puerto 3060"));
