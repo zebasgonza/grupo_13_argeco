@@ -7,7 +7,7 @@ const controllers = {
          return res.render(path.join(__dirname, 'index'));
     },
 
-    getProducDetail: (req, res) => {
+    getproductDetail: (req, res) => {
 
         return res.render(path.join(__dirname, 'productDetail'));
 
