@@ -5,6 +5,10 @@ const mainRoutes = require('./routes/mainRoutes');
 
 app.set("view engine", "ejs")
 
+app.set('views', [
+    path.join(__dirname, './views/main'),
+
+]);
 
 app.use(express.static('public'));
 
