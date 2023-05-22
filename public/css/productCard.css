@@ -21,6 +21,11 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
 .center-navbar {
     display: flex;
     justify-content: center;
@@ -100,7 +105,15 @@ h2{
     border-radius: 10px;
 }
 
+.img-producto{
+    width: 200px;
+    height: 200px;
+}
 
+.texto{
+    text-align: justify;
+    width: 30%;
+}
 .product2{
     flex-direction: row;
     display: flex;
@@ -140,6 +153,24 @@ h2{
 
 .textoBoton{
     color: white;
+}
+
+.finalizarCompra a{
+    background-color: #EAE2CD;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #122f44;
+    width: 20px; 
+}
+
+.finalizarCompra{
+    text-align: right;
+    margin-right: 5%;
+    padding-bottom: 20px;
+    padding: 10px;
 }
 
 footer {
