@@ -5,24 +5,138 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito de compras</title>
+    <title>Home</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="/css/productCard.css">
+    <link rel="stylesheet" href="/css/productCard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
+
 <body>
-    
-    <header>
 
-    </header>
+    <body>
+        <header>
+            <nav>
+                <div class="left-navbar">
+                    <a href="#" class="container-hamburguer-button">
+                        <i class="material-symbols-outlined hamburguer-button">menu</i>
+                    </a>
+                </div>
 
-    <main>
+                <div class="center-navbar">
+                    <a href="/index"><img src="./img/img-furni-house-logo.svg" alt="logo" class="logo"></a>
+                </div>
+                
+                <ul class="right-navbar">
+                    <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+                    <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
+                    <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+                </ul>
+            </nav>
+        </header>
 
-    </main>
 
-    <footer>
+        <main class="fondo-carrito">
+            <h2>Carrito de Compras</h2>
+            <div class="subtitulos-carrito">
+                <div>Producto</div>
+                <div>Cantidad</div>
+                <div>Precio</div>
+            </div>
 
-    </footer>
+            <div class="product1">
+                <div class="img-producto">
+                    <img src="./img/img-celular-stand.jpg" alt="Imagen de 1er producto">
+                </div>
+                <div class="texto">El soporte de teléfono XYZ es la solución perfecta para mantener tu teléfono inteligente seguro, visible y al alcance de tus manos en todo momento. Diseñado con la combinación ideal de funcionalidad y estilo, este soporte está hecho para adaptarse a las necesidades de los usuarios más exigentes.</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$50.000</p>
+                </div>
+            </div>
+            <div class="product2">
+                <div class="img-producto">
+                    <img src="./img/img-espejo-roble.jpg" alt="Imagen de 2do producto">
+                </div>
+                <div class="texto"> Del espejo Reflections es mucho más que un simple reflejo; es una ventana a tu estilo, belleza y autoexpresión. Diseñado con precisión y elegancia, este espejo encarna la perfecta combinación entre funcionalidad y sofisticación.</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$45.000</p>
+                </div>
+            </div>
+            <div class="product3">
+                <div class="img-producto">
+                    <img src="./img/img-lampara-temp.jpg" alt="Imagen de 3er producto">
+                </div>
+                <div class="texto"> La lámpara Luminaris es una obra maestra de iluminación que combina estilo, funcionalidad y sofisticación en una sola pieza. Diseñada para iluminar tu espacio con elegancia y crear una atmósfera acogedora, esta lámpara es mucho más que una simple fuente de luz.</div>
+                <div>
+                    <div class="contador">
+                        <button><i class="fa-solid fa-minus"></i></button>
+                        <span>0</span>
+                        <button><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <div>
+                    <p>$70.000</p>
+                </div>
+                </div>
+                    <div class="seguirComprando">
+                        <a href="/index" class="textoBoton">Seguir comprando</a>
+                    </div>
+                    <div class="finalizarCompra">
+                        <a href="/index" class="textoBoton">Finalizar compra</a>
+                    </div>
+        </main>
 
-</body>
+        <footer>
+            <section class="main-footer">
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">star</i>
+                    <h3 class="foooter-text-align">Diseños exclusivos</h3>
+                    <p class="foooter-text-align">En Furni House encontrarás diseños exclusivos y vanguardistas para que
+                        tus muebles y accesorios resalten por su calidad y elegancia.
+                    </p>
+                </article>
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">partner_exchange</i>
+                    <h3 class="foooter-text-align">Asesoría personalizada</h3>
+                    <p class="foooter-text-align">un asesor te brindará las recomendaciones de estilo para que se
+                        adapten
+                        a tus espacios según a tus preferencias y necesidades.
+                    </p>
+                </article>
+                <article class="main-container-footer">
+                    <i class="material-symbols-outlined container-footer-icon">design_services</i>
+                    <h3 class="foooter-text-align">Crea tu producto</h3>
+                    <p class="foooter-text-align">Nuestro equipo de diseñadores y artesanos trabajará contigo para crear
+                        un
+                        producto
+                        que se adapte perfectamente a tus gustos, necesidades y estilo personal.
+                    </p>
+                </article>
+            </section>
+            <section class="bottom-footer">
+                <article class="bottom-footer-text">
+                    <p>Copyright © 2023 Furni House</p>
+                </article>
+            </section>
+
+        </footer>
+
+    </body>
+
 </html>

@@ -1,25 +1,20 @@
 const path = require('path');
 const controllers = {
 
-    /* controlador configurado para EJS */
     getIndex: (req, res) => {
-
          return res.render('index');
     },
-
     getproductDetail: (req, res) => {
-
         return res.render('productDetail');
-
      },
-
-     /* se debe cambiar el de abajo controlador configurado para EJS */
     getRegister: (req, res) => {
-
         res.sendFile(path.join(__dirname, '../views/register.html'));
-        
-
     },
-
+    getDetail: (req, res) => {
+        res.sendFile(path.join(__dirname, '../views/productDetail.html'));
+    },
+    getProductCard: (req, res) => {
+        res.sendFile(path.join(__dirname, '../views/productCard.html'));
+    },
 };
 module.exports = controllers;
