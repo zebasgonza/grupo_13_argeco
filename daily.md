@@ -4,3 +4,4 @@
 -Rosa informo que le anda el git
 -omar tiene que hacer el Formulario de carga y edición de productos
 -seba va a dejar la base
+
