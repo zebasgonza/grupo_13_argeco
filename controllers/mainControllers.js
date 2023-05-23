@@ -4,12 +4,12 @@ const controllers = {
     /* controlador configurado para EJS */
     getIndex: (req, res) => {
 
-         return res.render(path.join(__dirname, 'index'));
+         return res.render('index');
     },
 
     getproductDetail: (req, res) => {
 
-        return res.render(path.join(__dirname, 'productDetail'));
+        return res.render('productDetail');
 
      },
 
