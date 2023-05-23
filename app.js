@@ -16,4 +16,6 @@ app.use(mainRoutes);
 //     res.sendFile(rutaAlArchivo);
 // });
 
+
+
 app.listen(3060,() => console.log("servidor corriendo en el puerto 3060"));

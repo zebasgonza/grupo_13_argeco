@@ -5,12 +5,48 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
-body {
-    font-family: 'Roboto', sans-serif ;
-}
-
-body p {
-    font-weight: 400;
-}
-
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3e5c2bd;
+        margin: 0;
+        padding: 20px;
+      }
+  
+      form {
+        max-width: 400px;
+        margin: 20px auto;
+        background-color:#1a374c;
+        padding: 20px;
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+  
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: white;
+      }
+  
+      input[type="email"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+  
+      input[type="submit"] {
+        background-color: #EAE2CD;
+        color: #000000;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+  
+      input[type="submit"]:hover {
+        background-color: #091a26;
+      }

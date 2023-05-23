@@ -8,21 +8,59 @@
     <title>Iniciar sesión</title>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
-<body>
-    
-    <header>
 
+<body>
+
+    <header>
+        <nav>
+            <div class="left-navbar">
+                <a href="#" class="container-hamburguer-button">
+                    <i class="material-symbols-outlined hamburguer-button">menu</i>
+                </a>
+            </div>
+
+            <div class="center-navbar">
+                <img src="./img/img-furni-house-logo.svg" alt="logo" class="logo">
+            </div>
+
+            <ul class="right-navbar">
+                <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+                <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
+                <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+            </ul>
+        </nav>
+        
+        <span class="material-symbols-outlined">account_circle</span>
     </header>
 
     <main>
 
+        <form>
+
+            <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+
+            <div>
+                <label>Contraseña</label>
+                <input type="password" name="contraseña">
+            </div>
+
+            <label>Recordar datos</label>
+            <label>¿Olvidaste la constraseña?</label>
+
+            <button type="submit">Ingresar</button>
+
+            <h2>Registrate</h2>
+            <span class="material-icons-outlined">email</span>
+
+        </form>
     </main>
 
-    <footer>
-
-    </footer>
 
 </body>
+
 </html>
