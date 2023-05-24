@@ -16,4 +16,4 @@ app.use(express.static('public'));
 
 app.use(mainRoutes);
 
-app.listen(3060,() => console.log("servidor corriendo en el puerto 3060"));
+app.listen(3060,() => console.log("servidor corriendo en el puerto http://localhost:3060"));
