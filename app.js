@@ -8,7 +8,8 @@ app.set("view engine", "ejs")
 
 app.set('views', [
     path.join(__dirname, './views/main'),
-    path.join(__dirname, './views/productDetail')
+    path.join(__dirname, './views/products'),
+    path.join(__dirname, './views/users')
 ]);
 
 app.use(express.static('public'));
