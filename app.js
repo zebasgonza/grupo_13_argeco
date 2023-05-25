@@ -8,11 +8,12 @@ app.set("view engine", "ejs")
 
 app.set('views', [
     path.join(__dirname, './views/main'),
-    path.join(__dirname, './views/productDetail')
+    path.join(__dirname, './views/products'),
+    path.join(__dirname, './views/users')
 ]);
 
 app.use(express.static('public'));
 
 app.use(mainRoutes);
 
-app.listen(3060,() => console.log("servidor corriendo en el puerto 3060"));
+app.listen(3060,() => console.log("servidor corriendo en el puerto http://localhost:3060"));
