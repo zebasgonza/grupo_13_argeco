@@ -11,6 +11,14 @@ const controllers = {
         res.sendFile(path.join(__dirname, '../views/register.html'));
         
 
+    },
+    getcargaEdicion: (req, res) => {
+
+        res.sendFile(path.join(__dirname, '../views/cargaEdicion.html'));
+        
+
     }
+    
+    
 };
 module.exports = controllers;
