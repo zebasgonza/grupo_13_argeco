@@ -77,8 +77,15 @@ h2{
     text-align: center;
     padding: 3%;
 }
-.fondo-carrito{
+
+.fondoContenido{
     background-color: #F3E8CC;
+}
+
+.fondo-carrito{
+    background-color: #122f44;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .titulo-carrito{
@@ -92,6 +99,12 @@ h2{
     display: flex;
     justify-content:space-around;
     margin-left: 40%;
+
+}
+
+.subtitulos-carrito p{
+    color: white;
+    margin-top: 15px;
 }
 
 .product1{
