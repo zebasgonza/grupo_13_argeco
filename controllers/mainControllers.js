@@ -8,15 +8,14 @@ const controllers = {
         return res.render('productDetail', { title: 'Detalle del producto' });
     },
 
+    getproductCard: (req, res) => {
+        return res.render('productCard', { title: 'Carrito de Compras' });
+    },
+
     /* configuración antigua sin EJS */
     getRegister: (req, res) => {
         res.sendFile(path.join(__dirname, '../views/register.html'));
     },
-    getDetail: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/productDetail.html'));
-    },
-    getProductCard: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/productCard.html'));
-    },
+
 };
 module.exports = controllers;
