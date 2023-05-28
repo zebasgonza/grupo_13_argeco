@@ -12,6 +12,10 @@ const controllers = {
         return res.render('productCard', { title: 'Carrito de Compras' });
     },
 
+    getLogin: (req, res) => {
+        return res.render('login', { title: 'Iniciar Sesión' });
+    },
+
     /* configuración antigua sin EJS */
     getRegister: (req, res) => {
         res.sendFile(path.join(__dirname, '../views/register.html'));

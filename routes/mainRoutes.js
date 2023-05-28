@@ -6,5 +6,6 @@ router.get('/', mainControllers.getIndex);
 router.get('/register', mainControllers.getRegister);
 router.get('/productDetail', mainControllers.getproductDetail);
 router.get('/productCard', mainControllers.getproductCard);
+router.get('/login', mainControllers.getLogin)
 
 module.exports = router;
