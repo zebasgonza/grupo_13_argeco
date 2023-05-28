@@ -28,6 +28,9 @@ body p {
     font-weight: 400;
 }
 
+.excelente{
+    font-style: italic;
+}
 .container{
     padding: 1rem;
 }
