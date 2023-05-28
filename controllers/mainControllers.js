@@ -1,29 +1,25 @@
 const path = require('path');
 const controllers = {
+    /* configuración para vista EJS */
     getIndex: (req, res) => {
-
-        res.sendFile(path.join(__dirname, '../views/index.html'));
-        
-
+         return res.render('index', { title: 'Home' });
     },
-    getRegister: (req, res) => {
-
-        res.sendFile(path.join(__dirname, '../views/register.html'));
-        
-
+    getproductDetail: (req, res) => {
+        return res.render('productDetail', { title: 'Detalle del producto' });
     },
-    getDetail: (req, res) => {
 
-        res.sendFile(path.join(__dirname, '../views/productDetail.html'));
-        
-
+    getproductCard: (req, res) => {
+        return res.render('productCard', { title: 'Carrito de Compras' });
     },
 
     getLogin: (req, res) => {
-
-        res.sendFile(path.join(__dirname, '../views/login.html'));
-        
-
+        return res.render('login', { title: 'Iniciar Sesión' });
     },
+
+    /* configuración antigua sin EJS */
+    getRegister: (req, res) => {
+        res.sendFile(path.join(__dirname, '../views/register.html'));
+    },
+
 };
 module.exports = controllers;

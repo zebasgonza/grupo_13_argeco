@@ -223,6 +223,15 @@ form {
     color: #ebebeb;
 }
 
+.especificacionesTecnicas{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: justify;
+}
+.especificacionesTecnicas p{
+    padding: 10 px;
+}
+
 /*  FIN visualización del producto */
 
 
