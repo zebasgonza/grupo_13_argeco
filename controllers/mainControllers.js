@@ -1,5 +1,7 @@
 const path = require('path');
 const controllers = {
+    
+   
     /* configuración para vista EJS */
     getIndex: (req, res) => {
          return res.render('index', { title: 'Home' });
@@ -8,6 +10,13 @@ const controllers = {
         return res.render('productDetail', { title: 'Detalle del producto' });
     },
 
+    getcreacionProductos: (req, res) => {
+        return res.render('creacionProductos', { title: 'creacionProductos' });
+    },
+    getedicionProductos: (req, res) => {
+        return res.render('edicionProductos', { title: 'edicionProductos' });
+    },  
+  
     getproductCard: (req, res) => {
         return res.render('productCard', { title: 'Carrito de Compras' });
     },
@@ -15,11 +24,10 @@ const controllers = {
     getLogin: (req, res) => {
         return res.render('login', { title: 'Iniciar Sesión' });
     },
-
-    /* configuración antigua sin EJS */
     getRegister: (req, res) => {
-        res.sendFile(path.join(__dirname, '../views/register.html'));
+        return res.render('register', { title: 'register' });
     },
 
+    
 };
 module.exports = controllers;
