@@ -13,6 +13,7 @@ const controllers = {
     getcreacionProductos: (req, res) => {
         return res.render('creacionProductos', { title: 'creacionProductos' });
     },
+    
     getedicionProductos: (req, res) => {
         return res.render('edicionProductos', { title: 'edicionProductos' });
     },  
