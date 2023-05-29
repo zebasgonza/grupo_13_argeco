@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head')%>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header')%>
+    <main>
+
+        <form>
+            <span class="material-symbols-outlined">account_circle</span>
+
+            <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+
+            <div>
+                <label>Contraseña</label>
+                <input type="password" name="contraseña">
+            </div>
+
+            <label class= "cursiva">Recordar datos</label>
+            <label class= "cursiva">¿Olvidaste la constraseña?</label>
+
+            <button type="submit">Ingresar</button>
+
+            <p class="registro">Registrate</p>
+            <span class="material-symbols-outlined email">mail</span>
+
+        </form>
+
+
+    </main>
+
+    <%- include('../partials/footer')%>
+    
+</body>
+
+</html>

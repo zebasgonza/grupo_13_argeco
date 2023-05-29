@@ -28,6 +28,9 @@ body p {
     font-weight: 400;
 }
 
+.excelente{
+    font-style: italic;
+}
 .container{
     padding: 1rem;
 }
@@ -218,6 +221,15 @@ form {
 .boton-shoppingcart[type="submit"]:hover {
     background-color: #b2b2b2;
     color: #ebebeb;
+}
+
+.especificacionesTecnicas{
+    margin-top: 5px;
+    margin-left: 5px;
+    text-align: justify;
+}
+.especificacionesTecnicas p{
+    padding: 10 px;
 }
 
 /*  FIN visualización del producto */
