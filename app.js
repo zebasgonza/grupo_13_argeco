@@ -19,3 +19,13 @@ app.use(express.static('public'));
 app.use(mainRoutes);
 
 app.listen(3060,() => console.log("servidor corriendo en el puerto http://localhost:3060"));
+
+/* 
+Sprint 4
+-Separa rutas por routers (rutas de usuarios, rutas productos y principales (home))(main routers)
+-Armar ruta de post, put y delete.
+-Armar controller post (fs.writefilesync - productos.push)
+-Armar controller delete (fs.writefilesync - productos.filter)
+-Armar controller put (fs.writefilesync - productos.getIndex)
+
+*/
