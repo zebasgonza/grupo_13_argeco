@@ -60,7 +60,8 @@
         "Ancho": 60,
         "cargaMax": 100,
         "tips": "Sala de estar, comedor, oficina, dormitorios y exteriores.",
-        "Garantia ": "1 año, por defectos de fabricación."
+        "Garantia ": "1 año, por defectos de fabricación.",
+        "image": "/img/img-mesa-fetich.jpg"
     },
     {
         "id": 5,
@@ -75,8 +76,8 @@
         "Ancho": 86,
         "cargaMax": 102,
         "tips": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem. Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.",
-        "Garantia ": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem."
-        
+        "Garantia ": "Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+        "image": "escribir la ruta de la imagen"
     },
     {
         "id": 6,
