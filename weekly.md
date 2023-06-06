@@ -22,3 +22,10 @@ Se realizo de 19:00 pm a 21:00 (hora colombia):
     -Se socializaron algunos tips que nos brindo Nacho.
     -Se realiza primer y segundo punto de los JSON (products.json, users.json).
     
+
+# Mawe: 05 de Junio, presentes: Sebastian, Omar, Rosa, Mawensy
+
+Se realizo de 20:40 pm a 21:20 (hora colombia):
+
+    -Se socializan avances de la base de datos json
+    -Se aclara temas de CRUD
