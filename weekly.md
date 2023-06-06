@@ -11,3 +11,14 @@ Se realizo de 20:30 pm a 22:30 pm (hora colombia):
     -Resolvimos conflictos de la rama de omar,feature/register con la del sprint-3
     -Se agregaron las vistas ejs, partials,y estilos del head,footer para el archivo creacionProductos.
     -Falta realizar los cambios a la vista de registro y sebastián ayudará a terminar la vista edicionProductos de Omar.
+
+# Mawe: 31 de mayo, presentes: Sebastián, Omar, Rosa, Mawensy
+
+Se realizo de 19:00 pm a 21:00 (hora colombia):
+
+    -Se socializo el sprint 4 con los integrantes de grupo 13.
+    -Se crea rama sprint 4.
+    -Se clona la rama sprint 4 a cada uno de los sprint 4 locales de cada integrante.
+    -Se socializaron algunos tips que nos brindo Nacho.
+    -Se realiza primer y segundo punto de los JSON (products.json, users.json).
+    
