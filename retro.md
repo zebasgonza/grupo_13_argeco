@@ -24,3 +24,17 @@ flujo de trabajo grupal para el siguiente sprint.
         - Avisar con anticipación si no pueden asistir a una reunión para sugerir otra fecha.
         - Tener un objetivo claro de los encuentros para estar enfocados y evitar que se extienda demasiado tiempo las reuniones.
         - Mejorar la comunicación actualizando el status de cada tarea asignada en trello.
+
+## Retrospectiva Sprint 3
+## Resultado
+    ¿Qué ha ido bien durante el sprint?
+        - El apoyo y la crítica constructiva para mejorar en las actividades.
+    ¿Qué no debemos volver hacer?
+        - No tener claridad del objetivo sobre la reuniones realizadas generando que se extienda demasiado tiempo los encuentros.
+        - No reportar los avances en trello o WhatsApp para estar informados sobre el estado de cada entregable.
+        - No respetar los horarios y fechas establecidas para reunirnos todos.
+    ¿Qué se puede mejorar?
+        - Traer avances y dudas sobre las tareas asignadas para avanzar con los entregables.
+        - Avisar con anticipación si no pueden asistir a una reunión para sugerir otra fecha.
+        - Tener un objetivo claro de los encuentros para estar enfocados y evitar que se extienda demasiado tiempo las reuniones.
+        - Mejorar la comunicación actualizando el status de cada tarea asignada en trello.
