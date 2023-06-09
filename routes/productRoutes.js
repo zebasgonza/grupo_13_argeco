@@ -34,4 +34,4 @@ router.put('/:id/update', productControllers.updateProducts);
 // products/cart (GET) MUESTRA la vista del carrito de compras
 router.get('/cart', productControllers.getCart);
 
-module.exports = route;
+module.exports = router;
