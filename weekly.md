@@ -27,5 +27,5 @@ Se realizo de 19:00 pm a 21:00 (hora colombia):
 
 Se realizo de 20:40 pm a 21:20 (hora colombia):
 
-    -Se socializan avances de la base de datos json
+    -Se socializan avances de la base de datos json entre todo los integrantes del grupo.
     -Se aclara temas de CRUD
