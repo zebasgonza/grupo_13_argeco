@@ -8,10 +8,24 @@ const multer = require("multer");
 const productsControllers = require('../controllers/productsControllers');
 
 
-//metodo http /la ruta desde el url
+// configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
+// TIP: Cada uno debe instalarlo en su pc (npm i multer)
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './public/imgs/products');
+    },
+    filename: (req, file, cb) => {
+        console.log(path.extname(file.originalname))
+        cb(null, Date.now() + '-' + file.originalname);
+    }
+});
+
+const upload = multer({ storage });
+
+//metodos http 
 
 //products (GET) nos MUESTRA el listado de productos
-router.get("../products",productsControllers.getproducts);
+router.get("/",productsControllers.getproducts);
 
 // products/create (GET) nos MUESTRA la vista para crear un producto
 router.get('/create', productControllers.getCreate);
