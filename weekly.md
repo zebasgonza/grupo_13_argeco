@@ -24,8 +24,19 @@ Se realizo de 19:00 pm a 21:00 (hora colombia):
     
 
 # Mawe: 05 de Junio, presentes: Sebastian, Omar, Rosa, Mawensy
-
 Se realizo de 20:40 pm a 21:20 (hora colombia):
 
     -Se socializan avances de la base de datos json entre todo los integrantes del grupo.
     -Se aclara temas de CRUD
+
+ # Sebas: 08 de Junio, presentes: Sebastian, Omar, Rosa, Mawensy
+Se realizo de 20:30 pm a 22:30 (hora colombia):
+
+    -Se realizo el archivo models para los productos.
+    -Se socializo la opción de cómo podriamos repartinos el trabajo para hacerlo de manera autonoma y avanzar más rapido.
+    -Se propuso una reunión extra para el 09 de Junio para organizarnos y explicar como nos vamos a repartir los puntos del sprint.
+
+# Sebas: 08 de Junio, presentes: Sebastian, Omar, Rosa, Mawensy
+Se realizo de 20:30 pm a 21:15 (hora colombia):
+    -Se socializo la forma para dividir el trabajo por puntos para hacer los controladores de los productos y se propuso una fecha limite hasta el 11 de Junio.
+    -Se socializo avances de la configuración para la ruta de productos y el app.js
