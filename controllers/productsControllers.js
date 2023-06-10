@@ -8,7 +8,7 @@ const controllers = {
     // get /products 
     getProducts: (req, res) => {
         const productos = productModel.findAll();
-        res.render('productList', {
+        res.render('index', {
             title: 'Productos',
             productos
         });
