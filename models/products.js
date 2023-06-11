@@ -61,4 +61,6 @@ const model = {
     },
 };
 
+model.deleteById(3);
+
 module.exports = model;
