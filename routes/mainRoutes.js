@@ -5,6 +5,8 @@ const mainControllers = require('../controllers/mainControllers')
 
 
 router.get('/', mainControllers.getIndex);
+
+// lo de abajo se debe cambiar
 router.get('/register', mainControllers.getRegister);
 router.get('/productDetail', mainControllers.getproductDetail);
 router.get('/productCard', mainControllers.getproductCard);
