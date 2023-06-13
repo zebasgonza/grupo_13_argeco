@@ -68,6 +68,8 @@ const model = {
 
         fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
     },
+
+    
 };
 
 module.exports = model;

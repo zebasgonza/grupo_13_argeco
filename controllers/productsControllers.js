@@ -1,21 +1,35 @@
 const productModel = require('../models/products');
 
+
 const controllers = {
 
     // get /products 
     getProducts: (req, res) => {
         const productos = productModel.findAll();
         res.render('index', {
-            title: 'Productos',
+            name: 'Productos',
             productos
         });
 
     },
-    //get/products/:id/detail
+    
 
+    // get /productscard 
+    getCard: (req, res) => {
+        const productos = productModel.findAll();
+        res.render('productCard', {
+            title: 'carrito',
+            productos
+        });
+        console.log(productos);
+    },
+
+   //get/products/:id/detail
+  
     getProductDetail: (req, res) => {
 
         const id = number(req.params.id);
+
 
         const productoAMostrar = productModel.findById(id);
 
