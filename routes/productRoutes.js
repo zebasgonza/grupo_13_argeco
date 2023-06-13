@@ -25,16 +25,16 @@ const upload = multer({ storage });
 //metodos http 
 
 //products (GET) nos MUESTRA el listado de productos 1 sebas
-//router.get("/",productsControllers.getProducts);
+router.get("/",productsControllers.getProducts);
 
 // products/create (GET) nos MUESTRA la vista para crear un producto 2 sebas
-//router.get('/create', productsControllers.getCreate);
+router.get('/create', productsControllers.getCreate);
 
 // products (POST) permite que el usuario pueda CREAR y ENVIAR la info al servidor 3 mawe
-router.post('/', upload.any('img'), productsControllers.postProduct);
+// router.post('/', upload.any('img'), productsControllers.postProduct);
 
 // products/:id/detail (GET) nos MUESTRA la vista del detalle de un producto en especifico de acuerdo a su ID 4 mawe
-router.get('/:id/detail', productsControllers.getProductDetail);
+// router.get('/:id/detail', productsControllers.getProductDetail);
 
 //products/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su ID 5 rosa
 //router.delete('/:id/delete', productsControllers.deleteProducts);
