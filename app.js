@@ -21,7 +21,7 @@ app.use(express.static('public'));
 // nos permite recibir la info desde formularios a través del control
 app.use(express.urlencoded ({extended: true}));
 // convierte la información del json en un objeto de javascript para ser usar en el server.
-app.use(express.json)
+app.use(express.json())
 // habilita el uso de métodos http como (delete) y (put)
 app.use(methodOverride('_method'));
 
