@@ -17,7 +17,6 @@
     },
     {
         "id": 2,
-
         "name": "Reloj perla",
         "categoria": "Reloj",
         "Descripcion": "La esfera del reloj presenta un patrón de vetas únicas y tonos cálidos que dan testimonio de su autenticidad y originalidad. Las delicadas manecillas doradas se deslizan sin esfuerzo sobre la esfera, mientras que los marcadores de hora sutiles pero distintivos aseguran una lectura clara y precisa. ",
@@ -67,16 +66,16 @@
         "id": 5,
         "name": "Mesa couver",
         "categoria": "Mesa",
-        "Descripcion":"La mesa minimalista moderna de madera y resina es una pieza de mobiliario elegante y contemporánea que combina la belleza natural de la madera con la versatilidad y el encanto de la resina. Esta mesa está diseñada con líneas limpias y un enfoque minimalista, lo que la convierte en un complemento perfecto para espacios modernos y estilos de decoración sofisticados.",
+        "Descripcion": "La mesa minimalista moderna de madera y resina es una pieza de mobiliario elegante y contemporánea que combina la belleza natural de la madera con la versatilidad y el encanto de la resina. Esta mesa está diseñada con líneas limpias y un enfoque minimalista, lo que la convierte en un complemento perfecto para espacios modernos y estilos de decoración sofisticados.",
         "Precio": "$1.500.000",
         "Descuento": 5,
         "productName ": "couver",
-        "Material":"Madera,resina y ceramica",
+        "Material": "Madera,resina y ceramica",
         "Altura": 75,
         "Ancho": 86,
         "cargaMax": 102,
-        "tips":"Sala de estar, comedor, oficina, dormitorios y exteriores.",
-        "Garantia ":"1 año, por defectos de fabricación.",
+        "tips": "Sala de estar, comedor, oficina, dormitorios y exteriores.",
+        "Garantia ": "1 año, por defectos de fabricación.",
         "image": "/img-mesa-couver.jpg"
     },
     {
@@ -87,12 +86,12 @@
         "Precio": "$1.900.000",
         "Descuento": 6,
         "productName ": "Rustic",
-        "Material":"madera y metal",
+        "Material": "madera y metal",
         "Altura": 75,
         "Ancho": 80,
         "cargaMax": 200,
-        "tips":"Sala de estar, comedor, dormitorios y exteriores.",
-        "Garantia ":"1 año, por defectos de fabricación.",
+        "tips": "Sala de estar, comedor, dormitorios y exteriores.",
+        "Garantia ": "1 año, por defectos de fabricación.",
         "image": "img-mesa-rustic.jpg"
     },
     {
@@ -108,15 +107,15 @@
         "Ancho": 55,
         "cargaMax": 100,
         "tips": "Sala de estar, luz nocturna de dormitorio y lámpara de sueño.",
-        "Garantia ": "1 año, por defectos de fabricación.",
+        "Garantia": "1 año, por defectos de fabricación.",
         "image": "/img/img-lampara-lava.jpg"
     },
     {
         "id": 8,
-        "name": "Temp",
+        "name": "banano2",
         "categoria": "Lámpara",
         "Descripcion": "Nuestra lámpara de madera está diseñada con materiales naturales y de alta calidad para brindar un toque único y acogedor a tu hogar u oficina.",
-        "Precio": "$ 130.000",
+        "Precio": "5000",
         "Descuento": 20,
         "productName ": "Temp",
         "Material": "Madera, vidrio templado, metal",
@@ -124,7 +123,8 @@
         "Ancho": 45,
         "cargaMax": 100,
         "tips": "Escritorios, dormitorios y exteriores.",
-        "Garantia ": "1 año, por defectos de fabricación.",
-        "image": "/img/img-lampara-temp.jpg"
+        "garantia ": "1 año, por defectos de fabricación.",
+        "image": "/img/img-lampara-temp.jpg",
+        "precio": "500"
     }
 ]
