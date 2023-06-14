@@ -6,21 +6,22 @@ const controllers = {
     getIndex: (req, res) => {
          return res.render('index', { title: 'Home' });
     },
-    getproductDetail: (req, res) => {
-        return res.render('productDetail', { title: 'Detalle del producto' });
-    },
+    // lo de abajo que esta comentado seria bueno borrarlo (socializar en grupo)
+    // getproductDetail: (req, res) => {
+    //     return res.render('productDetail', { title: 'Detalle del producto' });
+    // },
 
-    getcreacionProductos: (req, res) => {
-        return res.render('creacionProductos', { title: 'creacionProductos' });
-    },
+    // getcreacionProductos: (req, res) => {
+    //     return res.render('creacionProductos', { title: 'creacionProductos' });
+    // },
     
-    getedicionProductos: (req, res) => {
-        return res.render('edicionProductos', { title: 'edicionProductos' });
-    },  
+    // getedicionProductos: (req, res) => {
+    //     return res.render('edicionProductos', { title: 'edicionProductos' });
+    // },  
   
-    getproductCard: (req, res) => {
-        return res.render('productCard', { title: 'Carrito de Compras' });
-    },
+    // getproductCard: (req, res) => {
+    //     return res.render('productCard', { title: 'Carrito de Compras' });
+    // },
 
     getLogin: (req, res) => {
         return res.render('login', { title: 'Iniciar Sesión' });

@@ -28,7 +28,8 @@
         "Ancho": 20,
         "cargaMax": 5.2,
         "tips": "Interiores",
-        "Garantia ": " 1 año, por defectos de fabricación."
+        "Garantia ": " 1 año, por defectos de fabricación.",
+        "image": "/img/img-reloj-perla.jpg"
     },
     {
         "id": 3,
@@ -76,7 +77,7 @@
         "cargaMax": 102,
         "tips": "Sala de estar, comedor, oficina, dormitorios y exteriores.",
         "Garantia ": "1 año, por defectos de fabricación.",
-        "image": "/img-mesa-couver.jpg"
+        "image": "img/img-mesa-couver.jpg"
     },
     {
         "id": 6,
@@ -92,7 +93,7 @@
         "cargaMax": 200,
         "tips": "Sala de estar, comedor, dormitorios y exteriores.",
         "Garantia ": "1 año, por defectos de fabricación.",
-        "image": "img-mesa-rustic.jpg"
+        "image": "img/img-mesa-rustic.jpg"
     },
     {
         "id": 7,
@@ -112,19 +113,18 @@
     },
     {
         "id": 8,
-        "name": "banano2",
+        "name": "Chiami",
         "categoria": "Lámpara",
         "Descripcion": "Nuestra lámpara de madera está diseñada con materiales naturales y de alta calidad para brindar un toque único y acogedor a tu hogar u oficina.",
-        "Precio": "5000",
+        "Precio": "$200.000",
         "Descuento": 20,
-        "productName ": "Temp",
+        "productName ": "Chiami",
         "Material": "Madera, vidrio templado, metal",
         "Altura": 50,
         "Ancho": 45,
         "cargaMax": 100,
         "tips": "Escritorios, dormitorios y exteriores.",
         "garantia ": "1 año, por defectos de fabricación.",
-        "image": "/img/img-lampara-temp.jpg",
-        "precio": "500"
+        "image": "/img/img-lampara-temp.jpg"
     }
 ]
