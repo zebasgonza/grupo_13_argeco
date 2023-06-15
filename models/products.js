@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const model = {
-    router: '../data/products.json',
+    route: '../data/products.json',
 
     findAll: function () {
         const allProducts = fs.readFileSync(path.join(__dirname, this.route), 'utf-8');
