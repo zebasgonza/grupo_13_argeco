@@ -42,8 +42,8 @@ router.get('/:id/detail', productsControllers.getProductDetail);
 //products/:id/update (GET) nos MUESTRA la vista para editar un producto ya existente de acuerdo a su ID 6 rosa
 //router.get('/:id/update', productsControllers.getUpdate);
 
-// @PUT /products/:id/update permite reemplazar un dato ya existente de un producto según su ID 7 omar
-// router.put('/:id/update', productsControllers.updateProducts);
+// // @PUT /products/:id/update permite reemplazar un dato ya existente de un producto según su ID 7 omar
+ router.put('/:id/update', productsControllers.updateProducts);
 
 // products/cart (GET) MUESTRA la vista del carrito de compras 8 omar
 router.get('/cart', productsControllers.getCard);

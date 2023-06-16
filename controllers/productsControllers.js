@@ -26,11 +26,26 @@ const controllers = {
         const productos = productModel.findAll();
         res.render('productCard', {
             title: 'carrito',
-            productos
+            productos 
         });
         console.log(productos);
     },
 
+    // get/products
+
+    updateProducts: (req, res) => {
+
+        const id = number(req.params.id);
+
+        const productoModificar = productos.find(productoActual => productoActual.id === id);
+
+        if (!productoModificar){
+            // Con el return detenemos la ejecución del controller, y con el res.send enviamos un mensaje de errar 
+            // queremos detener la ejecución para que no se ejecute el otro res.render (la otra respuesta)
+            return res.send('error de id');
+        }
+        res.render('updateproduct',{product: productoModificar});
+    },
     //get/products/:id/detail
 
     getProductDetail: (req, res) => {
@@ -60,3 +75,4 @@ const controllers = {
 }
 
 module.exports = controllers;
+
