@@ -15,7 +15,7 @@ const controllers = {
     },
 
     getCreate: (req, res) => {
-        res.render('creacionProductos', {
+        res.render('creacionPr0oductos', {
             title: 'Creación de productos'
         });
     },

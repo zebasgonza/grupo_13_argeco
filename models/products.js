@@ -15,7 +15,7 @@ const model = {
     findById: function (id) {
         const products = this.findAll();
 
-        const product = products.find(product => product.id === id);
+        let product = products.find(product => product.id === id);
 
         if(!product){
             product = null;
