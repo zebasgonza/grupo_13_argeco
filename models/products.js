@@ -5,9 +5,9 @@ const model = {
     route: '../data/products.json',
 
     findAll: function () {
-        const allProducts = fs.readFileSync(path.join(__dirname, this.route), 'utf-8');
+        const productsJSON = fs.readFileSync(path.join(__dirname, this.route), 'utf-8');
 
-        const products = JSON.parse(allProducts);
+        const products = JSON.parse(productsJSON);
 
         return products;
     },
@@ -15,13 +15,21 @@ const model = {
     findById: function (id) {
         const products = this.findAll();
 
-        console.log(products);
+        const product = products.find(product => product.id === id);
+
+        if(!product){
+            product = null;
+        }
+
+        return product;
+    
     },
 
     deleteById: function (id) {
+
         let products = this.findAll();
 
-        products = products.filter(products => products.id !== id);
+        products = products.filter(product => product.id !== id);
 
         const productsJSON = JSON.stringify(products);
 
@@ -33,11 +41,13 @@ const model = {
     updateById: function (id, newData) {
         let products = this.findAll();
 
-        const indice = products.findIndex(products);
+        const indice = products.findIndex(productoActual =>productoActual.id === id);
 
-        products[indice].title = newData.title;
+        products[indice].name = newData.name;
 
-        products[indice].price = newData.title;
+        products[indice].Precio = newData.precio;
+
+        console.log(products[indice])
 
         const productsJSON = JSON.stringify(products);
 
@@ -57,7 +67,6 @@ const model = {
         const productsJSON = JSON.stringify(products);
 
         fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
-
     },
 
     
