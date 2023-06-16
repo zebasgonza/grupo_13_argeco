@@ -35,7 +35,7 @@ const controllers = {
 
     getProductDetail: (req, res) => {
 
-        const id = number(req.params.id);
+        const id = Number(req.params.id);
 
 
         const productoAMostrar = productModel.findById(id);
