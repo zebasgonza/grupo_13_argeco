@@ -34,7 +34,7 @@ router.get('/create', productsControllers.getCreate);
 router.post('/', upload.any('img'), productsControllers.postProduct);
 
 // products/:id/detail (GET) nos MUESTRA la vista del detalle de un producto en especifico de acuerdo a su ID 4 mawe
-router.get('/:id/detail', productsControllers.getProductDetail);
+router.get('/:id/detail', productsControllers.getProductDetail); 
 
 //products/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su ID 5 rosa
 // router.delete('/:id/delete', productsControllers.deleteProducts);
