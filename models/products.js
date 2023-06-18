@@ -39,8 +39,10 @@ const model = {
     },
 
     updateById: function (id, newData) {
+        //buscamos el array de productos
         let products = this.findAll();
 
+        //con el findIndex,en que indicce del array de productos
         const indice = products.findIndex(productoActual =>productoActual.id === id);
 
         products[indice].name = newData.name;
@@ -53,7 +55,7 @@ const model = {
 
         fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
 
-        return products;
+        //return products;
 
     },
 
@@ -72,4 +74,5 @@ const model = {
     
 };
 
+model.updateById(1, { name: "Tostadora", precio: 45000 });
 module.exports = model;
