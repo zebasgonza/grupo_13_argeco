@@ -32,22 +32,6 @@
         "image": "/img/img-reloj-perla.jpg"
     },
     {
-        "id": 3,
-        "name": "Wood Mood",
-        "categoria": "Aromatizador",
-        "descripcion": "Descubre nuestro exquisito aromatizador diseñado por artesanos con un cuidado meticuloso, utilizando la nobleza de la madera de roble. Este accesorio brinda  una estética atemporal y una durabilidad excepcional. El grano natural y las tonalidades cálidas le otorgan un aspecto vanguardista para tu espacio.",
-        "precio": "$230.000",
-        "descuento": 15,
-        "productName ": "Wood Mood",
-        "material": "Madera de roble con grano natural y tonalidades cálidas",
-        "altura": 20,
-        "ancho": 50,
-        "cargaMax": 1,
-        "tips": "En interiores y exteriores.",
-        "garantia": "6 meses.",
-        "image": "/img/img-wood-mood.jpg"
-    },
-    {
         "id": 4,
         "name": "Fetich",
         "categoria": "Mesa",
