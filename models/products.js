@@ -21,7 +21,7 @@ const model = {
             product = null;
         }
 
-        return product;
+        return product; 
     
     },
 
@@ -39,15 +39,17 @@ const model = {
     },
 
     updateById: function (id, newData) {
+        //buscamos el array de productos
         let products = this.findAll();
 
+        //con el findIndex,en que indicce del array de productos
         const indice = products.findIndex(productoActual =>productoActual.id === id);
 
         products[indice].name = newData.name;
 
         products[indice].Precio = newData.precio;
 
-        console.log(products[indice])
+        //console.log(products[indice])
 
         const productsJSON = JSON.stringify(products);
 
@@ -72,4 +74,5 @@ const model = {
     
 };
 
+//model.updateById(1, { name: "Tostadora", precio: 45000 });
 module.exports = model;

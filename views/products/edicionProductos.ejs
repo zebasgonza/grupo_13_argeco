@@ -46,13 +46,14 @@
         
         <!-- Consejo: probar boton eliminar con el método put -->
         <div class="botones">
-          <input type="submit" value="Guardar">
-          <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
-            <input type="submit" value="Eliminar"></input>
-          </form>
+          <input type="submit" value="Guardar"> 
         </div>
       </form>
-      
+      <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Eliminar">
+      </form>
+
     </main>
     <%- include('../partials/footer') %>
 </body>

@@ -1,39 +1,6 @@
 [
     {
-        "id": 1,
-        "name": "Unity",
-        "categoria": "Mesa",
-        "descripcion": "Diseñada y desarrollada con madera de robles, es una obra de arte funcional y duradera. Su diseño clásico, el tallado a mano en la superficie y sus bases metalicas con forma geométrica la convierten en una pieza destacada en cualquier hogar.",
-        "precio": "$600.000",
-        "descuento": 10,
-        "productName ": "Unity",
-        "material": "Madera sellada en resina acrilica, con un tablero agromerado de 15 cm.",
-        "altura": 100,
-        "ancho": 70,
-        "cargaMax": 88.2,
-        "tips": "En interiores y exteriores.",
-        "garantia": " 1 año, por defectos de fabricación.",
-        "image": "/img/img-mesa-unity1.jpg"
-    },
-    {
-        "id": 2,
-        "name": "Reloj perla",
-        "categoria": "Reloj",
-        "descripcion": "La esfera del reloj presenta un patrón de vetas únicas y tonos cálidos que dan testimonio de su autenticidad y originalidad. Las delicadas manecillas doradas se deslizan sin esfuerzo sobre la esfera, mientras que los marcadores de hora sutiles pero distintivos aseguran una lectura clara y precisa. ",
-        "precio": "$ 250.000",
-        "descuento": 5,
-        "productName ": "Reloj perla",
-        "material": "Madera sellada en acrilico con acabados exteriores de destellos.",
-        "altura": 20,
-        "ancho": 20,
-        "cargaMax": 5.2,
-        "tips": "Interiores",
-        "garantia": " 1 año, por defectos de fabricación.",
-        "image": "/img/img-reloj-perla.jpg"
-    },
-    {
         "id": 3,
-        "name": "Wood Mood",
         "categoria": "Aromatizador",
         "descripcion": "Descubre nuestro exquisito aromatizador diseñado por artesanos con un cuidado meticuloso, utilizando la nobleza de la madera de roble. Este accesorio brinda  una estética atemporal y una durabilidad excepcional. El grano natural y las tonalidades cálidas le otorgan un aspecto vanguardista para tu espacio.",
         "precio": "$230.000",
@@ -44,7 +11,7 @@
         "ancho": 50,
         "cargaMax": 1,
         "tips": "En interiores y exteriores.",
-        "garantia": "6 meses.",
+        "garantia ": "6 meses.",
         "image": "/img/img-wood-mood.jpg"
     },
     {
@@ -60,24 +27,8 @@
         "ancho": 60,
         "cargaMax": 100,
         "tips": "Sala de estar, comedor, oficina, dormitorios y exteriores.",
-        "garantia": "1 año, por defectos de fabricación.",
+        "garantia ": "1 año, por defectos de fabricación.",
         "image": "/img/img-mesa-fetich.jpg"
-    },
-    {
-        "id": 5,
-        "name": "Mesa couver",
-        "categoria": "Mesa",
-        "descripcion": "La mesa minimalista moderna de madera y resina es una pieza de mobiliario elegante y contemporánea que combina la belleza natural de la madera con la versatilidad y el encanto de la resina. Esta mesa está diseñada con líneas limpias y un enfoque minimalista, lo que la convierte en un complemento perfecto para espacios modernos y estilos de decoración sofisticados.",
-        "precio": "$1.500.000",
-        "descuento": 5,
-        "productName ": "couver",
-        "material": "Madera,resina y ceramica",
-        "altura": 75,
-        "ancho": 86,
-        "cargaMax": 102,
-        "tips": "Sala de estar, comedor, oficina, dormitorios y exteriores.",
-        "garantia": "1 año, por defectos de fabricación.",
-        "image": "img/img-mesa-couver.jpg"
     },
     {
         "id": 6,
@@ -92,7 +43,7 @@
         "ancho": 80,
         "cargaMax": 200,
         "tips": "Sala de estar, comedor, dormitorios y exteriores.",
-        "garantia": "1 año, por defectos de fabricación.",
+        "garantia ": "1 año, por defectos de fabricación.",
         "image": "img/img-mesa-rustic.jpg"
     },
     {
@@ -124,7 +75,7 @@
         "ancho": 45,
         "cargaMax": 100,
         "tips": "Escritorios, dormitorios y exteriores.",
-        "garantia": "1 año, por defectos de fabricación.",
+        "garantia ": "1 año, por defectos de fabricación.",
         "image": "/img/img-lampara-temp.jpg"
     }
 ]
