@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -151,6 +152,26 @@ body p {
     text-align: center;
     padding-bottom: 20px;
 }
+
+.formImg {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 5px;
+}
+
+.imgText {
+  color: #EAE2CD;
+  font-size: small;
+  padding-bottom: 10px;
+  font-weight: 400;
+}
+
+img {
+  width: 55px;
+  padding-bottom: 15px;
+  filter: brightness(0.8);
+}
+
 @media (min-width: 668px) {
 
 .main-footer {
