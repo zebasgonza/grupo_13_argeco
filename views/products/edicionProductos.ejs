@@ -10,29 +10,49 @@
   <%- include('../partials/header') %>
     <main>
       <h1>Formulario de Edición de Productos</h1>
-      <form action="/editar" method="POST">
-        <label for="nombre">Nombre del producto:</label>
-        <input type="text" id="nombre" name="nombre" required>
 
-        <label for="precio">Precio:</label>
-        <input type="number" id="precio" name="precio" required>
+      <form action="/products/<%= product.id %>/update?_method=put" method="post" enctype="multipart/form-data">
+        <label for="nombre">Nombre del producto</label>
+        <input type="text" id="nombre" name="nombre" value="<%= product.name %>" required>
 
-        <label for="categoria">Categoría:</label>
-        <select id="categoria" name="categoria" required>
+        <label for="precio">Precio</label>
+        <input type="text" id="precio" name="precio" value="<%= product.precio %>" required>
+        <label for="descuento">Descuento</label>
+        <input type="number" id="descuento" name="descuento" value="<%= product.descuento %>" required>
+
+        <label for="categoria">Categoría</label>
+        <input type="text" id="categoria" name="categoria" value="<%= product.categoria %>" required>
+
+        <!-- evaluar el selector (grupo) -->
+        <!-- <select id="categoria" name="categoria" required>
           <option value="">Seleccionar</option>
           <option value="sillas">Sillas</option>
           <option value="mesas">Mesas</option>
           <option value="sofas">Sofás</option>
-        </select>
+        </select> -->
 
-        <label for="imagen">Imagen del producto:</label>
-        <input type="file" id="imagen" name="imagen" accept="image/*" required>
-
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" name="descripcion" required></textarea>
-
-        <input type="submit" value="Guardar">
+        <label for="imagen">Imagen del producto</label>
+        <input class="formImg" type="file" id="imagen" name="imagen"  multiple accept=".jpg, .jpeg, .png" required>
+        <p class="imgText">Imagenes guardadas anteriormente</p>
+        <% if (product && product.image) { %>
+          <img src="<%= product.image %>" alt="Imagen del producto">
+        <% } %>
+        
+        <label for="descripcion">Descripción</label>
+        <textarea id="descripcion" name="descripcion" required> <%= product.descripcion %></textarea>
+        
+        <label for="garantia">Garantía</label>
+        <textarea id="garantia" name="garantia" required> <%= product.garantia %></textarea>
+        
+        <!-- Consejo: probar boton eliminar con el método put -->
+        <div class="botones">
+          <input type="submit" value="Guardar">
+          <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
+            <input type="submit" value="Eliminar"></input>
+          </form>
+        </div>
       </form>
+      
     </main>
     <%- include('../partials/footer') %>
 </body>
