@@ -172,6 +172,10 @@ img {
   filter: brightness(0.8);
 }
 
+.botones input {
+  margin-right: 10px;
+}
+
 @media (min-width: 668px) {
 
 .main-footer {

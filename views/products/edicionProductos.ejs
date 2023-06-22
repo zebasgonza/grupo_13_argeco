@@ -44,8 +44,15 @@
         <label for="garantia">Garantía</label>
         <textarea id="garantia" name="garantia" required> <%= product.garantia %></textarea>
         
-        <input type="submit" value="Guardar">
+        <!-- Consejo: probar boton eliminar con el método put -->
+        <div class="botones">
+          <input type="submit" value="Guardar">
+          <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
+            <input type="submit" value="Eliminar"></input>
+          </form>
+        </div>
       </form>
+      
     </main>
     <%- include('../partials/footer') %>
 </body>
