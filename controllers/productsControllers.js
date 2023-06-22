@@ -33,7 +33,7 @@ const controllers = {
 
     // get/products
 
-    updateProduct: (req, res) => { 
+    updateProducts: (req, res) => { 
         const id = Number (req.params.id); 
         const nuevosDatos = req.body;
 

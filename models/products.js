@@ -21,7 +21,7 @@ const model = {
             product = null;
         }
 
-        return product;
+        return product; 
     
     },
 
@@ -49,13 +49,13 @@ const model = {
 
         products[indice].Precio = newData.precio;
 
-        console.log(products[indice])
+        //console.log(products[indice])
 
         const productsJSON = JSON.stringify(products);
 
         fs.writeFileSync(path.join(__dirname, this.route), productsJSON);
 
-        //return products;
+        return products;
 
     },
 
@@ -74,5 +74,5 @@ const model = {
     
 };
 
-model.updateById(1, { name: "Tostadora", precio: 45000 });
+//model.updateById(1, { name: "Tostadora", precio: 45000 });
 module.exports = model;
