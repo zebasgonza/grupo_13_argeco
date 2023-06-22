@@ -15,7 +15,7 @@ const controllers = {
     },
 
     getCreate: (req, res) => {
-        res.render('creacionPr0oductos', {
+        res.render('creacionProductos', {
             title: 'Creación de productos'
         });
     },
@@ -62,6 +62,20 @@ const controllers = {
         res.render('productDetail', { title: 'Detalle', product: productoAMostrar });
     },
 
+    // @GET /products/:id/update
+
+    getUpdate: (req, res) => {
+        const id = Number (req.params.id);
+        const productsToModify = productModel.findById(id)
+        if (!productsToModify) {
+            return res.send('El producto que desea buscar no se encuentra disponible :( ');
+        }
+        res.render('edicionProductos', {
+            title: 'Edición Productos',
+            product: productsToModify
+        });
+    },
+
     // // post/products
 
     postProduct: (req, res) => {
@@ -71,7 +85,7 @@ const controllers = {
          productModel.createOne(datos);
 
          res.redirect('/');
-     },
+     }
 }
 
 module.exports = controllers;
