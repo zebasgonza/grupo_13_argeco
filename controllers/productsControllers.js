@@ -90,12 +90,12 @@ const controllers = {
          datos.price = Number(datos.precio);
 
          /* datos.img = '/imgs/products/' + req.file.filename; */
-         datos.img = req.files.map(file => '/img' + file.filename);
+         datos.img = req.files.map(file => '/img/' + file.filename);
 
-         productModel.createOne(datos);
+         productModel.create(datos);
 
 
-         res.redirect('/');
+         res.redirect('/products');
      }
 
 }
