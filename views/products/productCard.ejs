@@ -23,29 +23,29 @@
                     <p>Producto</p>
                     <p>Cantidad</p>
                     <p>Precio</p>
-                </div>
-                <div class="product1">
-                    <div class="img-producto">
-                        <img src="./img/img-celular-stand.jpg" alt="Imagen de 1er producto">
-                    </div>
-                    <div class="texto">El soporte de teléfono XYZ es la solución perfecta para mantener tu teléfono
-                        inteligente seguro, visible y al alcance de tus manos en todo momento. Diseñado con la
-                        combinación
-                        ideal de funcionalidad y estilo, este soporte está hecho para adaptarse a las necesidades de los
-                        usuarios más exigentes.</div>
-                    <div>
-                        <div class="contador">
-                            <button><i class="fa-solid fa-minus"></i></button>
-                            <span>0</span>
-                            <button><i class="fa-solid fa-plus"></i></button>
+                </div> 
+                
+                <% for (let producto of productos) { %>
+                    
+                    <div class="product1">
+                        <div class="img-producto">
+                            <img src="<%= producto.image %>" alt="<%= producto.name %>" />
                         </div>
-                    </div>
-                    <div>
-                        <p>$50.000</p>
+                        <div class="texto"><%= producto.descripcion %></div>
+                        <div>
+                            <div class="contador">
+                                <button><i class="fa-solid fa-minus"></i></button>
+                                <span>0</span>
+                                <button><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <p>Precio: <%= producto.precio %></p>
                     </div>
                 </div>
-
-                <div class="product2">
+                <% } %>
+            
+            <!-- <div>
+            <div class="product2">
                     <div class="img-producto">
                         <img src="./img/img-espejo-roble.jpg" alt="Imagen de 2do producto">
                     </div>
@@ -72,17 +72,13 @@
                         funcionalidad y sofisticación en una sola pieza. Diseñada para iluminar tu espacio con elegancia
                         y
                         crear una atmósfera acogedora, esta lámpara es mucho más que una simple fuente de luz.</div>
-                    <div>
+                    <div> -->
                         <div class="contador">
                             <button><i class="fa-solid fa-minus"></i></button>
                             <span>0</span>
                             <button><i class="fa-solid fa-plus"></i></button>
                         </div>
-                    </div>
-                    <div>
-                        <p>$70.000</p>
-                    </div>
-                </div>
+                
             </div>
 
             <div class="seguirComprando">

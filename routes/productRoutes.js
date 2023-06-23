@@ -37,10 +37,10 @@ router.post('/', upload.any('img'), productsControllers.postProduct);
 router.get('/:id/detail', productsControllers.getProductDetail); 
 
 //products/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su ID 5 rosa
-// router.delete('/:id/delete', productsControllers.deleteProducts);
+ router.delete('/:id/delete', productsControllers.deleteProducts);
 
 //products/:id/update (GET) nos MUESTRA la vista para editar un producto ya existente de acuerdo a su ID 6 rosa
-//router.get('/:id/update', productsControllers.getUpdate);
+router.get('/:id/update', productsControllers.getUpdate);
 
 // // @PUT /products/:id/update permite reemplazar un dato ya existente de un producto según su ID 7 omar
  router.put('/:id/update', productsControllers.updateProducts);
