@@ -15,7 +15,7 @@ const controllers = {
         let datos = req.body;
         datos.price = Number(datos.precio);
         datos.img = req.files.map(file => '/img/users/' + file.filename);
-        productModel.create(datos);
+        usersModel.create(datos);
         // Debe redirreccionar a la vista de perfil usuario.
         res.redirect('/products');
     }
