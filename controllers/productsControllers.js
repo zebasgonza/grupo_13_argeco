@@ -3,7 +3,7 @@ const productModel = require('../models/products');
 
 const controllers = {
 
-    // get /products 
+    // get /products/Sebas
     getProducts: (req, res) => {
         // buscamos todos los productos que tenemos en la base de datos.
         const productos = productModel.findAll();
@@ -13,15 +13,15 @@ const controllers = {
         });
 
     },
-
+   //get/Create/Sebas
     getCreate: (req, res) => {
-        res.render('creacionPr0oductos', {
+        res.render('creacionProductos', {
             title: 'Creación de productos'
         });
     },
 
 
-    // get /productscard 
+    // get /productscard/ Omar
     getCard: (req, res) => {
         const productos = productModel.findAll();
         res.render('productCard', {
@@ -31,11 +31,11 @@ const controllers = {
         console.log(productos);
     },
 
-    // get/products
+    // get/products/Omar
 
     updateProducts: (req, res) => {
 
-        const id = number(req.params.id);
+        const id = Number(req.params.id);
 
         const productoModificar = productos.find(productoActual => productoActual.id === id);
 
@@ -45,8 +45,9 @@ const controllers = {
             return res.send('error de id');
         }
         res.render('updateproduct',{product: productoModificar});
+
     },
-    //get/products/:id/detail
+    //get/products/:id/detail/Mawe
 
     getProductDetail: (req, res) => {
 
@@ -62,17 +63,22 @@ const controllers = {
         res.render('productDetail', { title: 'Detalle', product: productoAMostrar });
     },
 
-    // // post/products
+    // // post/products/Mawe
 
     postProduct: (req, res) => {
 
          let datos = req.body;
 
+         datos.price = Number(datos.precio);
+
+         /* datos.img = '/imgs/products/' + req.file.filename; */
+         datos.img = req.files.map(file => '/img' + file.filename);
+
          productModel.createOne(datos);
 
-         res.redirect('/');
+         res.redirect('/products');
      },
 }
-
+     
 module.exports = controllers;
 
