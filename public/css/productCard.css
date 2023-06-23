@@ -1,16 +1,208 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+}
+/* ----- Mobile first ----- */
+header {
+    background-color:#122f44;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.center-navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 20%;
+}
+
+.left-navbar {
+    display: flex;
+}
+
+.hamburguer-button {
+    display: flex;
+    justify-content: center;
+    background-color: #091A26;
+    border-radius: 10%;
+    color: #ebebeb;
+    width: 55px;
+    height: 45px;
+    font-size: 40px;
+}
+
+.right-navbar {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* Tip: modifica todos los iconos */
+.material-symbols-outlined {
+    color: white;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 700,
+        'GRAD' 0,
+        'opsz' 48
+}
 body {
-    font-family: 'Roboto', sans-serif ;
+    font-family: 'Roboto', sans-serif;
 }
 
 body p {
     font-weight: 400;
 }
 
+h2{
+    text-align: center;
+    padding: 3%;
+}
+
+.fondoContenido{
+    background-color: #F3E8CC;
+}
+
+.fondo-carrito{
+    background-color: #122f44;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.titulo-carrito{
+    text-align: center;
+    font-weight: bold;
+    padding: 3%;
+}
+
+.subtitulos-carrito{
+    flex-direction: row;
+    display: flex;
+    justify-content:space-around;
+    margin-left: 40%;
+
+}
+
+.subtitulos-carrito p{
+    color: white;
+    margin-top: 15px;
+}
+
+.product1{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    background-color: #cbc5b5;
+    margin: 5%;
+    border-radius: 10px;
+}
+
+.img-producto{
+    width: 200px;
+    height: 200px;
+}
+
+.texto{
+    text-align: justify;
+    width: 30%;
+}
+.product2{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    margin: 5%;
+    background-color:#cbc5b5;
+}
+
+.product3{
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3%;
+    margin: 5%;
+    background-color:#cbc5b5;
+}
+
+.seguirComprando a{
+        background-color: #EAE2CD;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #122f44;
+        width: 20px; 
+      }
+
+.seguirComprando{
+    text-align: right;
+    margin-right: 5%;
+    padding-bottom: 20px;
+}
+
+.textoBoton{
+    color: white;
+}
+
+.finalizarCompra a{
+    background-color: #EAE2CD;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #122f44;
+    width: 20px; 
+}
+
+.finalizarCompra{
+    text-align: right;
+    margin-right: 5%;
+    padding-bottom: 20px;
+    padding: 10px;
+}
+
+footer {
+    background-color: #EAE2CD;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.main-container-footer {
+    margin-top: 20px;
+}
+
+.bottom-footer-text{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* ----- FIN Mobile first ----- */

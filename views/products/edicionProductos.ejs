@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../partials/head') %>
+    <link rel="stylesheet" type="text/css" href="/css/edicionProductos.css">
+</head>
+
+<body>
+  <%- include('../partials/header') %>
+    <main>
+      <div class="container">
+        <h1>Formulario de Edición de Productos</h1>
+        <div class="formPut" >
+          <form action="/products/<%= product.id %>/update?_method=put" method="post" enctype="multipart/form-data">
+            <label for="name">Nombre del producto</label>
+            <input type="text" id="" name="name" value="<%= product.name %>" required>
+    
+            <label for="precio">Precio</label>
+            <input type="text" id="" name="precio" value="<%= product.precio %>" required>
+            <label for="descuento">Descuento</label>
+            <input type="number" id="" name="descuento" value="<%= product.descuento %>" required>
+    
+            <label for="categoria">Categoría</label>
+            <input type="text" id="" name="categoria" value="<%= product.categoria %>" required>
+    
+            <label for="image">Imagen del producto</label>
+            <input class="formImg" type="file" id="" name="image"  multiple accept=".jpg, .jpeg, .png">
+            <p class="imgText">Imagenes guardadas anteriormente</p>
+            <% if (product && product.image) { %>
+              <img src="<%= product.image %>" alt="Imagen del producto">
+            <% } %>
+            
+            <label for="descripcion">Descripción</label>
+            <textarea id="" name="descripcion" required> <%= product.descripcion %></textarea>
+            
+            <label for="garantia">Garantía</label>
+            <textarea id="" name="garantia" required> <%= product.garantia %></textarea>
+    
+            <input type="submit" value="Guardar"> 
+    
+          </form>
+        </div>
+        <div class="formDelete">
+          <form action="/products/<%= product.id %>/delete?_method=delete" method="post">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Eliminar">
+          </form>
+        </div>
+        <%- include('../partials/footer') %>
+      </div>
+    </main>
+</body>
+</html>

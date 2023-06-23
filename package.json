@@ -4,7 +4,8 @@
   "description": "- ¿Qué productos o servicios brindará nuestro sitio?\r    Venta muebles y accesorios de con un estilo industrial o madera con resina.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/zebasgonza/grupo_13_furnihouse#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "app": "^0.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22"
   }
 }

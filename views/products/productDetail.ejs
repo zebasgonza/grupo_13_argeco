@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head') %>
+
+        <link rel="stylesheet" href="/css/productDetail.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+        <main>
+            <section class="container">
+                <article class="container-product">
+                    <div class="container-product-mainpicture">
+                        <img src=<%= product.image %>alt="Imagen de una mesa familiar que esta en venta">
+                    </div>
+                    <!-- <div class="container-product-smallpicture">
+                        <div class="container-smallpicture">
+                            <img id="image-1" src="./img/img-mesa-unity1.jpg"
+                                alt="Imagen de una mesa familiar que esta en venta">
+                        </div>
+                        <div class="container-smallpicture">
+                            <img id="image-2" src="./img/img-mesa-unity2.jpg"
+                                alt="Imagen de una mesa familiar que esta en venta">
+                        </div>
+                        <div class="container-smallpicture">
+                            <img id="image-3" src="./img/img-mesa-unity3.jpg"
+                                alt="Imagen de una mesa familiar que esta en venta">
+                        </div>
+                        <div class="container-smallpicture">
+                            <img id="image-4" src="./img/img-mesa-unity4.jpg"
+                                alt="Imagen de una mesa familiar que esta en venta">
+                        </div> -->
+                    <div class="container-productDetail-info">
+
+                            <h2><%= product.name %></h2>
+                            <p class="categoria"> <%= product.categoria %></p>
+                            <p class="descripcion"> <%= product.descripcion %></p>
+                        
+
+                        <div class="container-icon-start">
+                            <i class="material-symbols-outlined icon-start-rate">
+                                star_rate
+                            </i>                                               
+                            <i class="material-symbols-outlined icon-start-rate">
+                                star_rate
+                            </i>
+                            <i class="material-symbols-outlined icon-start-rate">
+                                star_rate
+                            </i>
+                            <i class="material-symbols-outlined icon-start-rate">
+                                star_rate
+                            </i>
+                            <i class="material-symbols-outlined icon-start-rate-half">
+                                star_rate_half
+                            </i>
+                        </div>
+                        <div class="container-precio">
+                            <p class="precio"><%= product.precio%></p>
+                            <p class="descuento"><%= product.descuento %>% OFF</p>
+                        </div>
+                        
+                        <form action="#" method="POST">
+                            <div class="cantidad">
+                                <label for="cantidad">Cantidad</label>
+                                <input type="number" id="cantidad" name="cantidad" min="0" value="1"
+                                    class="cantidad-input">
+                            </div>
+                            <input class="boton-comprar" type="submit" value="Comprar">
+                            <input class="boton-shoppingcart" type="submit" value="Agregar al carrito">
+                        </form>
+                    </div>
+                    <div class="especificacionesTecnicas">
+                        <h2>Información Tecnica</h2>
+                        <br>
+                        <p> -Nombre del mueble: <%= product.name %></p>
+                        <p> -Material: <%= product.material %></p>
+                        <p>Dimensiones:</p>
+                        <p>Altura: <%= product.altura %></p>
+                        <p>Ancho: <%= product.ancho %></p>
+                        <p>Carga maxima: <%= product.cargaMax %> lbs</p>
+                        <p> -Uso recomendado: <%= product.tips %></p>
+                        <p> -Garantía: <%= product.garantia %> </p>
+                    </div>
+                    <article>
+
+                        <h2>Opiniones Clientes</h2>
+                            <div class="container-icon-start">
+                                <p>4.5</p>
+                                <i class="material-symbols-outlined icon-start-rate">
+                                    star_rate
+                                </i>
+                                <i class="material-symbols-outlined icon-start-rate">
+                                    star_rate
+                                </i>
+                                <i class="material-symbols-outlined icon-start-rate">
+                                    star_rate
+                                </i>
+                                <i class="material-symbols-outlined icon-start-rate">
+                                    star_rate
+                                </i>
+                                <i class="material-symbols-outlined icon-start-rate-half">
+                                    star_rate_half
+                                </i>
+                            </div>
+                            <p class= "excelente">Excelente producto</p>
+                            <h3>Rosa Mina</h3>
+                            <p class= "descripcion"> 
+                            Recientemente adquirí esta mesa de madera para mi comedor y estoy encantado con ella. 
+                            El grano de la madera es hermoso y los tonos cálidos le dan un toque acogedor a la habitación.
+                            La calidad de construcción de la mesa es excepcional. Se nota que se utilizaron materiales de alta calidad
+                            </p>
+            
+                        </article>
+                </article>
+                
+
+            </section>
+
+        </main>
+
+        
+
+        <%- include('../partials/footer') %>
+
+</body>
+
+</html>
