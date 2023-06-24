@@ -7,7 +7,7 @@
         "categoria": "comprador",
         "password": "123456ded",
         "image": "data:image/png;"
-    },
+    }, 
     {
         "id": 2,
         "first_name": "Edgar",
