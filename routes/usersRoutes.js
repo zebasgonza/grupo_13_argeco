@@ -5,7 +5,7 @@ const router = express.Router();
 //requerimos multer para que el usuario pueda subir archivos.
 const multer = require("multer");
 //requerimos para llamar a los controladores de products
-const productsControllers = require('../controllers/usersControllers');
+const usersControllers = require('../controllers/usersControllers');
 
 
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
@@ -27,11 +27,11 @@ const upload = multer({ storage });
 // // users (GET) nos MUESTRA la vista del login
 // router.get('/login', usersControllers.getLogin);//Omar
 
-// // users (GET) nos MUESTRA la vista del register
-// router.get('/register', usersControllers.getRegister);//Sebas
+// users/register (GET) nos MUESTRA la vista del register
+router.get('/register', usersControllers.getRegister);//Sebas
 
-// // users (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
-// router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
+// users/register (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
+router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
 
 // // products/:id/detail (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
 // router.get('/:id/perfil', usersControllers.getUsersProfile); //Mawe
