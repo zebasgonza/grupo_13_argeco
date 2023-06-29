@@ -12,26 +12,22 @@
   <main>
   <h1>Formulario de Creación de Productos</h1>
   
-  <form action="/guardar" method="POST">
-    <label for="nombre">Nombre del producto:</label>
-    <input type="text" id="nombre" name="nombre" required>
+  <form action="/products" method="post" enctype="multipart/form-data">
+    <label for="name">Nombre del producto:</label>
+    <input type="text" id="" name="name" required>
 
     <label for="precio">Precio:</label>
-    <input type="number" id="precio" name="precio" required>
+    <input type="number" id="" name="precio" required>
 
-    <label for="categoria">Categoría:</label>
-    <select id="categoria" name="categoria" required>
-      <option value="">Seleccionar</option>
-      <option value="sillas">Sillas</option>
-      <option value="mesas">Mesas</option>
-      <option value="sofas">Sofás</option>
-    </select>
+    <label for="categoria">Categoría</label>
+    <input type="text" id="" name="categoria" required>
 
-    <label for="imagen">Imagen del producto:</label>
-    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+
+    <label for="image">Imagen del producto:</label>
+    <input type="file" id="" name="image" accept="image/*" required>
 
     <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion" required></textarea>
+    <textarea id="" name="descripcion" required></textarea>
 
     <input type="submit" value="Cargar">
   </form>

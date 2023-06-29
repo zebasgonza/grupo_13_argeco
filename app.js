@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const path = require('path');
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
-
+const usersRoutes = require('./routes/usersRoutes');
 
 /* ---- Configuración vistas EJS ---- */
 app.set("view engine", "ejs")
@@ -28,6 +28,7 @@ app.use(methodOverride('_method'));
 /* ---- Routers ---- */
 app.use(mainRoutes);
 app.use('/products', productRoutes);
+app.use('/users', usersRoutes);
 
 app.listen(3060,() => console.log("servidor corriendo en el puerto http://localhost:3060"));
 

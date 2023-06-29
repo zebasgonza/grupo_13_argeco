@@ -3,7 +3,7 @@ const productModel = require('../models/products');
 
 const controllers = {
 
-    // get /products 
+    // get /products/Sebas
     getProducts: (req, res) => {
         // buscamos todos los productos que tenemos en la base de datos.
         const productos = productModel.findAll();
@@ -13,7 +13,7 @@ const controllers = {
         });
 
     },
-
+   //get/Create/Sebas
     getCreate: (req, res) => {
         res.render('creacionProductos', {
             title: 'Creación de productos'
@@ -28,7 +28,7 @@ const controllers = {
         res.redirect('/products');
       },
 
-    // get /productscard 
+    // get /productscard/ Omar
     getCard: (req, res) => {
         const productos = productModel.findAll();
         res.render('productCard', {
@@ -38,7 +38,8 @@ const controllers = {
         console.log(productos);
     },
 
-    // get/products
+    // get/products/Omar
+
 
     updateProducts: (req, res) => { 
         const id = Number (req.params.id); 
@@ -48,7 +49,7 @@ const controllers = {
         
         res.redirect('/products');
     },
-    //get/products/:id/detail
+    //get/products/:id/detail/Mawe
 
     getProductDetail: (req, res) => {
 
@@ -63,6 +64,7 @@ const controllers = {
 
         res.render('productDetail', { title: 'Detalle', product: productoAMostrar });
     },
+
 
     // @GET /products/:id/update
 
@@ -80,15 +82,23 @@ const controllers = {
 
     // // post/products
 
+
     postProduct: (req, res) => {
 
          let datos = req.body;
 
-         productModel.createOne(datos);
+         datos.price = Number(datos.precio);
 
-         res.redirect('/');
+         /* datos.img = '/imgs/products/' + req.file.filename; */
+         datos.img = req.files.map(file => '/img/' + file.filename);
+
+         productModel.create(datos);
+
+
+         res.redirect('/products');
      }
-}
 
+}
+     
 module.exports = controllers;
 
