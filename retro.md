@@ -33,3 +33,13 @@ flujo de trabajo grupal para el siguiente sprint.
         - No saber controlar los tiempos de la reunión para ser más productivos.
     ¿Qué se puede mejorar?
         - Reunirnos una vez a la semana y un día adicional si se requiere para resolver dudas en el desarrollo del sprint.
+
+## Retrospectiva Sprint 4
+## Resultado
+    ¿Qué ha ido durante el sprint?
+        - La ayuda grupal para resolver dudas durante el proyecto.
+        - La repartición correcta de las tareas y resolver las tareas pendientes.
+    ¿Qué no debemos volver hacer?
+        - Avisar con tiempo para resolver tareas que no se pudieron lograr con el fin avanzar.
+    ¿Qué se puede mejorar?
+        - Avisar antes de la fecha de entrega de la tareas para analizar alternativas de apoyo para avanzar en las asignaciones.
