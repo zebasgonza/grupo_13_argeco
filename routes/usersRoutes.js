@@ -25,7 +25,7 @@ const upload = multer({ storage });
 // //metodos http 
 
 // // users (GET) nos MUESTRA la vista del login
-// router.get('/login', usersControllers.getLogin);//Omar
+router.get('/login', usersControllers.getLogin);//Omar
 
 // users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas

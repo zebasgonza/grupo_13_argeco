@@ -18,7 +18,17 @@ const controllers = {
         usersModel.create(datos);
         // Debe redirreccionar a la vista de perfil usuario.
         res.redirect('/products');
-    }
+    },
+
+    getLogin : (req, res) => {
+        res.render('login'); // Nombre de la vista para la página de inicio de sesión
+        const data = {
+            title: "Login" // Establece el valor deseado para el título
+        };
+    
+        res.render('login', data);
+      },
+    
 
 }
 
