@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage }); //nos habilita para guardar el archivo y usar en una ruta de archivos especifica.
 
 // //metodos http 
 
@@ -33,11 +33,11 @@ router.get('/register', usersControllers.getRegister);//Sebas
 // users/register (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
 router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
 
-// // products/:id/detail (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
-// router.get('/:id/perfil', usersControllers.getUsersProfile); //Mawe
+// // users/usersProfile' (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
+router.get('/usersProfile/:userId', usersControllers.getUsersProfile); //Mawe
 
-// // products/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su 
-// router.delete('/:id/delete', usersControllers.deleteProducts);// tener en cuenta de crear la vista perfil..//Mawe
+// // users/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su 
+router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener en cuenta de crear la vista perfil..//Mawe
 
 // //products/:id/update (GET) nos MUESTRA la vista para editar una info de perfil ya existente
 // router.get('/:id/update',usersControllers.getUpdate);//Rosa
