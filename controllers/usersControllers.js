@@ -26,7 +26,7 @@ const controllers = {
 
         usersModel.create(datos);
         // Debe redirreccionar a la vista de perfil usuario.
-        res.redirect('/products');
+        res.redirect('/users/usersProfile/:userId');
     },
 
     getUsersProfile: (req, res) => {
