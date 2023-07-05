@@ -18,8 +18,27 @@ const controllers = {
         usersModel.create(datos);
         // Debe redirreccionar a la vista de perfil usuario.
         res.redirect('/products');
-    }
+    },
 
+    getUsersProfile: (req, res) => {
+        const userId =  Number(req.params.userId);
+        const user = usersModel.findById(userId)
+        
+        res.render('usersProfile', {
+            title: 'Perfil de Usuario',
+            user
+        });
+    
+    },
+
+    deleteUsersProfile: (req, res) => {
+
+        const id = Number(req.params.userId);
+    
+        usersModel.deleteById(userId);
+    
+        res.redirect('/');
+      },
 }
 
 module.exports = controllers;
