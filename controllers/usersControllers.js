@@ -25,8 +25,9 @@ const controllers = {
         datos['confirm-password'] = hashedConfirmPassword;
 
         usersModel.create(datos);
+        const userId = datos.id;
         // Debe redirreccionar a la vista de perfil usuario.
-        res.redirect('/users/usersProfile/:userId');
+        res.redirect('/users/usersProfile/' + userId);
     },
 
     getUsersProfile: (req, res) => {
