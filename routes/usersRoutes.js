@@ -5,7 +5,7 @@ const router = express.Router();
 //requerimos multer para que el usuario pueda subir archivos.
 const multer = require("multer");
 //requerimos para llamar a los controladores de products
-const productsControllers = require('../controllers/usersControllers');
+const usersControllers = require('../controllers/usersControllers');
 
 
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
@@ -22,28 +22,28 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-//metodos http 
+// //metodos http 
 
-// users (GET) nos MUESTRA la vista del login
-router.get('/login', usersControllers.getLogin);//Omar
+// // users (GET) nos MUESTRA la vista del login
+// router.get('/login', usersControllers.getLogin);//Omar
 
-// users (GET) nos MUESTRA la vista del register
+// users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas
 
-// users (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
+// users/register (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
 router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
 
-// products/:id/detail (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
-router.get('/:id/perfil', usersControllers.getUsersProfile); //Mawe
+// // users/usersProfile' (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
+router.get('/usersProfile/:userId', usersControllers.getUsersProfile); //Mawe
 
-// products/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su 
-router.delete('/:id/delete', usersControllers.deleteProducts);// tener en cuenta de crear la vista perfil..//Mawe
+// // users/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su 
+router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener en cuenta de crear la vista perfil..//Mawe
 
-//products/:id/update (GET) nos MUESTRA la vista para editar una info de perfil ya existente
-router.get('/:id/update',usersControllers.getUpdate);//Rosa
+// //products/:id/update (GET) nos MUESTRA la vista para editar una info de perfil ya existente
+// router.get('/:id/update',usersControllers.getUpdate);//Rosa
 
-// // @PUT /products/:id/update permite reemplazar un dato ya existente de un  perfil
- router.put('/:id/update', usersControllers.updateUsers);//Rosa
+// // // @PUT /products/:id/update permite reemplazar un dato ya existente de un  perfil
+//  router.put('/:id/update', usersControllers.updateUsers);//Rosa
 
 
-module.exports = router;
+ module.exports = router;

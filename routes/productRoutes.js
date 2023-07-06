@@ -12,7 +12,7 @@ const productsControllers = require('../controllers/productsControllers');
 // TIP: Cada uno debe instalarlo en su pc (npm i multer)
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, './public/imgs/products');
+        cb(null, './public/img');
     },
     filename: (req, file, cb) => {
         console.log(path.extname(file.originalname))
