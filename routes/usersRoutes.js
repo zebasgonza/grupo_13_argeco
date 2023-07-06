@@ -20,7 +20,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage });
+const upload = multer({ storage }); //nos habilita para guardar el archivo y usar en una ruta de archivos especifica.
 
 // //metodos http 
 
