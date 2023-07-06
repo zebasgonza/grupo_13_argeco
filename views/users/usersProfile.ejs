@@ -31,9 +31,9 @@
                 <div>Email: <%= user.email  %></div>
                 <div>Categoria <%= user.categoria  %></div>
             </div>
-            <div class="datosPersonales">
+            <form action= "/users/delete/<%= user.id %>?_method=DELETE" method="post" class="datosPersonales">
                 <button type="submit">Eliminar</button>
-            </div>
+            </form>
         </main>
 
 </body>

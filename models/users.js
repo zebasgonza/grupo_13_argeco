@@ -41,11 +41,11 @@ const model = {
 
         users = users.filter(user => user.id !== id);
 
-        const usersJSON = JSON.stringify(users);
+        const usersJSON = JSON.stringify(users, null, " ");
 
         fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
 
-        return user;
+        return users;
     },
 };
 
