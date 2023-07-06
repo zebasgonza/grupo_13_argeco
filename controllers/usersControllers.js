@@ -45,7 +45,9 @@ const controllers = {
 
         const id = Number(req.params.userId);
 
-        usersModel.deleteById(userId);
+    
+        usersModel.deleteById(id);
+    
 
         res.redirect('/');
     },
