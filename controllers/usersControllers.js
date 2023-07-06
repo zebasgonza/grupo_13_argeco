@@ -21,12 +21,10 @@ const controllers = {
     },
 
     getLogin : (req, res) => {
-        res.render('login'); // Nombre de la vista para la página de inicio de sesión
-        const data = {
-            title: "Login" // Establece el valor deseado para el título
-        };
-    
-        res.render('login', data);
+        res.render('login',{
+            title: 'iniciar sesion'
+        }); // Nombre de la vista para la página de inicio de sesión
+       
       },
     
 

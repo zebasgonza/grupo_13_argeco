@@ -6,12 +6,12 @@ const controllers = {
     getIndex: (req, res) => {
          return res.render('index', { title: 'Home' });
     },
-    getLogin: (req, res) => {
-        return res.render('login', { title: 'Iniciar Sesión' });
-    },
-    getRegister: (req, res) => {
-        return res.render('register', { title: 'register' });
-    }
+    // getLogin: (req, res) => {
+    //     return res.render('login', { title: 'Iniciar Sesión' });
+    // },
+    // getRegister: (req, res) => {
+    //     return res.render('register', { title: 'register' });
+    // }
 
     
 };
