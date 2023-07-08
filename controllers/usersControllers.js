@@ -51,6 +51,18 @@ const controllers = {
 
         res.redirect('/');
     },
+
+    getEdit: (req, res) => {
+        const id = Number (req.params.id);
+        const usersToModify = usersModel.findById(id)
+        if (!usersToModify) {
+            return res.send('El producto que desea buscar no se encuentra disponible :( ');
+        }
+        res.render('edit', {
+            title: 'Edición Productos',
+            user: usersToModify
+        });
+    },
 }
 
 module.exports = controllers;

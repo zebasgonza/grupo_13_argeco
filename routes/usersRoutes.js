@@ -40,7 +40,7 @@ router.get('/usersProfile/:userId', usersControllers.getUsersProfile); //Mawe
 router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener en cuenta de crear la vista perfil..//Mawe
 
 // //products/:id/update (GET) nos MUESTRA la vista para editar una info de perfil ya existente
-// router.get('/:id/update',usersControllers.getUpdate);//Rosa
+router.get('/edit/:id',usersControllers.getEdit);//Rosa
 
 // // // @PUT /products/:id/update permite reemplazar un dato ya existente de un  perfil
 //  router.put('/:id/update', usersControllers.updateUsers);//Rosa
