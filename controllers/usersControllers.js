@@ -56,10 +56,10 @@ const controllers = {
         const id = Number (req.params.id);
         const usersToModify = usersModel.findById(id)
         if (!usersToModify) {
-            return res.send('El producto que desea buscar no se encuentra disponible :( ');
+            return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
         res.render('edit', {
-            title: 'Edición Productos',
+            title: 'Edición del perfil',
             user: usersToModify
         });
     },
