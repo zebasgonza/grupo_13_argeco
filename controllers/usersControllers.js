@@ -63,6 +63,15 @@ const controllers = {
             user: usersToModify
         });
     },
+
+    putEdit: (req, res) => { 
+        const id = Number (req.params.id); 
+        const nuevosDatos = req.body;
+
+        usersModel.updateById(id, nuevosDatos)
+        
+        res.redirect('/products');
+    },
 }
 
 module.exports = controllers;
