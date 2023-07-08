@@ -43,7 +43,7 @@ router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener e
 router.get('/edit/:id',usersControllers.getEdit);//Rosa
 
 //@PUT /products/:id/update permite reemplazar un dato ya existente de un  perfil
-router.put('/:id/update', usersControllers.updateUsers);//Rosa
+router.put('/edit/:id', usersControllers.putEdit);//Rosa
 
 
  module.exports = router;
