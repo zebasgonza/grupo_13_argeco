@@ -21,7 +21,7 @@ const controllers = {
         datos.password = hashedPassword;
 
         // Encriptación confirmación contraseña
-        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
+        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10); 
         datos['confirm-password'] = hashedConfirmPassword;
 
         usersModel.create(datos);
@@ -68,10 +68,18 @@ const controllers = {
         const id = Number (req.params.id); 
         const nuevosDatos = req.body;
 
+        if (req.file) {
+            nuevosDatos.image = req.file.filename;
+        } else {
+            nuevosDatos.image = 'default-image.png';
+        }
+
+        // nuevosDatos.image = req.file ? req.file.filename : 'default-image.png';
         usersModel.updateById(id, nuevosDatos)
-        
-        res.redirect('/products');
+        res.redirect('/');
     },
+
+    
 }
 
 module.exports = controllers;

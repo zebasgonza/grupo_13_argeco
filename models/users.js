@@ -56,8 +56,9 @@ const model = {
         const indice = users.findIndex(user =>user.id === id);
 
         users[indice].first_name = newData.first_name;
-        users [indice].last_name = newData.last_name;
-        users [indice].email = newData.email;
+        users[indice].last_name = newData.last_name;
+        users[indice].email = newData.email;
+        users[indice].image = newData.image;
 
         //console.log(users[indice])
 
