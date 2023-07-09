@@ -21,7 +21,7 @@ const controllers = {
         datos.password = hashedPassword;
 
         // Encriptación confirmación contraseña
-        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
+        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10); 
         datos['confirm-password'] = hashedConfirmPassword;
 
         usersModel.create(datos);
@@ -51,6 +51,35 @@ const controllers = {
 
         res.redirect('/');
     },
+
+    getEdit: (req, res) => {
+        const id = Number (req.params.id);
+        const usersToModify = usersModel.findById(id)
+        if (!usersToModify) {
+            return res.send('El usuario que desea buscar no se encuentra disponible :( ');
+        }
+        res.render('edit', {
+            title: 'Edición del perfil',
+            user: usersToModify
+        });
+    },
+
+    putEdit: (req, res) => { 
+        const id = Number (req.params.id); 
+        const nuevosDatos = req.body;
+
+        if (req.file) {
+            nuevosDatos.image = req.file.filename;
+        } else {
+            nuevosDatos.image = 'default-image.png';
+        }
+
+        // nuevosDatos.image = req.file ? req.file.filename : 'default-image.png';
+        usersModel.updateById(id, nuevosDatos)
+        res.redirect('/');
+    },
+
+    
 }
 
 module.exports = controllers;
