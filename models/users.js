@@ -22,8 +22,53 @@ const model = {
         const usersJSON = JSON.stringify(users);
 
         fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
+    },
+
+    findById: function (id) {
+        const users = this.findAll();
+
+        let user = users.find(user => user.id === id);
+
+        if(!user){
+            user = null;
+        }
+
+        return user; 
+    },
+    deleteById: function (id) {
+
+        let users = this.findAll();
+
+        users = users.filter(user => user.id !== id);
+
+        const usersJSON = JSON.stringify(users, null, " ");
+
+        fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
+
+        return users;
+    },
+
+    updateById: function (id, newData) {
+        //buscamos el array de productos
+        let users = this.findAll();
+
+        //con el findIndex,en que indicce del array de usuarios
+        const indice = users.findIndex(user =>user.id === id);
+
+        users[indice].first_name = newData.first_name;
+        users[indice].last_name = newData.last_name;
+        users[indice].email = newData.email;
+        users[indice].image = newData.image;
+
+        //console.log(users[indice])
+
+        const usersJSON = JSON.stringify(users);
+
+        fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
+
+        return users;
     }
 
-};
+}
 
 module.exports = model;
