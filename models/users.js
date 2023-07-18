@@ -67,7 +67,19 @@ const model = {
         fs.writeFileSync(path.join(__dirname, this.route), usersJSON);
 
         return users;
-    }
+    },
+    //trae un usuario segun su email
+    findByEmail: function (email) {
+        const users = this.findAll();
+
+        let user = users.find(user => user.email === email);
+
+        if(!user){
+            user = null;
+        }
+
+        return user; 
+    },
 
 }
 

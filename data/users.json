@@ -143,5 +143,17 @@
         "price": null,
         "img": [],
         "id": 15
+    },
+    {
+        "first_name": "omar",
+        "last_name": "maldonado",
+        "email": "omita@gmail.com",
+        "password": "$2b$10$PaKHPFETFr2T/Fh.TiRtr.0ZnR1w0fMaIZRmaxbf0D3UURNxGPua2",
+        "confirm-password": "$2b$10$EF5ybZBFTzwvFPcFTA7FzuB/L1EIgLSsKn3DJyWaO3DYSh8r9Yt8C",
+        "price": null,
+        "img": [
+            "/img/users/1689553482666-{762AA2BE-DC92-414C-BA3B-3C6C86AD815E}.png"
+        ],
+        "id": 16
     }
 ]

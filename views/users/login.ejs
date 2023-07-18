@@ -3,42 +3,46 @@
 
 <head>
     <%- include('../partials/head')%>
-    <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
 
     <%- include('../partials/header')%>
-    <main>
+        <main>
 
-        <form action="/" method="POST">
-            <span class="material-symbols-outlined">account_circle</span>
-        
-            <div>
-                <label>Email</label>
-                <input type="email" name="email">
-            </div>
-        
-            <div>
-                <label>Contraseña</label>
-                <input type="password" name="contraseña">
-            </div>
-        
-            <label class="cursiva">Recordar datos</label>
-            <label class="cursiva">¿Olvidaste la constraseña?</label>
-        
-            <button type="submit">Ingresar</button>
-        
-            <p class="registro"><a href="/users/register">Registrate</a></p>
-            <span class="material-symbols-outlined email">mail</span>
-        </form>
-        
+            <form action="/users/login/" method="POST">
+                <span class="material-symbols-outlined">account_circle</span>
+
+                <div>
+                    <label>Email</label>
+                    <input type="email" name="email">
+                </div>
+
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" name="contraseña">
+                </div>
+
+                <label class="cursiva">Recordar datos</label>
+                <label class="cursiva">¿Olvidaste la constraseña?</label>
+                <button>
+                    <input type="submit" value="ingresar">
+                </button>
+                <br>
+                <label for="">mantener sesion iniciada</label>
+                <input type="checkbox" name="remember" id="">
+                <br>
+                <p class="registro"><a href="/users/register">Registrate</a></p>
+                <span class="material-symbols-outlined email">mail</span>
+            </form>
 
 
-    </main>
 
-    <%- include('../partials/footer')%>
-    
+        </main>
+
+        <%- include('../partials/footer')%>
+
 </body>
 
 </html>

@@ -79,6 +79,42 @@ const controllers = {
         res.redirect('/');
     },
 
+getLogin: (req,res) => {
+    res.render("login", {
+        title: 'Registro'
+    });
+},
+
+loginUser: (req,res) => {
+const searchedUser = usersModel.findByEmail(req.body.email);
+
+if(!searchedUser){
+return res.redirect('/users/login');
+}
+
+const{password: hashedPw} = searchedUser;
+
+const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
+
+
+
+
+if(isCorrect){
+    if(!!req.body.remember){
+        res.cookie('email', searchedUser.email, {
+            maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
+        });
+    }
+
+    delete searchedUser.password;
+    delete searchedUser.id;
+
+    req.session.user = searchedUser;
+    res.redire('se inicio sesion')
+}else{
+    return res.redirect('/users/login');
+}
+}
     
 }
 

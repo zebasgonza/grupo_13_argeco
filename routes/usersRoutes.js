@@ -6,6 +6,14 @@ const router = express.Router();
 const multer = require("multer");
 //requerimos para llamar a los controladores de products
 const usersControllers = require('../controllers/usersControllers');
+//express-validatior
+const { body } = require("express-validator");
+//validaciones inserbibles de momento,borrar si esta demas
+// const validaciones = [
+//     body("email").notEmpty().withMessage("El campo de correo electrónico es obligatorio"),
+//     body("contraseña").notEmpty().withMessage("El campo de contraseña es obligatorio"),
+//   ];
+
 
 
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
@@ -26,6 +34,9 @@ const upload = multer({ storage }); //nos habilita para guardar el archivo y usa
 
 // // users (GET) nos MUESTRA la vista del login
 router.get('/login', usersControllers.getLogin);//Omar
+
+//ruta de express-validator
+router.post('/login', usersControllers.loginUser);//Omar
 
 // users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas
