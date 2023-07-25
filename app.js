@@ -6,6 +6,8 @@ const path = require('path');
 const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
 const usersRoutes = require('./routes/usersRoutes');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session')
 
 /* ---- Configuración vistas EJS ---- */
 app.set("view engine", "ejs")
@@ -19,18 +21,24 @@ app.set('views', [
 /* ---- Middlewares ---- */
 app.use(express.static('public'));
 // nos permite recibir la info desde formularios a través del control
-app.use(express.urlencoded ({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 // convierte la información del json en un objeto de javascript para ser usar en el server.
 app.use(express.json());
 // habilita el uso de métodos http como (delete) y (put)
 app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(expressSession({
+    secret: 'monito123',
+    resave: false,
+    saveUninitialized: true
+}))
 
 /* ---- Routers ---- */
 app.use(mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', usersRoutes);
 
-app.listen(3060,() => console.log("servidor corriendo en el puerto http://localhost:3060"));
+app.listen(3060, () => console.log("servidor corriendo en el puerto http://localhost:3060"));
 
 /* 
 Sprint 4
