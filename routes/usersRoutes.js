@@ -6,6 +6,14 @@ const router = express.Router();
 const multer = require("multer");
 //requerimos para llamar a los controladores de products
 const usersControllers = require('../controllers/usersControllers');
+//express-validatior
+const { body } = require("express-validator");
+//validaciones inserbibles de momento,borrar si esta demas
+// const validaciones = [
+//     body("email").notEmpty().withMessage("El campo de correo electrónico es obligatorio"),
+//     body("contraseña").notEmpty().withMessage("El campo de contraseña es obligatorio"),
+//   ];
+
 
 
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
@@ -25,7 +33,10 @@ const upload = multer({ storage }); //nos habilita para guardar el archivo y usa
 // //metodos http 
 
 // // users (GET) nos MUESTRA la vista del login
-// router.get('/login', usersControllers.getLogin);//Omar
+router.get('/login', usersControllers.getLogin);//Omar
+
+//ruta de express-validator
+router.post('/login', usersControllers.loginUser);//Omar
 
 // users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas
@@ -40,9 +51,17 @@ router.get('/usersProfile/:userId', usersControllers.getUsersProfile); //Mawe
 router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener en cuenta de crear la vista perfil..//Mawe
 
 // //products/:id/update (GET) nos MUESTRA la vista para editar una info de perfil ya existente
-router.get('/edit/:id',usersControllers.getEdit);//Rosa
+router.get('/edit/:id', usersControllers.getEdit);//Rosa
 
 //@PUT /products/:id/update permite reemplazar un dato ya existente de un  perfil
 router.put('/edit/:id', upload.single('image'), usersControllers.putEdit);//Rosa
 
- module.exports = router;
+router.get('/pruebaSession', function (req, res) {
+    if (req.session.numeroVisitas == undefined) {
+        req.session.numeroVisitas = 0;
+    }
+    req.session.numeroVisitas++;
+    res.send('session tiene el numero: ' + req.session.numeroVisitas);
+});
+
+module.exports = router;

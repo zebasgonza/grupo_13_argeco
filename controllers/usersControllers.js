@@ -21,7 +21,7 @@ const controllers = {
         datos.password = hashedPassword;
 
         // Encriptación confirmación contraseña
-        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10); 
+        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
         datos['confirm-password'] = hashedConfirmPassword;
 
         usersModel.create(datos);
@@ -45,15 +45,15 @@ const controllers = {
 
         const id = Number(req.params.userId);
 
-    
+
         usersModel.deleteById(id);
-    
+
 
         res.redirect('/');
     },
 
     getEdit: (req, res) => {
-        const id = Number (req.params.id);
+        const id = Number(req.params.id);
         const usersToModify = usersModel.findById(id)
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
@@ -64,8 +64,8 @@ const controllers = {
         });
     },
 
-    putEdit: (req, res) => { 
-        const id = Number (req.params.id); 
+    putEdit: (req, res) => {
+        const id = Number(req.params.id);
         const nuevosDatos = req.body;
 
         if (req.file) {
@@ -79,7 +79,41 @@ const controllers = {
         res.redirect('/');
     },
 
-    
+    getLogin: (req, res) => {
+        res.render("login", {
+            title: 'Registro'
+        });
+    },
+
+    loginUser: (req, res) => {
+        const searchedUser = usersModel.findByEmail(req.body.email);
+       
+        if (!searchedUser) {
+            return res.redirect('/users/login');
+        }
+        
+        const { password: hashedPw } = searchedUser;
+        //console.log(req.body.password,hashedPw);
+        const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
+        
+        if (isCorrect) {
+            if (!!req.body.remember) {
+                res.cookie('email', searchedUser.email, {
+                    maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
+                });
+            }
+            
+            
+            delete searchedUser.password;
+            delete searchedUser.id;
+            
+            req.session.user = searchedUser;
+            res.redirect('/')
+        } else {
+            return res.redirect('/users/login');
+        }
+    }
+
 }
 
 module.exports = controllers;
