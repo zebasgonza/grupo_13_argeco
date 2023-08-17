@@ -8,6 +8,7 @@ const productRoutes = require('./routes/productRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session')
+const sequelize = new Sequelize('furnihouse ','','')
 
 /* ---- Configuración vistas EJS ---- */
 app.set("view engine", "ejs")
