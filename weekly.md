@@ -40,3 +40,9 @@ Se realizo de 20:30 pm a 22:30 (hora colombia):
 Se realizo de 20:30 pm a 21:15 (hora colombia):
     -Se socializo la forma para dividir el trabajo por puntos para hacer los controladores de los productos y se propuso una fecha limite hasta el 11 de Junio.
     -Se socializo avances de la configuración para la ruta de productos y el app.js
+
+# Mawe: 16 de Agosto, presentes: Sebastian, Omar, Rosa, Mawensy
+Se realizo de 20:30 pm a 21:15 (hora colombia):
+    - Se socializan las BD y sequelize 
+    - Se inicializa sequelize y se configura 
+
