@@ -15,8 +15,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-        estado_pedido: {
-            type: DataTypes.LONGTEXT,
+
+        
+        estado_pedido:{
+            type: DataTypes.STRING,
+
             allowNull: false
         },
         fecha_finalizacion: {
