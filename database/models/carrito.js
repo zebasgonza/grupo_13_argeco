@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const Carrito = sequelize.define(alias, cols, config)
 
-    Carrito.associate = (models) => {
+ /*    Carrito.associate = (models) => {
 
         Carrito.hasMany(models.items_carrito, {
             as: 'Carrito',
@@ -53,7 +53,7 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false,
             foreignKey: 'id_usuario'
         });
-    }
+    } */
 
     return Carrito;
 }
