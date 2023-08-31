@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         
         estado_pedido:{
-            type: DataTypes.LONGTEXT,
+            type: DataTypes.STRING,
             allowNull: false
         },
         fecha_finalizacion: {
