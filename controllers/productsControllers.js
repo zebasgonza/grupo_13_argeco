@@ -1,12 +1,18 @@
 const productModel = require('../models/products');
-
+const DB = require('../database/models');
+/* const stock = require('../database/models/stock');  */
 
 const controllers = {
 
     // get /products/Sebas
-    getProducts: (req, res) => {
-        // buscamos todos los productos que tenemos en la base de datos.
-        const productos = productModel.findAll();
+    getProducts: async (req, res) => {
+
+        /* se asigna que busque todos los datos desde la tabla Stock */
+        const Stock = await DB.Stock.findAll()
+
+        /* const productos = productModel.findAll(); */
+        /* Mostramos en la vista todos los productos de la tabla Stock */
+        const productos = await DB.Stock.findAll()
         res.render('listProducts', {
             title: 'Lista de productos',
             productos

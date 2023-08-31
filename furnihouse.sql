@@ -31,7 +31,7 @@ CREATE TABLE `carrito` (
   `id_carrito` smallint(15) NOT NULL,
   `id_usuario` tinyint(15) DEFAULT NULL,
   `fecha_inicio` date DEFAULT NULL,
-  `estado_pedido` longtext DEFAULT NULL,
+  `estado_pedido` varchar DEFAULT NULL,
   `fecha_finalizacion` date DEFAULT NULL,
   `precio` decimal(10,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
