@@ -1,33 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = 'Carrito';
+    const alias = 'FichaTenica';
 
     const cols = {
-        id_carrito: {
+        id_ficha_tecnica: {
             type: DataTypes.SMALLINT,
             primaryKey: true,
             autoIncrement: true
         },
-        id_usuario: {
+        id_producto: {
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
-        fecha_inicio: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-
-        
-        estado_pedido:{
-            type: DataTypes.STRING,
-
-            allowNull: false
-        },
-        fecha_finalizacion: {
-            type: DataTypes.DATE,
-            allowNull: false
-        },
-        precio: {
+        ancho: {
             type: DataTypes.DECIMAL,
+            allowNull: false
+        },
+        alto: {
+            type: DataTypes.DECIMAL,
+            allowNull: false
+        },
+        garantia: {
+            type: DataTypes.VARCHAR,
             allowNull: false
         },
     }
@@ -42,17 +35,12 @@ module.exports = (sequelize, DataTypes) => {
 
     Carrito.associate = (models) => {
 
-        Carrito.hasMany(models.items_carrito, {
+        Carrito.belongsToMany(models.items_carrito, {
             as: 'Carrito',
             timestamps: false,
             foreignKey: 'id_carrito'
         });
 
-        Carrito.hasMany(models.usuarios, {
-            as: 'Carrito',
-            timestamps: false,
-            foreignKey: 'id_usuario'
-        });
     }
 
     return Carrito;
