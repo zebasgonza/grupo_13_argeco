@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `carrito`
 --
-
+//
 CREATE TABLE `carrito` (
   `id_carrito` smallint(15) NOT NULL,
   `id_usuario` tinyint(15) DEFAULT NULL,
