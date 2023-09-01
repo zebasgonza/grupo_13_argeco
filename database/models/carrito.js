@@ -15,34 +15,47 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
+
         
         estado_pedido:{
-            type: DataTypes.LONGTEXT,
+            type: DataTypes.STRING,
+
             allowNull: false
         },
         fecha_finalizacion: {
             type: DataTypes.DATE,
             allowNull: false
         },
-        precio:{
+        precio: {
             type: DataTypes.DECIMAL,
             allowNull: false
         },
     }
 
 
-const config = {
-    tableName: 'carrito',
-    timestamps: false
-}
+    const config = {
+        tableName: 'carrito',
+        timestamps: false
+    }
 
-const Carrito = sequelize.define (alias, cols,config)
+    const Carrito = sequelize.define(alias, cols, config)
 
-Carrito.associate = (models) =>{
-//Aca hacemos las relaciones
-} 
+ /*    Carrito.associate = (models) => {
 
-return Carrito;
+        Carrito.hasMany(models.items_carrito, {
+            as: 'Carrito',
+            timestamps: false,
+            foreignKey: 'id_carrito'
+        });
+
+        Carrito.hasMany(models.usuarios, {
+            as: 'Carrito',
+            timestamps: false,
+            foreignKey: 'id_usuario'
+        });
+    } */
+
+    return Carrito;
 }
 
 
