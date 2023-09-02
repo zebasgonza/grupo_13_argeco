@@ -11,7 +11,7 @@ const controllers = {
         });
     },
 
-    // @Post users/registera 
+    // @Post users/register 
     postRegister: (req, res) => {
         let datos = req.body;
         datos.price = Number(datos.precio);
@@ -92,9 +92,17 @@ const controllers = {
             title: 'Registro'
         });
     },
+// Se iniciaria ejecutando login user- Mawe
+    loginUser: async (req, res) => {
 
-    loginUser: (req, res) => {
-        const searchedUser = usersModel.findByEmail(req.body.email);
+        const Usuarios = await DB.Usuarios.findOne({
+
+            email: req.body.email
+
+        })
+
+        
+        /* const searchedUser = usersModel.findByEmail(req.body.email); */
 
         if (!searchedUser) {
             return res.redirect('/users/login');
