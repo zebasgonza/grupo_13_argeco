@@ -3,8 +3,9 @@ module.exports = (sequelize, DataTypes) => {
 
     const cols = {
         id: {
-            type: DataTypes.INTEGER,
-           
+            type: DataTypes.BIGINT,
+            primaryKey: true,
+            autoIncrement: true,
         },
         name: {
             type: DataTypes.STRING,
@@ -21,9 +22,9 @@ const config = {
 
 const Carrito = sequelize.define (alias, cols,config)
 
-Carrito.associate = (models) =>{
+/* Carrito.associate = (models) =>{
 //Aca hacemos las relaciones
 } 
-
+ */
 return Carrito;
 }
