@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
     const alias = 'Usuarios';
 
     const cols = {
-        id_usuarios: {
+        id_usuario: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-        contraseña: {
+        contrasena: {
             type: DataTypes.STRING,
             allowNull: true
         },
