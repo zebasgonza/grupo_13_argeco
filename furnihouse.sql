@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2023 at 09:56 PM
+-- Generation Time: Aug 31, 2023 at 06:03 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `carrito`
 --
-//
+
 CREATE TABLE `carrito` (
   `id_carrito` smallint(15) NOT NULL,
   `id_usuario` tinyint(15) DEFAULT NULL,
   `fecha_inicio` date DEFAULT NULL,
-  `estado_pedido` varchar DEFAULT NULL,
+  `estado_pedido` varchar(50) DEFAULT NULL,
   `fecha_finalizacion` date DEFAULT NULL,
-  `precio` decimal(10,0) DEFAULT NULL
+  `precio` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -41,8 +41,27 @@ CREATE TABLE `carrito` (
 --
 
 INSERT INTO `carrito` (`id_carrito`, `id_usuario`, `fecha_inicio`, `estado_pedido`, `fecha_finalizacion`, `precio`) VALUES
-(1, 1, '0000-00-00', 'finalizado', '0000-00-00', 50000),
-(2, 2, '2023-08-21', 'finalizado', '2023-08-25', 30000);
+(1, 1, '0000-00-00', 'finalizado', '0000-00-00', 50000.00),
+(2, 2, '2023-08-21', 'finalizado', '2023-08-25', 30000.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categoria_usuario`
+--
+
+CREATE TABLE `categoria_usuario` (
+  `id_categoria_usuario` int(15) NOT NULL,
+  `nombre` int(15) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categoria_usuario`
+--
+
+INSERT INTO `categoria_usuario` (`id_categoria_usuario`, `nombre`) VALUES
+(1, NULL),
+(2, NULL);
 
 -- --------------------------------------------------------
 
@@ -139,6 +158,12 @@ ALTER TABLE `carrito`
   ADD PRIMARY KEY (`id_carrito`);
 
 --
+-- Indexes for table `categoria_usuario`
+--
+ALTER TABLE `categoria_usuario`
+  ADD PRIMARY KEY (`id_categoria_usuario`);
+
+--
 -- Indexes for table `ficha_tecnica`
 --
 ALTER TABLE `ficha_tecnica`
@@ -171,6 +196,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `carrito`
   MODIFY `id_carrito` smallint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `categoria_usuario`
+--
+ALTER TABLE `categoria_usuario`
+  MODIFY `id_categoria_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `ficha_tecnica`
