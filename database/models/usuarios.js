@@ -1,43 +1,44 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = 'usuarios';
+    const alias = 'Usuarios';
 
     const cols = {
-        id_usuarios: {
+        id_usuario: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true
         },
         nombre: {
             type: DataTypes.STRING,
+            allowNull: true
            
         },
         apellido: {
             type: DataTypes.STRING,
+            allowNull: true
         },
         
         email:{
             type: DataTypes.STRING,
+            allowNull: true
         },
-        contraseña: {
+        contrasena: {
             type: DataTypes.STRING,
+            allowNull: true
         },
        
     }
 
 
 const config = {
-    tableName: 'usuarios',
+    tableName: 'Usuarios',
     timestamps: false
 }
 
-const Carrito = sequelize.define (alias, cols,config)
-
-Carrito.associate = (models) =>{
+const Usuarios = sequelize.define (alias, cols,config)
+/* 
+Usuarios.associate = (models) =>{
 //Aca hacemos las relaciones
-// sequelize.sync({ force: true }).then(() => {
-//     console.log('Tabla de usuarios creada.');
-//   }); 
- } 
+ }  */
 
-return id_usuarios;
+return Usuarios;
 }
