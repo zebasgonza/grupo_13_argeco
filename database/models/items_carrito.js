@@ -29,9 +29,9 @@ const config = {
 
 const producto = sequelize.define (alias, cols,config)
 
-// Carrito.associate = (models) =>{
-// //Aca hacemos las relaciones
-// } 
+producto.associate = (models) =>{
+//Aca hacemos las relaciones
+} 
 
 return producto;
 }
