@@ -20,27 +20,13 @@ const controllers = {
 
     },
    //get/Create/Sebas
+   
     getCreate: (req, res) => {
-        
-            const nuevoProducto = {
-                nombre: req.body.nombre,
-                categoria: req.body.categoria,
-                id_producto: req.body.producto
-            };
-    
-            try {
-                const datos = await producto.create(nuevoProducto);
-                console.log(datos);
-            } catch (error) {
-                console.log(error);
-            }
-    
-            res.send('Producto creado con exito');
+            res.render('createProduct', { errors: [], values: {} });
         },
     
+    
 
-
-    },
     
     deleteProducts: (req, res) => {
         const id = Number(req.params.id);
