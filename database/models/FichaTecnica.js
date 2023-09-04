@@ -20,20 +20,20 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         garantia: {
-            type: DataTypes.VARCHAR,
+            type: DataTypes.STRING,
             allowNull: false
         },
     }
 
 
     const config = {
-        tableName: 'carrito',
+        tableName: 'FichaTécnica',
         timestamps: false
     }
 
-    const Carrito = sequelize.define(alias, cols, config)
+    const FichaTecnica = sequelize.define(alias, cols, config)
 
-    Carrito.associate = (models) => {
+/*     Carrito.associate = (models) => {
 
         Carrito.belongsToMany(models.items_carrito, {
             as: 'Carrito',
@@ -41,9 +41,9 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'id_carrito'
         });
 
-    }
+    } */
 
-    return Carrito;
+    return FichaTecnica;
 }
 
 
