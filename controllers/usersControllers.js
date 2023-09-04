@@ -1,5 +1,6 @@
 const usersModel = require('../models/users');
 const bcrypt = require('bcrypt');
+const DB = require('../database/models');
 
 const controllers = {
 
@@ -10,7 +11,7 @@ const controllers = {
         });
     },
 
-    // @Post users/register
+    // @Post users/registera 
     postRegister: (req, res) => {
         let datos = req.body;
         datos.price = Number(datos.precio);
@@ -29,11 +30,17 @@ const controllers = {
         // Debe redirreccionar a la vista de perfil usuario.
         res.redirect('/users/usersProfile/' + userId);
     },
-
-    getUsersProfile: (req, res) => {
+    /* Mawe */
+    getUsersProfile: async (req, res) => {
+        console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
         const userId = Number(req.params.userId);
-        const user = usersModel.findById(userId)
-
+        console.log('user id: ' + userId);
+        const user = await DB.Usuarios.findOne({
+            where: {
+              id_usuario: userId
+            }
+          });
+        
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
@@ -52,7 +59,7 @@ const controllers = {
         res.redirect('/');
     },
 
-    getEdit: (req, res) => {
+/*Mawe */   getEdit: (req, res) => {
         const id = Number(req.params.id);
         const usersToModify = usersModel.findById(id)
         if (!usersToModify) {
@@ -87,26 +94,26 @@ const controllers = {
 
     loginUser: (req, res) => {
         const searchedUser = usersModel.findByEmail(req.body.email);
-       
+
         if (!searchedUser) {
             return res.redirect('/users/login');
         }
-        
+
         const { password: hashedPw } = searchedUser;
         //console.log(req.body.password,hashedPw);
         const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
-        
+
         if (isCorrect) {
             if (!!req.body.remember) {
                 res.cookie('email', searchedUser.email, {
                     maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
                 });
             }
-            
-            
+
+
             delete searchedUser.password;
             delete searchedUser.id;
-            
+
             req.session.user = searchedUser;
             res.redirect('/')
         } else {

@@ -15,11 +15,8 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false
         },
-
-        
-        estado_pedido:{
+        estado_pedido: {
             type: DataTypes.STRING,
-
             allowNull: false
         },
         fecha_finalizacion: {
@@ -40,20 +37,20 @@ module.exports = (sequelize, DataTypes) => {
 
     const Carrito = sequelize.define(alias, cols, config)
 
-/*     Carrito.associate = (models) => {
-
-        Carrito.hasMany(models.items_carrito, {
-            as: 'Carrito',
-            timestamps: false,
-            foreignKey: 'id_carrito'
-        });
-
-        Carrito.hasMany(models.usuarios, {
-            as: 'Carrito',
-            timestamps: false,
-            foreignKey: 'id_usuario'
-        });
-    } */
+    /*    Carrito.associate = (models) => {
+   
+           Carrito.hasMany(models.items_carrito, {
+               as: 'Carrito',
+               timestamps: false,
+               foreignKey: 'id_carrito'
+           });
+   
+           Carrito.hasMany(models.usuarios, {
+               as: 'Carrito',
+               timestamps: false,
+               foreignKey: 'id_usuario'
+           });
+       } */
 
     return Carrito;
 }

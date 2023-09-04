@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = 'FichaTenica';
+    const alias = 'FichaTecnica';
 
     const cols = {
         id_ficha_tecnica: {
@@ -27,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 
 
     const config = {
-        tableName: 'FichaTécnica',
+        tableName: 'FichaTecnica',
         timestamps: false
     }
 
