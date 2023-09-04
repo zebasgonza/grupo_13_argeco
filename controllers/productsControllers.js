@@ -20,11 +20,13 @@ const controllers = {
 
     },
    //get/Create/Sebas
+   
     getCreate: (req, res) => {
-        res.render('creacionProductos', {
-            title: 'Creación de productos'
-        });
-    },
+            res.render('createProduct', { errors: [], values: {} });
+        },
+    
+    
+
     
     deleteProducts: (req, res) => {
         const id = Number(req.params.id);

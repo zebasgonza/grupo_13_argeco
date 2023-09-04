@@ -32,16 +32,15 @@ const controllers = {
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
-        const Usuarios = await DB.Usuarios.findByPk(1)
-
-        console.log(Usuarios);
-        //Implementar FindByPk
-
-        /*      const userId = Number(req.params.userId);
-                const user = usersModel.findById(userId) */
-
-        const vista = await DB.Usuarios.findByPk(1)
-
+        console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
+        const userId = Number(req.params.userId);
+        console.log('user id: ' + userId);
+        const user = await DB.Usuarios.findOne({
+            where: {
+              id_usuario: userId
+            }
+          });
+        
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
