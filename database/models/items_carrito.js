@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         cantidad: {
-            type: DataTypes.INT,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         precio:{
@@ -29,9 +29,9 @@ const config = {
 
 const producto = sequelize.define (alias, cols,config)
 
-Carrito.associate = (models) =>{
+//Carrito.associate = (models) =>{
 //Aca hacemos las relaciones
-} 
+ 
 
 return producto;
 }
