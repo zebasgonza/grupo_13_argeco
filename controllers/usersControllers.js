@@ -57,8 +57,6 @@ const controllers = {
         }
     },
 
-    // postUsersProfile: async (req, res)
-
     deleteUsersProfile: (req, res) => {
 
         const id = Number(req.params.userId);
@@ -70,9 +68,9 @@ const controllers = {
         res.redirect('/');
     },
 
-/*Mawe */   getEdit: (req, res) => {
-        const id = Number(req.params.id);
-        const usersToModify = usersModel.findById(id)
+/*Mawe */   getEdit: async (req, res) => {
+        const id = req.params.id;
+        const usersToModify =  await DB.Usuarios.findByPk(id)
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
@@ -82,20 +80,20 @@ const controllers = {
         });
     },
 
-    putEdit: (req, res) => {
-        const id = Number(req.params.id);
+    putEdit:async (req, res) => {
+        const id = req.params.id;
         const nuevosDatos = req.body;
 
-        if (req.file) {
-            nuevosDatos.image = req.file.filename;
-        } else {
-            nuevosDatos.image = 'default-image.png';
-        }
-
-        // nuevosDatos.image = req.file ? req.file.filename : 'default-image.png';
-        usersModel.updateById(id, nuevosDatos)
+      const userActualizado = await DB.Usuarios.update(
+            nuevosDatos,
+        {
+            where:{id_usuario:id}
+        })
+        console.log(userActualizado);
         res.redirect('/');
     },
+
+    
 
     getLogin: (req, res) => {
         res.render("login", {
