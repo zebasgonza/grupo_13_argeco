@@ -33,6 +33,7 @@ const controllers = {
     /* Mawe */
     getUsersProfile: async (req, res) => {
 
+        try {
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
         const userId = Number(req.params.id);
         console.log(req.params)
@@ -44,12 +45,12 @@ const controllers = {
 
         });
 
-
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
             
         });
+
         }catch(error){
         console.error('error al consultar por usuario:',error)
         }
