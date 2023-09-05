@@ -125,7 +125,7 @@ CREATE TABLE `stock` (
 --
 
 INSERT INTO `stock` (`id_producto`, `nombre`, `imagen`, `categoria`, `descripcion`, `cantidad`, `precio`) VALUES
-(1, 'Unity', '../img/img-mesa-unity1.jpg', 'mesa', 'madera roja', 2, 50000);
+(1, 'Unity', 'img-mesa-unity1.jpg', 'mesa', 'madera roja', 2, 50000);
 
 -- --------------------------------------------------------
 
