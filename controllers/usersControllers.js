@@ -32,6 +32,7 @@ const controllers = {
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
+
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
         const userId = Number(req.params.id);
         console.log(req.params)
@@ -40,13 +41,18 @@ const controllers = {
             where: {
                 id_usuario: userId
             }
+
         });
+
 
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
+            
         });
-
+        }catch(error){
+        console.error('error al consultar por usuario:',error)
+        }
     },
 
     deleteUsersProfile: (req, res) => {
@@ -60,9 +66,11 @@ const controllers = {
         res.redirect('/');
     },
 
-    getEdit: (req, res) => {
-        const id = Number(req.params.id);
-        const usersToModify = usersModel.findById(id)
+
+/*Mawe */   getEdit: async (req, res) => {
+        const id = req.params.id;
+        const usersToModify =  await DB.Usuarios.findByPk(id)
+
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
@@ -71,21 +79,23 @@ const controllers = {
             user: usersToModify
         });
     },
-    //este se debe editar
-    putEdit: (req, res) => {
-        const id = Number(req.params.id);
+
+
+    putEdit:async (req, res) => {
+        const id = req.params.id;
+
         const nuevosDatos = req.body;
 
-        if (req.file) {
-            nuevosDatos.image = req.file.filename;
-        } else {
-            nuevosDatos.image = 'default-image.png';
-        }
-
-        // nuevosDatos.image = req.file ? req.file.filename : 'default-image.png';
-        usersModel.updateById(id, nuevosDatos)
+      const userActualizado = await DB.Usuarios.update(
+            nuevosDatos,
+        {
+            where:{id_usuario:id}
+        })
+        console.log(userActualizado);
         res.redirect('/');
     },
+
+    
 
     getLogin: (req, res) => {
         res.render("login", {
