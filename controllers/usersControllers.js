@@ -33,14 +33,15 @@ const controllers = {
     /* Mawe */
     getUsersProfile: async (req, res) => {
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
-        const userId = Number(req.params.userId);
+        const userId = Number(req.params.id);
+        console.log(req.params)
         console.log('user id: ' + userId);
         const user = await DB.Usuarios.findOne({
             where: {
-              id_usuario: userId
+                id_usuario: userId
             }
-          });
-        
+        });
+
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
@@ -59,7 +60,7 @@ const controllers = {
         res.redirect('/');
     },
 
-/*Mawe */   getEdit: (req, res) => {
+    getEdit: (req, res) => {
         const id = Number(req.params.id);
         const usersToModify = usersModel.findById(id)
         if (!usersToModify) {
@@ -70,7 +71,7 @@ const controllers = {
             user: usersToModify
         });
     },
-
+    //este se debe editar
     putEdit: (req, res) => {
         const id = Number(req.params.id);
         const nuevosDatos = req.body;

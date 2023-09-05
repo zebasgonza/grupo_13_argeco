@@ -38,7 +38,7 @@ app.use(mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', usersRoutes);
 
-app.listen(3060, () => console.log("servidor corriendo en el puerto http://localhost:3060"));
+app.listen(3000, () => console.log("servidor corriendo en el puerto http://localhost:3060"));
 
 /* 
 Sprint 4
