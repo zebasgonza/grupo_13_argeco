@@ -34,14 +34,16 @@ const controllers = {
     getUsersProfile: async (req, res) => {
 
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
-        const userId = Number(req.params.userId);
+        const userId = Number(req.params.id);
+        console.log(req.params)
         console.log('user id: ' + userId);
         const user = await DB.Usuarios.findOne({
             where: {
-              id_usuario: userId
+                id_usuario: userId
             }
-          });
-        
+
+        });
+
 
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
@@ -64,9 +66,11 @@ const controllers = {
         res.redirect('/');
     },
 
+
 /*Mawe */   getEdit: async (req, res) => {
         const id = req.params.id;
         const usersToModify =  await DB.Usuarios.findByPk(id)
+
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
@@ -76,8 +80,10 @@ const controllers = {
         });
     },
 
+
     putEdit:async (req, res) => {
         const id = req.params.id;
+
         const nuevosDatos = req.body;
 
       const userActualizado = await DB.Usuarios.update(

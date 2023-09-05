@@ -45,7 +45,7 @@ router.get('/register', usersControllers.getRegister);//Sebas
 router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
 
 // // users/usersProfile' (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
-router.get('/usersProfile/:userId', usersControllers.getUsersProfile); //Mawe
+router.get('/usersProfile/:id', usersControllers.getUsersProfile); //Mawe
 
 // // users/:id/delete (DELETE) ELIMINA información del detalle de un producto en especifico de acuerdo a su 
 router.delete('/delete/:userId', usersControllers.deleteUsersProfile);// tener en cuenta de crear la vista perfil..//Mawe
