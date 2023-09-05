@@ -59,6 +59,7 @@ flujo de trabajo grupal para el siguiente sprint.
         - Intentar acudir a personas externas del grupo para obtener ayuda.
     ¿Qué no debemos volver hacer?
         - No comunicar de manera acertiva las dificultades durante los entregables para brindar ayuda grupal generando que no pueda cumplir con las fechas limites.
+        - No comunicar con anticipación la asistencia a la reuniones y el cumplimiento de los entregables generando retraso largos.
     ¿Qué se puede mejorar?
         - Mejorar la comunicación, el compromiso y la responsabilidad con la fechas de entrega con el fin de avanzar con las fases del proyecto para no generar retrasos.
         - Aumentar la frecuencia de las reuniones con el fin de tener mayor claridad sobre el estado de cada uno con relación a las tareas.
