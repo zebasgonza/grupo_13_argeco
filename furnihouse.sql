@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2023 a las 19:03:18
+-- Tiempo de generación: 04-09-2023 a las 22:14:43
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -113,6 +113,7 @@ INSERT INTO `items_carrito` (`id_carrito`, `id_producto`, `cantidad`, `precio_to
 CREATE TABLE `stock` (
   `id_producto` bigint(15) NOT NULL,
   `nombre` varchar(15) DEFAULT NULL,
+  `imagen` varchar(255) NOT NULL,
   `categoria` varchar(15) DEFAULT NULL,
   `descripcion` varchar(15) DEFAULT NULL,
   `cantidad` int(15) DEFAULT NULL,
@@ -123,8 +124,8 @@ CREATE TABLE `stock` (
 -- Volcado de datos para la tabla `stock`
 --
 
-INSERT INTO `stock` (`id_producto`, `nombre`, `categoria`, `descripcion`, `cantidad`, `precio`) VALUES
-(1, 'bambino', 'mesa', 'madera roja', 2, 50000);
+INSERT INTO `stock` (`id_producto`, `nombre`, `imagen`, `categoria`, `descripcion`, `cantidad`, `precio`) VALUES
+(1, 'Unity', 'img-mesa-unity1.jpg', 'mesa', 'madera roja', 2, 50000);
 
 -- --------------------------------------------------------
 

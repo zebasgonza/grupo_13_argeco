@@ -21,10 +21,34 @@ const controllers = {
     },
    //get/Create/Sebas
    
-    getCreate: (req, res) => {
-            res.render('createProduct', { errors: [], values: {} });
+    getCreate: async (req, res) => {
+        
+        const nuevoProducto = {
+            id_producto: req.body.id,
+            nombre: req.body.nombre,
+            imagen: req.body.imagen,
+            categoria: req.body.categoria,
+            descripcion: req.body.descripcion,
+            cantidad: req.body.cantidad,
+            precio: req.body.precio,
+        };
+
+        try {
+            const datos = await DB.Stock.create(nuevoProducto);
+            console.log(datos);
+        } catch (error) {
+            console.log(error);
+
+        }
+
+
+        res.render('creacionProductos', {
+            title: 'Crear producto',
+            nuevoProducto
+        });
+
+/*         res.render('creacionProductos', { errors: [], values: {} });  */
         },
-    
     
 
     
@@ -46,13 +70,35 @@ const controllers = {
         console.log(productos);
     },
 
-    updateProducts: (req, res) => { 
-        const id = Number (req.params.id); 
+    updateProducts: async (req, res) => { 
+
+        /* NEW CODE */
+
+        console.log(req.body);
+
+        const values = req.body
+
+        try {
+            await DB.Stock.updateById(values, {
+                where: {
+                    id_producto: req.body.id_producto
+                }
+                
+            });
+            
+            res.redirect('/');
+        } catch (error) {
+            res.send('No se pudo actualizar')
+            console.log(error);
+
+        }
+        /* OLD CODE */
+/*         const id = Number (req.params.id); 
         const nuevosDatos = req.body;
 
         productModel.updateById(id, nuevosDatos)
         
-        res.redirect('/products');
+        res.redirect('/products'); */
     },
     //get/products/:id/detail/Mawe
 
