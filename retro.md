@@ -43,3 +43,12 @@ flujo de trabajo grupal para el siguiente sprint.
         - Avisar con tiempo para resolver tareas que no se pudieron lograr con el fin avanzar.
     ¿Qué se puede mejorar?
         - Avisar antes de la fecha de entrega de la tareas para analizar alternativas de apoyo para avanzar en las asignaciones.
+
+## Retrospectiva Sprint 5
+## Resultado
+    ¿Qué ha ido durante el sprint?
+        - No se realizo la retrospectiva.
+    ¿Qué no debemos volver hacer?
+        - No dejar para ultimo momento la retrospectiva debido a que se acumulan entregables y de esta manera no logramos reflexionar sobre nuestro progreso del proyecto
+    ¿Qué se puede mejorar?
+        - Realizar y disponer maximo 15 minutos para que no se extienda demasiado tiempo y de esta manera lograr avanzar con la reunión.
