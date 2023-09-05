@@ -47,8 +47,18 @@ flujo de trabajo grupal para el siguiente sprint.
 ## Retrospectiva Sprint 5
 ## Resultado
     ¿Qué ha ido durante el sprint?
-        - No se realizo la retrospectiva.
+        - Debido a las dificultades tenidas no se logro identificar cosas positivas durante este sprint.
     ¿Qué no debemos volver hacer?
-        - No dejar para ultimo momento la retrospectiva debido a que se acumulan entregables y de esta manera no logramos reflexionar sobre nuestro progreso del proyecto
+        - No dejar para ultimo momento la retrospectiva debido a que se acumulan entregables y de esta manera no se logra reflexionar de manera adecuada sobre el proyecto
     ¿Qué se puede mejorar?
         - Realizar y disponer maximo 15 minutos para que no se extienda demasiado tiempo y de esta manera lograr avanzar con la reunión.
+
+## Retrospectiva Sprint 6
+## Resultado
+    ¿Qué ha ido durante el sprint?
+        - Intentar acudir a personas externas del grupo para obtener ayuda.
+    ¿Qué no debemos volver hacer?
+        - No comunicar de manera acertiva las dificultades durante los entregables para brindar ayuda grupal generando que no pueda cumplir con las fechas limites.
+    ¿Qué se puede mejorar?
+        - Mejorar la comunicación, el compromiso y la responsabilidad con la fechas de entrega con el fin de avanzar con las fases del proyecto para no generar retrasos.
+        - Aumentar la frecuencia de las reuniones con el fin de tener mayor claridad sobre el estado de cada uno con relación a las tareas.
