@@ -32,7 +32,9 @@ const controllers = {
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
-try{
+
+        try {
+
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
         const userId = Number(req.params.id);
         console.log(req.params)
@@ -44,14 +46,15 @@ try{
 
         });
 
-
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
             
         });
+
         }catch(error){
         console.error('error al consultar por usuario:',error)
+
         }
     },
 
@@ -69,7 +72,7 @@ try{
 
 /*Mawe */   getEdit: async (req, res) => {
         const id = req.params.id;
-        const usersToModify =  await DB.Usuarios.findByPk(id)
+        const usersToModify = await DB.Usuarios.findByPk(id)
 
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
@@ -82,21 +85,21 @@ try{
     },
 
 
-    putEdit:async (req, res) => {
+    putEdit: async (req, res) => {
         const id = req.params.id;
 
         const nuevosDatos = req.body;
 
-      const userActualizado = await DB.Usuarios.update(
+        const userActualizado = await DB.Usuarios.update(
             nuevosDatos,
-        {
-            where:{id_usuario:id}
-        })
+            {
+                where: { id_usuario: id }
+            })
         console.log(userActualizado);
         res.redirect('/');
     },
 
-    
+
 
     getLogin: (req, res) => {
         res.render("login", {

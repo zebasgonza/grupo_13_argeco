@@ -7,17 +7,22 @@ module.exports = (sequelize, DataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+        image: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
+
         nombre: {
             type: DataTypes.STRING,
             allowNull: true
-           
+
         },
         apellido: {
             type: DataTypes.STRING,
             allowNull: true
         },
-        
-        email:{
+
+        email: {
             type: DataTypes.STRING,
             allowNull: true
         },
@@ -25,20 +30,20 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-       
+
     }
 
 
-const config = {
-    tableName: 'Usuarios',
-    timestamps: false
-}
+    const config = {
+        tableName: 'Usuarios',
+        timestamps: false
+    }
 
-const Usuarios = sequelize.define (alias, cols,config)
-/* 
-Usuarios.associate = (models) =>{
-//Aca hacemos las relaciones
- }  */
+    const Usuarios = sequelize.define(alias, cols, config)
+    /* 
+    Usuarios.associate = (models) =>{
+    //Aca hacemos las relaciones
+     }  */
 
-return Usuarios;
+    return Usuarios;
 }
