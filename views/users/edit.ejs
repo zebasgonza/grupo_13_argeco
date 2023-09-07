@@ -12,12 +12,12 @@
       <div class="container">
         <h1>Edición del perfil</h1>
         <div class="formPut">
-          <form action="/users/edit/<%= user.id %>?_method=PUT" method="post" enctype="multipart/form-data">
+          <form action="/users/edit/<%= user.id_usuario %>?_method=PUT" method="post" enctype="multipart/form-data">
             <label for="first_name">Nombre</label>
-            <input type="text" id="first_name" name="first_name" value="<%= user.first_name %>" required>
+            <input type="text" id="first_name" name="nombre" value="<%= user.nombre %>" required>
 
             <label for="last_name">Apellidos</label>
-            <input type="text" id="last_name" name="last_name" value="<%= user.last_name %>" required>
+            <input type="text" id="last_name" name="apellido" value="<%= user.apellido %>" required>
             <label for="email">Email</label>
             <input type="email" id="" name="email" value="<%= user.email %>" required>
 
