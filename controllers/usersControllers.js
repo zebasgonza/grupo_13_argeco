@@ -32,7 +32,7 @@ const controllers = {
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
-
+try{
         console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
         const userId = Number(req.params.id);
         console.log(req.params)
@@ -74,6 +74,7 @@ const controllers = {
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
+        console.log(usersToModify);
         res.render('edit', {
             title: 'Edición del perfil',
             user: usersToModify
