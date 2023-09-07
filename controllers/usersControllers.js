@@ -32,22 +32,30 @@ const controllers = {
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
-        console.log('SE ESTA EJECUTANDO LA FUNCION');
-        const Usuarios = await DB.Usuarios.findByPk(2)
-        
-        console.log(Usuarios);
-        //Implementar FindByPk
-        
-        /*      const userId = Number(req.params.userId);
-        const user = usersModel.findById(userId) */
-        
-        const user = await DB.Usuarios.findByPk(2)
-        console.log ('ESTE ES EL CONST DE USER',user);
+
+        try {
+
+        console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
+        const userId = Number(req.params.id);
+        console.log(req.params)
+        console.log('user id: ' + userId);
+        const user = await DB.Usuarios.findOne({
+            where: {
+                id_usuario: userId
+            }
+
+        });
+
         res.render('usersProfile', {
             title: 'Perfil de Usuario',
             user
+            
         });
 
+        }catch(error){
+        console.error('error al consultar por usuario:',error)
+
+        }
     },
 
     deleteUsersProfile: (req, res) => {
@@ -61,32 +69,37 @@ const controllers = {
         res.redirect('/');
     },
 
-/*Mawe */   getEdit: (req, res) => {
-        const id = Number(req.params.id);
-        const usersToModify = usersModel.findById(id)
+
+/*Mawe */   getEdit: async (req, res) => {
+        const id = req.params.id;
+        const usersToModify = await DB.Usuarios.findByPk(id)
+
         if (!usersToModify) {
             return res.send('El usuario que desea buscar no se encuentra disponible :( ');
         }
+        console.log(usersToModify);
         res.render('edit', {
             title: 'Edición del perfil',
             user: usersToModify
         });
     },
 
-    putEdit: (req, res) => {
-        const id = Number(req.params.id);
+
+    putEdit: async (req, res) => {
+        const id = req.params.id;
+
         const nuevosDatos = req.body;
 
-        if (req.file) {
-            nuevosDatos.image = req.file.filename;
-        } else {
-            nuevosDatos.image = 'default-image.png';
-        }
-
-        // nuevosDatos.image = req.file ? req.file.filename : 'default-image.png';
-        usersModel.updateById(id, nuevosDatos)
+        const userActualizado = await DB.Usuarios.update(
+            nuevosDatos,
+            {
+                where: { id_usuario: id }
+            })
+        console.log(userActualizado);
         res.redirect('/');
     },
+
+
 
     getLogin: (req, res) => {
         res.render("login", {

@@ -14,7 +14,10 @@
   
   <form action="/products" method="post" enctype="multipart/form-data">
     <label for="name">Nombre del producto:</label>
-    <input type="text" id="" name="name" required>
+    <input type="text" id="" name="nombre" required>
+
+<!--     <label for="name">ID del producto:</label>
+    <input type="number" id="" name="id" required> -->
 
     <label for="precio">Precio:</label>
     <input type="number" id="" name="precio" required>
@@ -22,12 +25,14 @@
     <label for="categoria">Categoría</label>
     <input type="text" id="" name="categoria" required>
 
-
     <label for="image">Imagen del producto:</label>
-    <input type="file" id="" name="image" accept="image/*" required>
+    <input type="file" id="" name="imagen" accept="image/*" required>
 
     <label for="descripcion">Descripción:</label>
     <textarea id="" name="descripcion" required></textarea>
+
+    <label for="precio">Cantidad:</label>
+    <input type="number" id="" name="cantidad" required>
 
     <input type="submit" value="Cargar">
   </form>

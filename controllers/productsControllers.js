@@ -21,25 +21,9 @@ const controllers = {
     },
    //get/Create/Sebas
    
-    getCreate: async (req, res) => {
-        const nuevoProducto = {
-            nombre: req.body.nombre,
-            categoria: req.body.categoria,
-            descripcion: req.body.descripcion,
-            cantidad: req.body.cantidad,
-            precio: req.body.precio
-        };
-
-        try {
-            const datos = await productModel.create(nuevoProducto);
-            console.log(datos);
-        } catch (error) {
-            console.log(error);
-        }
-
-        res.send('Producto creado con exito');
+    getCreate: (req, res) => {
+            res.render('createProduct', { errors: [], values: {} });
         },
-    
     
 
     
@@ -61,24 +45,13 @@ const controllers = {
         console.log(productos);
     },
 
-    updateProducts: async (req, res) => { 
+    updateProducts: (req, res) => { 
+        const id = Number (req.params.id); 
+        const nuevosDatos = req.body;
 
-        console.log(req.body);
-
-        const values = req.body;
-
-        try {
-            await productModel.update(values, {
-                where: {
-                    id_producto: req.body.id_producto
-                }
-            });
-
-            res.redirect('/Stock');
-        } catch (error) {
-            res.send('No se pudo actualizar!')
-            console.log(error);
-        }
+        productModel.updateById(id, nuevosDatos)
+        
+        res.redirect('/products');
     },
     //get/products/:id/detail/Mawe
 
@@ -99,9 +72,9 @@ const controllers = {
 
     // @GET /products/:id/update
 
-    getUpdate: (req, res) => {
-        const id = Number (req.params.id);
-        const productsToModify = productModel.findById(id)
+    getUpdate: async (req, res) => {
+        const id = req.params.id;
+        const productsToModify = await DB.Stock.findByPk(id)
         if (!productsToModify) {
             return res.send('El producto que desea buscar no se encuentra disponible :( ');
         }
@@ -112,7 +85,6 @@ const controllers = {
     },
 
     // // post/products
-
 
     postProduct: (req, res) => {
 
