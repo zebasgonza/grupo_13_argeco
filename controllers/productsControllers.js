@@ -21,8 +21,23 @@ const controllers = {
     },
    //get/Create/Sebas
    
-    getCreate: (req, res) => {
-            res.render('createProduct', { errors: [], values: {} });
+    getCreate: async (req, res) => {
+        const nuevoProducto = {
+            nombre: req.body.nombre,
+            categoria: req.body.categoria,
+            descripcion: req.body.descripcion,
+            cantidad: req.body.cantidad,
+            precio: req.body.precio
+        };
+
+        try {
+            const datos = await productModel.create(nuevoProducto);
+            console.log(datos);
+        } catch (error) {
+            console.log(error);
+        }
+
+        res.send('Producto creado con exito');
         },
     
     
@@ -46,13 +61,24 @@ const controllers = {
         console.log(productos);
     },
 
-    updateProducts: (req, res) => { 
-        const id = Number (req.params.id); 
-        const nuevosDatos = req.body;
+    updateProducts: async (req, res) => { 
 
-        productModel.updateById(id, nuevosDatos)
-        
-        res.redirect('/products');
+        console.log(req.body);
+
+        const values = req.body;
+
+        try {
+            await productModel.update(values, {
+                where: {
+                    id_producto: req.body.id_producto
+                }
+            });
+
+            res.redirect('/Stock');
+        } catch (error) {
+            res.send('No se pudo actualizar!')
+            console.log(error);
+        }
     },
     //get/products/:id/detail/Mawe
 
