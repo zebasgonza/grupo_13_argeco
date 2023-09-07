@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2023 a las 22:14:43
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Sep 05, 2023 at 05:07 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `furnihouse`
+-- Database: `furnihouse`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `carrito`
+-- Table structure for table `carrito`
 --
 
 CREATE TABLE `carrito` (
@@ -37,7 +37,7 @@ CREATE TABLE `carrito` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `carrito`
+-- Dumping data for table `carrito`
 --
 
 INSERT INTO `carrito` (`id_carrito`, `id_usuario`, `fecha_inicio`, `estado_pedido`, `fecha_finalizacion`, `precio`) VALUES
@@ -47,7 +47,7 @@ INSERT INTO `carrito` (`id_carrito`, `id_usuario`, `fecha_inicio`, `estado_pedid
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categoria_usuario`
+-- Table structure for table `categoria_usuario`
 --
 
 CREATE TABLE `categoria_usuario` (
@@ -56,7 +56,7 @@ CREATE TABLE `categoria_usuario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `categoria_usuario`
+-- Dumping data for table `categoria_usuario`
 --
 
 INSERT INTO `categoria_usuario` (`id_categoria_usuario`, `nombre`) VALUES
@@ -66,7 +66,7 @@ INSERT INTO `categoria_usuario` (`id_categoria_usuario`, `nombre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `ficha_tecnica`
+-- Table structure for table `ficha_tecnica`
 --
 
 CREATE TABLE `ficha_tecnica` (
@@ -78,7 +78,7 @@ CREATE TABLE `ficha_tecnica` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `ficha_tecnica`
+-- Dumping data for table `ficha_tecnica`
 --
 
 INSERT INTO `ficha_tecnica` (`id_ficha_tecnica`, `id_producto`, `ancho`, `alto`, `garantia`) VALUES
@@ -87,7 +87,7 @@ INSERT INTO `ficha_tecnica` (`id_ficha_tecnica`, `id_producto`, `ancho`, `alto`,
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `items_carrito`
+-- Table structure for table `items_carrito`
 --
 
 CREATE TABLE `items_carrito` (
@@ -98,7 +98,7 @@ CREATE TABLE `items_carrito` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `items_carrito`
+-- Dumping data for table `items_carrito`
 --
 
 INSERT INTO `items_carrito` (`id_carrito`, `id_producto`, `cantidad`, `precio_total`) VALUES
@@ -107,13 +107,12 @@ INSERT INTO `items_carrito` (`id_carrito`, `id_producto`, `cantidad`, `precio_to
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `stock`
+-- Table structure for table `stock`
 --
 
 CREATE TABLE `stock` (
   `id_producto` bigint(15) NOT NULL,
   `nombre` varchar(15) DEFAULT NULL,
-  `imagen` varchar(255) NOT NULL,
   `categoria` varchar(15) DEFAULT NULL,
   `descripcion` varchar(15) DEFAULT NULL,
   `cantidad` int(15) DEFAULT NULL,
@@ -121,20 +120,22 @@ CREATE TABLE `stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `stock`
+-- Dumping data for table `stock`
 --
 
-INSERT INTO `stock` (`id_producto`, `nombre`, `imagen`, `categoria`, `descripcion`, `cantidad`, `precio`) VALUES
-(1, 'Unity', 'img-mesa-unity1.jpg', 'mesa', 'madera roja', 2, 50000);
+INSERT INTO `stock` (`id_producto`, `nombre`, `categoria`, `descripcion`, `cantidad`, `precio`) VALUES
+(1, 'bambino', 'mesa', 'madera roja', 2, 50000),
+(2, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id_usuario` bigint(15) NOT NULL,
+  `image` varchar(30) NOT NULL,
   `nombre` varchar(15) DEFAULT NULL,
   `apellido` varchar(15) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
@@ -142,90 +143,90 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nombre`, `apellido`, `email`, `contrasena`) VALUES
-(1, 'Mawensy', 'Pamplona', 'MawePamplona05@gmail.com', '1234567'),
-(2, 'Sebastian', 'Gonzalez Ortiz', 'Sebasgonza45@gmail.com', '12345678'),
-(3, 'Omar', 'Maldonado', 'Omita@gmail.com', '12345678');
+INSERT INTO `usuarios` (`id_usuario`, `image`, `nombre`, `apellido`, `email`, `contrasena`) VALUES
+(1, '', 'Mawensy', 'Pamplona', 'MawePamplona05@gmail.com', '1234567'),
+(2, 'sebasG.png', 'Sebastian', 'Gonzalez Ortiz', 'Sebasgonza45@gmail.com', '12345678'),
+(3, '', 'Omar', 'Maldonado', 'Omita@gmail.com', '12345678');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `carrito`
+-- Indexes for table `carrito`
 --
 ALTER TABLE `carrito`
   ADD PRIMARY KEY (`id_carrito`);
 
 --
--- Indices de la tabla `categoria_usuario`
+-- Indexes for table `categoria_usuario`
 --
 ALTER TABLE `categoria_usuario`
   ADD PRIMARY KEY (`id_categoria_usuario`);
 
 --
--- Indices de la tabla `ficha_tecnica`
+-- Indexes for table `ficha_tecnica`
 --
 ALTER TABLE `ficha_tecnica`
   ADD PRIMARY KEY (`id_ficha_tecnica`);
 
 --
--- Indices de la tabla `items_carrito`
+-- Indexes for table `items_carrito`
 --
 ALTER TABLE `items_carrito`
   ADD PRIMARY KEY (`id_carrito`);
 
 --
--- Indices de la tabla `stock`
+-- Indexes for table `stock`
 --
 ALTER TABLE `stock`
   ADD PRIMARY KEY (`id_producto`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `carrito`
+-- AUTO_INCREMENT for table `carrito`
 --
 ALTER TABLE `carrito`
   MODIFY `id_carrito` smallint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `categoria_usuario`
+-- AUTO_INCREMENT for table `categoria_usuario`
 --
 ALTER TABLE `categoria_usuario`
   MODIFY `id_categoria_usuario` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `ficha_tecnica`
+-- AUTO_INCREMENT for table `ficha_tecnica`
 --
 ALTER TABLE `ficha_tecnica`
   MODIFY `id_ficha_tecnica` smallint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `items_carrito`
+-- AUTO_INCREMENT for table `items_carrito`
 --
 ALTER TABLE `items_carrito`
   MODIFY `id_carrito` smallint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT de la tabla `stock`
+-- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id_producto` bigint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_producto` bigint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` bigint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
