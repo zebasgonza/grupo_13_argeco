@@ -73,24 +73,22 @@ const controllers = {
     updateProducts: async (req, res) => { 
 
         /* NEW CODE */
-
-        console.log(req.body);
-
-        const values = req.body
+        
+        const update = req.params.update;
+        const values = req.body;
 
         try {
             await DB.Stock.updateById(values, {
-                where: {
-                    id_producto: req.body.id_producto
+                where: { 
+                    id_producto: update/* req.body.id_producto */
                 }
                 
             });
-            
+            console.log(req.body);
             res.redirect('/');
         } catch (error) {
             res.send('No se pudo actualizar')
             console.log(error);
-
         }
         /* OLD CODE */
 /*         const id = Number (req.params.id); 
@@ -119,9 +117,9 @@ const controllers = {
 
     // @GET /products/:id/update
 
-    getUpdate: (req, res) => {
-        const id = Number (req.params.id);
-        const productsToModify = productModel.findById(id)
+    getUpdate: async (req, res) => {
+        const id = req.params.id;
+        const productsToModify = await DB.Stock.findByPk(id)
         if (!productsToModify) {
             return res.send('El producto que desea buscar no se encuentra disponible :( ');
         }
@@ -132,7 +130,6 @@ const controllers = {
     },
 
     // // post/products
-
 
     postProduct: (req, res) => {
 
