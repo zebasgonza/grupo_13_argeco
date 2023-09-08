@@ -36,6 +36,7 @@ const controllers = {
             console.error('Error al crear un nuevo usuario:', error);
             // Aquí puedes manejar errores de manera adecuada, por ejemplo, mostrar un mensaje de error al usuario o redirigir a una página de error.
         }
+    
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
