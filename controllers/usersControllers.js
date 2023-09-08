@@ -12,23 +12,30 @@ const controllers = {
     },
 
     // @Post users/registera 
-    postRegister: (req, res) => {
-        let datos = req.body;
-        datos.price = Number(datos.precio);
-        datos.img = req.files.map(file => '/img/users/' + file.filename);
+    postRegister: async (req, res) => {
+        try {
+            let datos = req.body;
+            datos.price = Number(datos.precio);
+            datos.img = req.files.map(file => '/img/users/' + file.filename);
 
-        // encriptación contraseña
-        const hashedPassword = bcrypt.hashSync(datos.password, 10);
-        datos.password = hashedPassword;
+            // Encriptación contraseña
+            const hashedPassword = bcrypt.hashSync(datos.password, 10);
+            datos.password = hashedPassword;
 
-        // Encriptación confirmación contraseña
-        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
-        datos['confirm-password'] = hashedConfirmPassword;
+            // Encriptación confirmación contraseña
+            const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
+            datos['confirm-password'] = hashedConfirmPassword;
 
-        usersModel.create(datos);
-        const userId = datos.id;
-        // Debe redirreccionar a la vista de perfil usuario.
-        res.redirect('/users/usersProfile/' + userId);
+            // Utiliza Sequelize para crear un nuevo usuario en la base de datos
+            const newUser = await DB.Usuarios.create(datos);
+
+            // Redirige a la vista del perfil del usuario
+            const userId = newUser.id_usuario; // Asegúrate de que este sea el nombre correcto del campo ID en tu modelo.
+            res.redirect('/users/usersProfile/' + userId);
+        } catch (error) {
+            console.error('Error al crear un nuevo usuario:', error);
+            // Aquí puedes manejar errores de manera adecuada, por ejemplo, mostrar un mensaje de error al usuario o redirigir a una página de error.
+        }
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
