@@ -12,23 +12,31 @@ const controllers = {
     },
 
     // @Post users/registera 
-    postRegister: (req, res) => {
-        let datos = req.body;
-        datos.price = Number(datos.precio);
-        datos.img = req.files.map(file => '/img/users/' + file.filename);
+    postRegister: async (req, res) => {
+        try {
+            let datos = req.body;
+            datos.price = Number(datos.precio);
+            datos.img = req.files.map(file => '/img/users/' + file.filename);
 
-        // encriptación contraseña
-        const hashedPassword = bcrypt.hashSync(datos.password, 10);
-        datos.password = hashedPassword;
+            // Encriptación contraseña
+            const hashedPassword = bcrypt.hashSync(datos.password, 10);
+            datos.password = hashedPassword;
 
-        // Encriptación confirmación contraseña
-        const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
-        datos['confirm-password'] = hashedConfirmPassword;
+            // Encriptación confirmación contraseña
+            const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
+            datos['confirm-password'] = hashedConfirmPassword;
 
-        usersModel.create(datos);
-        const userId = datos.id;
-        // Debe redirreccionar a la vista de perfil usuario.
-        res.redirect('/users/usersProfile/' + userId);
+            // Utiliza Sequelize para crear un nuevo usuario en la base de datos
+            const newUser = await DB.Usuarios.create(datos);
+
+            // Redirige a la vista del perfil del usuario
+            const userId = newUser.id_usuario; // Asegúrate de que este sea el nombre correcto del campo ID en tu modelo.
+            res.redirect('/users/usersProfile/' + userId);
+        } catch (error) {
+            console.error('Error al crear un nuevo usuario:', error);
+            // Aquí puedes manejar errores de manera adecuada, por ejemplo, mostrar un mensaje de error al usuario o redirigir a una página de error.
+        }
+    
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
@@ -106,35 +114,45 @@ const controllers = {
             title: 'Registro'
         });
     },
+    loginUser: async (req, res) => {
+        try {
+            const { email, password } = req.body;
 
-    loginUser: (req, res) => {
-        const searchedUser = usersModel.findByEmail(req.body.email);
+            // Busca el usuario por correo electrónico en la base de datos utilizando Sequelize
+            const user = await DB.Usuarios.findOne({
+                where: {
+                    email: email
+                }
+            });
 
-        if (!searchedUser) {
-            return res.redirect('/users/login');
-        }
-
-        const { password: hashedPw } = searchedUser;
-        //console.log(req.body.password,hashedPw);
-        const isCorrect = bcrypt.compareSync(req.body.password, hashedPw);
-
-        if (isCorrect) {
-            if (!!req.body.remember) {
-                res.cookie('email', searchedUser.email, {
-                    maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
-                });
+            if (!user) {
+                return res.redirect('/');
             }
 
+            // Compara la contraseña ingresada con la contraseña almacenada en la base de datos
+            const isCorrect = bcrypt.compareSync(password, user.password);
 
-            delete searchedUser.password;
-            delete searchedUser.id;
+            if (isCorrect) {
+                if (!!req.body.remember) {
+                    res.cookie('email', user.email, {
+                        maxAge: 1000 * 60 * 60 * 24 * 360 * 9999
+                    });
+                }
 
-            req.session.user = searchedUser;
-            res.redirect('/')
-        } else {
-            return res.redirect('/users/login');
+                // Elimina datos sensibles antes de almacenar el usuario en la sesión
+                delete user.password;
+                delete user.id_usuario;
+
+                req.session.user = user;
+                return res.redirect('/');
+            } else {
+                return res.redirect('/users/login');
+            }
+        } catch (error) {
+            console.error('Error al iniciar sesión:', error);
+            // Aquí puedes manejar errores de manera adecuada, por ejemplo, mostrar un mensaje de error al usuario o redirigir a una página de error.
         }
-    }
+    },
 
 }
 
