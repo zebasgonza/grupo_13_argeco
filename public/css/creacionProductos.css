@@ -7,7 +7,6 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #f3e5c2bd;
-    padding: 20px;
   }
   
   /* sección navbar */
@@ -58,7 +57,7 @@ nav {
 header {
   background-color: #122f44;
   padding: 20px;
-  margin: 0 auto;
+ 
 }
 
 main {

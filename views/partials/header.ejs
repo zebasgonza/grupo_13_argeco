@@ -4,13 +4,35 @@
             <a href="#" class="container-hamburguer-button">
                 <i class="material-symbols-outlined hamburguer-button">menu</i>
             </a>
-        </div>
+            
+            <ul id="navbar-list">
+                <li><a href="/">home</a></li>
+                <li><a href="/users/login">login</a></li>
+                <li><a href="/users/register">registro</a></li>
+                <li><a href="/products/cart">productos</a></li>
+            </ul>
+            <script>
+                    const menuList = document.getElementById("navbar-list");
 
+                    // Obtén una referencia al botón de menú
+                    const menuButton = document.querySelector(".container-hamburguer-button");
+
+                    // Agrega un evento de clic al botón de menú
+                    menuButton.addEventListener("click", () => {
+                        // Alterna la visibilidad de la lista al hacer clic en el botón de menú
+                        if (menuList.style.display === "none") {
+                            menuList.style.display = "block";
+                        } else {
+                            menuList.style.display = "none";
+                        }
+                    });
+            </script>
+        </div>
+        
         <div class="center-navbar">
             <img src="/img/img-furni-house-logo.svg" alt="logo" class="logo">
         </div>
 
- 
         <ul class="right-navbar">
             <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
             <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>

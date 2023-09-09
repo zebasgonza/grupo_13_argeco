@@ -5,11 +5,13 @@
   padding: 0px;
   box-sizing: border-box;
 }
-
+html {
+  height: 100%;
+  margin: 0;
+}
 header {
   background-color: #122f44;
   padding: 20px;
-  margin: 0 auto;
 }
 
 .cursiva{
@@ -63,10 +65,13 @@ nav {
 }
 
 body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   font-family: Arial, sans-serif;
   background-color: #f3e5c2bd;
   margin: 0;
-  padding: 20px;
 }
 
 form {
@@ -121,10 +126,15 @@ input[type="submit"]:hover {
   color:#ebebeb;
 }
 
-
+main{
+  flex: 1;
+}
 
 footer {
   background-color: #EAE2CD;
+  
+  text-align: center;
+  padding: 15px;
 }
 
 .main-footer {
@@ -157,6 +167,10 @@ footer {
     margin: 15px;
 }
 
+}
+
+html{
+  
 }
 
 @media(min-width: 992px){
