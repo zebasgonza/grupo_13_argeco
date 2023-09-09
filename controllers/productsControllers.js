@@ -131,19 +131,22 @@ const controllers = {
 
     // // post/products
 
-    postProduct: (req, res) => {
+    postProduct: async (req, res) => {
+        try {
+            let datos = req.body;
+            datos.price = Number(datos.precio);
+            /* datos.img = '/imgs/products/' + req.file.filename; */
+            datos.imagen = '/img/' + req.files[0].filename;
+/*             datos.img = req.files.map(file => '/img/' + file.filename); */
+             // Utiliza Sequelize para crear un nuevo producto en la base de datos
+            const newProduct = await DB.Stock.create(datos);
+/*             productModel.create(datos); */
+            res.redirect('/products');
+        } catch (error) {
+            console.error('Se produjo un error al crearel producto:', error),
+            res.status(400).send('Se produjo un error al crear el producto :(');
 
-         let datos = req.body;
-
-         datos.price = Number(datos.precio);
-
-         /* datos.img = '/imgs/products/' + req.file.filename; */
-         datos.img = req.files.map(file => '/img/' + file.filename);
-
-         productModel.create(datos);
-
-
-         res.redirect('/products');
+        }
      }
 
 }

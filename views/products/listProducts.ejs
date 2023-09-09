@@ -15,7 +15,7 @@
             <section class="container">
                 <% productos.forEach(producto => { %>
                     <article class="container-product">
-                        <img class="container-product-img" src="/img/<%= producto.imagen %>.jpg" alt="imagen de un producto">
+                        <img class="container-product-img" src="<%= producto.imagen %>" alt="imagen de un producto">
                         <script>
                             console.log("Nombre de imagen: <%= producto.imagen %>");
                         </script>
