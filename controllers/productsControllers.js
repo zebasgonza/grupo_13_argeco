@@ -27,10 +27,25 @@ const controllers = {
     
 
     
-    deleteProducts: (req, res) => {
-        const id = Number(req.params.id);
+    deleteProducts: async (req, res) => {
+
+        try {
+            const id = (req.params.id);
+            const product = await DB.destroy({
+
+                where : {id:id_producto}, 
+            
+
+            })
+                
+            if (!product)   
+            
+            
+
+            }
+        
     
-        productModel.deleteById(id);
+        
     
         res.redirect('/products');
       },
