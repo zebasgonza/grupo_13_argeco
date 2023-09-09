@@ -73,23 +73,37 @@ const controllers = {
     updateProducts: async (req, res) => { 
 
         /* NEW CODE */
+        console.log(req.params);
         
-        const update = req.params.update;
-        const values = req.body;
+        const id = req.params.id;
+        const updateValues = req.body;
 
         try {
-            await DB.Stock.updateById(values, {
-                where: { 
-                    id_producto: update/* req.body.id_producto */
-                }
+
+            const stockProduct = await DB.Stock.findByPk(id);
+
+            if (!stockProduct) {
+                return res.status(404).send('El producto no existe :(');
+            }
+
+            if (req.file) {
+                // Actualiza una imagen si el usuario decide cambiarla
+                console.log('Imagen antes de la actualización:', stockProduct.imagen);
+                stockProduct.imagen = '/img/' + req.file.filename;
+                console.log('Imagen después de la actualización:', stockProduct.imagen);
+    
                 
-            });
+            }
+
+            await stockProduct.update(updateValues);
+            
             console.log(req.body);
-            res.redirect('/');
+            res.redirect('/products');
         } catch (error) {
             res.send('No se pudo actualizar')
             console.log(error);
         }
+
         /* OLD CODE */
 /*         const id = Number (req.params.id); 
         const nuevosDatos = req.body;

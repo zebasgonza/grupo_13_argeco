@@ -43,7 +43,7 @@ router.get('/:id/detail', productsControllers.getProductDetail);
 router.get('/:id/update', productsControllers.getUpdate);
 
 // // @PUT /products/:id/update permite reemplazar un dato ya existente de un producto según su ID 7 omar
- router.put('/:id/update', productsControllers.updateProducts);
+ router.put('/:id/update', upload.single('image'), productsControllers.updateProducts);
 
 // products/cart (GET) MUESTRA la vista del carrito de compras 8 omar
 router.get('/cart', productsControllers.getCard);
