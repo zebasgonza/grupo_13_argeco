@@ -38,16 +38,11 @@ const controllers = {
 
             })
                 
-            if (!product)   
-            
-            
-
-            }
         
-    
+        } catch (error) {
+            res.status(500).send('No se pudo eliminar el producto');
+        }
         
-    
-        res.redirect('/products');
       },
 
     // get /productscard/ Omar
