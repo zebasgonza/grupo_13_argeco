@@ -5,6 +5,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
+#navbar-list li a:hover {
+    color: red; /* Cambia el color de fondo al pasar el cursor */
+    font-weight: bold;
+}
 /* ----- Mobile first ----- */
 
 /* general guidelines */
