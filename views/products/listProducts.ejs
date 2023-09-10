@@ -17,13 +17,19 @@
             <section class="container">
                 <% productos.forEach(producto => { %>
                     <article class="container-product">
-                        <img class="container-product-img" src=" <%= producto.imagen %>" alt="imagen de un producto">
+                        <img class="container-product-img" src="<%= producto.imagen %>" alt="imagen de un producto">
+                        <script>
+                            console.log("Nombre de imagen: <%= producto.imagen %>");
+                        </script>
                         <div class="container-product-description">
                             <p class="categoria"><%= producto.categoria %></p>
                             <p class="nombre"><%= producto.nombre %></p>
                             <div class="container-money">
                                 <p class="precio"> <%= producto.precio %></p>
-                                <p class="descuento"> <%= producto.descuento %>% OFF</p>
+                                <p class="descuento"> Disponibles <%= producto.cantidad %></p>
+                            </div>
+                            <div>
+                                <a class="detalle" href="/products/<%= producto.id_producto %>/detail">Ver detalle</a>
                             </div>
                         </div>
                     </article>
