@@ -52,13 +52,35 @@ const controllers = {
     
 
     
-    deleteProducts: (req, res) => {
-        const id = Number(req.params.id);
-    
-        productModel.deleteById(id);
-    
-        res.redirect('/products');
-      },
+    deleteProducts: async (req, res) => {
+/*         
+        try {
+            const id = (req.params.id);
+            const product = await DB.destroy({
+                where : {id:id_producto}, 
+            })
+        } catch (error) {
+            res.status(500).send('No se pudo eliminar el producto');
+        }
+      }, */
+
+
+        try {
+            const productId = req.params.id;
+      
+            // Encuentra el producto por su ID
+            const productToDelete = await DB.Stock.findByPk(productId);
+      
+            // Elimina el producto de la base de datos
+            await productToDelete.destroy();
+      
+            res.redirect('/products'); // Redirige a la página de lista de productos u otra página según tu aplicación
+          } catch (error) {
+            console.error('Error al eliminar el producto:', error);
+            res.status(500).send('Error al eliminar el producto');
+          }
+    }, 
+
 
     // get /productscard/ Omar
     getCard: (req, res) => {
@@ -82,17 +104,16 @@ const controllers = {
 
             const stockProduct = await DB.Stock.findByPk(id);
 
-            if (!stockProduct) {
-                return res.status(404).send('El producto no existe :(');
-            }
 
             if (req.file) {
                 // Actualiza una imagen si el usuario decide cambiarla
                 console.log('Imagen antes de la actualización:', stockProduct.imagen);
                 stockProduct.imagen = '/img/' + req.file.filename;
-                console.log('Imagen después de la actualización:', stockProduct.imagen);
-    
-                
+                console.log('Imagen después de la actualización:', stockProduct.imagen);   
+            }
+
+            if (!stockProduct) {
+                return res.status(404).send('El producto no existe :(');
             }
 
             await stockProduct.update(updateValues);
@@ -114,18 +135,18 @@ const controllers = {
     },
     //get/products/:id/detail/Mawe
 
-    getProductDetail: (req, res) => {
+    getProductDetail: async (req, res) => {
 
-        const id = Number(req.params.id);
+        const id = req.params.id;
+        const productsToSee = await DB.Stock.findByPk(id)
 
-
-        const productoAMostrar = productModel.findById(id);
-
-        if (!productoAMostrar) {
-            return res.send('error de id');
+        if (!productsToSee) {
+            return res.send('El producto que desea buscar no se encuentra disponible :(');
         }
 
-        res.render('productDetail', { title: 'Detalle', product: productoAMostrar });
+        res.render('productDetail', { 
+            title: 'Detalle', product: productsToSee 
+        });
     },
 
 

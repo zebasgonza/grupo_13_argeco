@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-09-2023 a las 18:36:21
+-- Tiempo de generación: 10-09-2023 a las 02:26:13
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -114,7 +114,7 @@ CREATE TABLE `stock` (
   `id_producto` bigint(15) NOT NULL,
   `nombre` varchar(15) DEFAULT NULL,
   `categoria` varchar(15) DEFAULT NULL,
-  `imagen` varchar(90) NOT NULL,
+  `imagen` varchar(1000) NOT NULL,
   `descripcion` varchar(15) DEFAULT NULL,
   `cantidad` int(15) DEFAULT NULL,
   `precio` decimal(15,0) DEFAULT NULL

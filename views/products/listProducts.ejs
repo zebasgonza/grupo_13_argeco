@@ -26,6 +26,9 @@
                                 <p class="precio"> <%= producto.precio %></p>
                                 <p class="descuento"> Disponibles <%= producto.cantidad %></p>
                             </div>
+                            <div>
+                                <a class="detalle" href="/products/<%= producto.id_producto %>/detail">Ver detalle</a>
+                            </div>
                         </div>
                     </article>
                 <% }) %>
