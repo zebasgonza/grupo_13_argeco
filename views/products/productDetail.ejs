@@ -15,12 +15,12 @@
             <section class="container">
                 <article class="container-product">
                     <div class="container-product-mainpicture">
-                        <img src=<%= product.img %>alt="Imagen de una mesa familiar que esta en venta">
+                        <img src="<%= product.imagen %>" alt="Imagen de una mesa familiar que esta en venta">
                     </div>
 
                     <div class="container-productDetail-info">
 
-                            <h2><%= product.name %></h2>
+                            <h2><%= product.nombre %></h2>
                             <p class="categoria"> <%= product.categoria %></p>
                             <p class="descripcion"> <%= product.descripcion %></p>
                         
@@ -44,7 +44,7 @@
                         </div>
                         <div class="container-precio">
                             <p class="precio"><%= product.precio%></p>
-                            <p class="descuento"><%= product.descuento %>% OFF</p>
+                            <p class="descuento"><%= product.cantidad %> Disponibilidad</p>
                         </div>
                         
                         <form action="#" method="POST">
@@ -55,9 +55,10 @@
                             </div>
                             <input class="boton-comprar" type="submit" value="Comprar">
                             <input class="boton-shoppingcart" type="submit" value="Agregar al carrito">
+                            
                         </form>
                     </div>
-                    <div class="especificacionesTecnicas">
+<!--                     <div class="especificacionesTecnicas">
                         <h2>Información Tecnica</h2>
                         <br>
                         <p> -Nombre del mueble: <%= product.name %></p>
@@ -68,7 +69,7 @@
                         <p>Carga maxima: <%= product.cargaMax %> lbs</p>
                         <p> -Uso recomendado: <%= product.tips %></p>
                         <p> -Garantía: <%= product.garantia %> </p>
-                    </div>
+                    </div> -->
                     <article>
 
                         <h2>Opiniones Clientes</h2>
