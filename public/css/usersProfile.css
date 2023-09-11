@@ -1,11 +1,22 @@
-
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body{ 
+    display: flex;
+    flex-direction: column;
+}
+header {
+    
+}
 .imagen-usuario{
     width: 50px;
     margin-left: 45%;
 }
 main{
     background-color: #cbc5b5;
-    width: 100%
+    width: 100%;
+    flex: 1;
 }
 
 .general {
@@ -30,3 +41,6 @@ main{
 }
 
 
+@media screen { 
+    
+}
