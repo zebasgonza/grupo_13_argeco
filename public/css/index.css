@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 #navbar-list li a:hover {
-    color: red; /* Cambia el color de fondo al pasar el cursor */
+    color: rgb(99, 9, 9); /* Cambia el color de fondo al pasar el cursor */
     font-weight: bold;
 }
 /* ----- Mobile first ----- */
@@ -59,6 +59,10 @@ nav {
 #navbar-list {
     list-style-type: none;
     display: none;
+    background-color: #e9eadd;
+    color: black;
+    border-radius: 10 px;
+
 }
 
 /* este es el a dentro de los li del ul*/
@@ -66,6 +70,7 @@ nav {
     text-decoration: none;
     list-style: none;
     font-family: 'Roboto', sans-serif;
+    color: black;
 }
 .left-navbar {
     display: flex;
@@ -154,6 +159,7 @@ nav {
 /* secciones productos destacados y nueva colección (productCard) */
 h2 {
     text-align: center;
+    padding-top: 35px;
 }
 
 .container-product {

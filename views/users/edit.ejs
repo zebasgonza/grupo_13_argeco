@@ -33,7 +33,7 @@
             <input class="formImg" type="file" id="" name="image" multiple accept=".jpg, .jpeg, .png">
             <p class="imgText">Foto de perfil anterior</p>
             <% if (user && user.image) { %>
-              <img src="<%= user.image %>" alt="Imagen del producto">
+              <img src="/img/users/<%=user.image %>" alt="Imagen del producto">
               <% } %>
             <input class="saveButton" type="submit" value="Guardar">
           </form>
