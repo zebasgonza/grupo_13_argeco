@@ -261,7 +261,10 @@ form {
 
 /* footer */
 footer {
-    background-color: #EAE2CD;
+    background-color: #122f44;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .main-footer {
@@ -335,6 +338,7 @@ footer {
 
     .container{
         padding: 4rem;
+        margin: 105px
     }
 
     .container-product {

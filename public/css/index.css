@@ -62,14 +62,15 @@ nav {
     background-color: #e9eadd;
     color: black;
     border-radius: 10 px;
+
 }
+
 /* este es el a dentro de los li del ul*/
 #navbar-list li a{
     text-decoration: none;
     list-style: none;
     font-family: 'Roboto', sans-serif;
     color: black;
-
 }
 .left-navbar {
     display: flex;
@@ -261,7 +262,7 @@ h2 {
 
 /* footer */
 footer {
-    background-color: #EAE2CD;
+    background-color: #122f44;
     text-align: center;
     padding: 15px;
 }
@@ -325,4 +326,21 @@ footer {
 
 @keyframes identifier {
     
+}
+
+input#miInput {
+    width: 100%; /* O el ancho deseado */
+    padding: 8px;
+    border: 1px solid #3498db; /* Borde azul */
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333; /* Color de texto */
+    background-color: #f5f5f5; /* Color de fondo */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input#miInput:focus {
+    border-color: #2980b9; /* Borde azul más oscuro al enfocar */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Sombra azul al enfocar */
+    outline: none; /* Quita el contorno predeterminado en algunos navegadores */
 }
