@@ -52,13 +52,35 @@ const controllers = {
     
 
     
-    deleteProducts: (req, res) => {
-        const id = Number(req.params.id);
-    
-        productModel.deleteById(id);
-    
-        res.redirect('/products');
-      },
+    deleteProducts: async (req, res) => {
+/*         
+        try {
+            const id = (req.params.id);
+            const product = await DB.destroy({
+                where : {id:id_producto}, 
+            })
+        } catch (error) {
+            res.status(500).send('No se pudo eliminar el producto');
+        }
+      }, */
+
+
+        try {
+            const productId = req.params.id;
+      
+            // Encuentra el producto por su ID
+            const productToDelete = await DB.Stock.findByPk(productId);
+      
+            // Elimina el producto de la base de datos
+            await productToDelete.destroy();
+      
+            res.redirect('/products'); // Redirige a la página de lista de productos u otra página según tu aplicación
+          } catch (error) {
+            console.error('Error al eliminar el producto:', error);
+            res.status(500).send('Error al eliminar el producto');
+          }
+    }, 
+
 
     // get /productscard/ Omar
     getCard: (req, res) => {
@@ -73,23 +95,36 @@ const controllers = {
     updateProducts: async (req, res) => { 
 
         /* NEW CODE */
+        console.log(req.params);
         
-        const update = req.params.update;
-        const values = req.body;
+        const id = req.params.id;
+        const updateValues = req.body;
 
         try {
-            await DB.Stock.updateById(values, {
-                where: { 
-                    id_producto: update/* req.body.id_producto */
-                }
-                
-            });
+
+            const stockProduct = await DB.Stock.findByPk(id);
+
+
+            if (req.file) {
+                // Actualiza una imagen si el usuario decide cambiarla
+                console.log('Imagen antes de la actualización:', stockProduct.imagen);
+                stockProduct.imagen = '/img/' + req.file.filename;
+                console.log('Imagen después de la actualización:', stockProduct.imagen);   
+            }
+
+            if (!stockProduct) {
+                return res.status(404).send('El producto no existe :(');
+            }
+
+            await stockProduct.update(updateValues);
+            
             console.log(req.body);
-            res.redirect('/');
+            res.redirect('/products');
         } catch (error) {
             res.send('No se pudo actualizar')
             console.log(error);
         }
+
         /* OLD CODE */
 /*         const id = Number (req.params.id); 
         const nuevosDatos = req.body;
@@ -100,18 +135,18 @@ const controllers = {
     },
     //get/products/:id/detail/Mawe
 
-    getProductDetail: (req, res) => {
+    getProductDetail: async (req, res) => {
 
-        const id = Number(req.params.id);
+        const id = req.params.id;
+        const productsToSee = await DB.Stock.findByPk(id)
 
-
-        const productoAMostrar = productModel.findById(id);
-
-        if (!productoAMostrar) {
-            return res.send('error de id');
+        if (!productsToSee) {
+            return res.send('El producto que desea buscar no se encuentra disponible :(');
         }
 
-        res.render('productDetail', { title: 'Detalle', product: productoAMostrar });
+        res.render('productDetail', { 
+            title: 'Detalle', product: productsToSee 
+        });
     },
 
 
@@ -131,19 +166,22 @@ const controllers = {
 
     // // post/products
 
-    postProduct: (req, res) => {
+    postProduct: async (req, res) => {
+        try {
+            let datos = req.body;
+            datos.price = Number(datos.precio);
+            /* datos.img = '/imgs/products/' + req.file.filename; */
+            datos.imagen = '/img/' + req.files[0].filename;
+/*             datos.img = req.files.map(file => '/img/' + file.filename); */
+             // Utiliza Sequelize para crear un nuevo producto en la base de datos
+            const newProduct = await DB.Stock.create(datos);
+/*             productModel.create(datos); */
+            res.redirect('/products');
+        } catch (error) {
+            console.error('Se produjo un error al crearel producto:', error),
+            res.status(400).send('Se produjo un error al crear el producto :(');
 
-         let datos = req.body;
-
-         datos.price = Number(datos.precio);
-
-         /* datos.img = '/imgs/products/' + req.file.filename; */
-         datos.img = req.files.map(file => '/img/' + file.filename);
-
-         productModel.create(datos);
-
-
-         res.redirect('/products');
+        }
      }
 
 }
