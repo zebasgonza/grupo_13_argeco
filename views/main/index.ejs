@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <%- include('../partials/head') %>
 
-    <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/index.css">
 </head>
+
 <body>
     <nav>
-        <h1><%= userData.first_name %></h1>
-        <h1><%= userData.email %></h1>
-      </nav>
+
+    </nav>
     <!-- header -->
     <%- include('../partials/header') %>
-    <main>
-        <section class="container"></section> <!-- container -->
+        <main>
+            <section class="container"></section> <!-- container -->
             <article class="container-carousel"> <!-- slider-wrapper -->
                 <div class="container-carousel-images"> <!-- slider -->
-                    <img id="slide-1" src="./img/img-wood-mood.jpg" alt="publicidad">
-                    <img id="slide-2" src="./img/img-mesa-unity3.jpg" alt="publicidad">
-                    <img id="slide-3" src="./img/img-mesa-fetich.jpg" alt="publicidad">
+                    <img id="slide-1" src="./img/slider/banner-1.jpg" alt="publicidad">
+                    <img id="slide-2" src="./img/slider/banner-fisrt-impressions.jpg" alt="publicidad">
+                    <img id="slide-3" src="./img/slider/banner-small-product.jpg" alt="publicidad">
                 </div>
                 <div class="slider-nav">
                     <a href="#slide-1"></a>
@@ -26,133 +27,61 @@
                     <a href="#slide-3"></a>
                 </div>
             </article>
-        </section>
-        <h2> Productos destacados </h2>
-        <section class="container">
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-mesa-unity2.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Mesas</p>
-                    <p class="nombre">Unity</p>
-                    <div class="container-money">
-                        <p class="precio">$600.000</p>
-                        <p class="descuento">10% OFF</p>
+            </section>
+            <h2> Productos destacados </h2>
+            <section class="container">
+                <% let count=0; %>
+                    <% products.forEach(product=> { %>
+                        <% if (count < 4) { %>
+                            <article class="container-product">
+                                <img class="container-product-img" src="<%= product.imagen %>"
+                                    alt="imagen de un producto">
+                                <div class="container-product-description">
+                                    <i class="material-symbols-outlined icon-add-shopping-cart">add_shopping_cart</i>
+                                    <p class="categoria">
+                                        <%= product.categoria %>
+                                    </p>
+                                    <p class="nombre">
+                                        <%= product.nombre %>
+                                    </p>
+                                    <div class="container-money">
+                                        <p class="precio">$<%= product.precio %>
+                                        </p>
+                                        <p class="descuento">
+                                            <%= product.descuento %>
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+<!--                             <% count++; %> -->
+                                <% } %>
+                                    <% }); %>
+            </section>
+            <h2> Productos según tu espacio </h2>
+            <section class="container">
+                <article class="container-categorias">
+                    <div class="container-categorias-img">
+                        <img class="img-maxsize" src="./img/img-categoria-exterior.jpg" alt="imagen de un producto">
+                        <h3> Exterior<br>(pronto)</h3>
                     </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-wood-mood.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Aromatizador</p>
-                    <p class="nombre">Wood Mood</p>
-                    <div class="container-money">
-                        <p class="precio">$230.000</p>
-                        <p class="descuento">15% OFF</p>
+                </article>
+                <article class="container-categorias">
+                    <div class="container-categorias-img">
+                        <img class="img-maxsize" src="./img/img-categoria-interior.jpg" alt="imagen de un producto">
+                        <h3> Interior<br>(pronto)</h3>
+
                     </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-mesa-fetich.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Mesas</p>
-                    <p class="nombre">Fetich</p>
-                    <div class="container-money">
-                        <p class="precio">$1.200.000</p>
-                        <p class="descuento">20% OFF</p>
+                </article>
+                <article class="container-categorias">
+                    <div class="container-categorias-img">
+                        <img class="img-maxsize" src="./img/img-categoria-accesorios.jpg" alt="imagen de un producto">
+                        <h3> Accesorios<br>(pronto)</h3>
                     </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-reloj-perla.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Reloj</p>
-                    <p class="nombre">Feller Rouper</p>
-                    <div class="container-money">
-                        <p class="precio">$300.000</p>
-                        <p class="descuento">15% OFF</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <h2> Nueva colección </h2>
-        <section class="container">
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-lampara-temp.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Lampara</p>
-                    <p class="nombre">Ocean Temp</p>
-                    <div class="container-money">
-                        <p class="precio">$400.000</p>
-                        <p class="descuento">20% OFF</p>
-                    </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-mesa-couver.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Mesas</p>
-                    <p class="nombre">Couvermin</p>
-                    <div class="container-money">
-                        <p class="precio">$500.000</p>
-                        <p class="descuento">15% OFF</p>
-                    </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-mesa-rustic.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Mesas</p>
-                    <p class="nombre">Rustic Wood</p>
-                    <div class="container-money">
-                        <p class="precio">$900.000</p>
-                        <p class="descuento">25% OFF</p>
-                    </div>
-                </div>
-            </article>
-            <article class="container-product">
-                <img class="container-product-img" src="./img/img-lampara-lava.jpg" alt="imagen de un producto">
-                <div class="container-product-description">
-                    <i class="material-symbols-outlined icon-add-shopping-cart"> add_shopping_cart</i>
-                    <p class="categoria">Lampara</p>
-                    <p class="nombre">Fire Lamp</p>
-                    <div class="container-money">
-                        <p class="precio">$350.000</p>
-                        <p class="descuento">10% OFF</p>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <h2> Productos según tu espacio </h2>
-        <section class="container">
-            <article class="container-categorias">
-                <div class="container-categorias-img">
-                    <img class="img-maxsize" src="./img/img-categoria-exterior.jpg" alt="imagen de un producto">
-                    <h3> Exterior </h3>
-                </div>
-            </article>
-            <article class="container-categorias">
-                <div class="container-categorias-img">
-                    <img class="img-maxsize" src="./img/img-categoria-interior.jpg" alt="imagen de un producto">
-                    <h3> Interior </h3>
-                </div>
-            </article>
-            <article class="container-categorias">
-                <div class="container-categorias-img">
-                    <img class="img-maxsize" src="./img/img-categoria-accesorios.jpg" alt="imagen de un producto">
-                    <h3> Accesorios </h3>
-                </div>
-            </article>
-        </section>
-    </main>
-    <!-- footer -->
-    <%- include('../partials/footer') %>
+                </article>
+            </section>
+        </main>
+        <!-- footer -->
+        <%- include('../partials/footer') %>
 </body>
 
 </html>
