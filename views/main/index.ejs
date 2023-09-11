@@ -47,10 +47,12 @@
                                     <div class="container-money">
                                         <p class="precio">$<%= product.precio %>
                                         </p>
-                                        <p class="descuento">
-                                            <%= product.descuento %>
+                                        <p class="descuento">Disponibles
+                                            <%= product.cantidad %>
+                                            <a class="detalle" href="/products/<%= product.id_producto %>/detail">Ver detalle</a>
                                         </p>
                                     </div>
+
                                 </div>
                             </article>
 <!--                             <% count++; %> -->

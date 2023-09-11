@@ -184,6 +184,11 @@ h2 {
     width: 100%;
 }
 
+.detalle {
+    margin-left: 10px;
+    text-decoration: none;
+}
+
 .icon-add-shopping-cart {
     position: absolute;
     /* contenido boton */
