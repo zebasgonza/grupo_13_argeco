@@ -114,7 +114,7 @@ const controllers = {
             title: 'Registro'
         });
     },
-    loginUser: async (req, res) => {
+loginUser: async (req, res) => {
         try {
             const { email, password } = req.body;
 
@@ -125,7 +125,7 @@ const controllers = {
                 }
             });
 
-            if (!user) {
+            if (user) {
                 return res.redirect('/');
             }
 

@@ -9,7 +9,7 @@
                 <li><a href="/">home</a></li>
                 <li><a href="/users/login">login</a></li>
                 <li><a href="/users/register">registro</a></li>
-                <li><a href="/products/cart">productos</a></li>
+                <li><a href="/products">productos</a></li>
             </ul>
             <script>
                     const menuList = document.getElementById("navbar-list");
@@ -26,6 +26,7 @@
                             menuList.style.display = "none";
                         }
                     });
+
             </script>
         </div>
         
@@ -34,9 +35,31 @@
         </div>
 
         <ul class="right-navbar">
-            <li><a href="#"></a><i class="material-symbols-outlined">search</i></li>
+            <li>
+                <a id="search" href="#">
+                    <i class="material-symbols-outlined">search</i>
+                </a>
             <li><a href="/login"></a><i class="material-symbols-outlined">login</i></li>
-            <li><a href="/productDetail"></a><i class="material-symbols-outlined">shopping_cart</i></li>
+            <li><a href="/products/cart"><i class="material-symbols-outlined">shopping_cart</i></a></li>
         </ul>
+
+        <script>
+                // Obtén una referencia al elemento <a> que deseas reemplazar
+                const enlace = document.getElementById("search");
+
+                // Crea un nuevo elemento <input>
+                const input = document.createElement("input");
+                input.type = "text";
+                input.id = "miInput";
+                input.value = "";
+                // input.style.border = "1px solid #ccc"; 
+                // input.style.padding = "5px"; 
+                // input.style.fontSize = "16px"; 
+
+                // Reemplaza el elemento <a> con el nuevo elemento <input>
+                enlace.addEventListener("click", () => {
+                    enlace.parentNode.replaceChild(input, enlace);
+                })
+        </script>
     </nav>
 </header>

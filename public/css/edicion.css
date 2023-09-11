@@ -7,9 +7,32 @@
   body {
     font-family: Arial, sans-serif;
     background-color: #f3e5c2bd;
-    padding: 20px;
   }
+  /* este es el ul */
+#navbar-list {
+  list-style-type: none;
+  display: none;
+
+}
+/* este es el a dentro de los li del ul*/
+#navbar-list li a{
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Roboto', sans-serif;
+
   
+}
+#navbar-list li a:hover {
+  color: red; /* Cambia el color de fondo al pasar el cursor */
+  font-weight: bold;
+}
+  
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
   /* sección navbar */
 nav {
   display: flex;
@@ -58,10 +81,10 @@ nav {
 header {
   background-color: #122f44;
   padding: 20px;
-  margin: 0 auto;
 }
 
 main {
+  flex: 1;
   width: 100%;
   background-color: #F3E8CC;
 }
@@ -76,9 +99,9 @@ body p {
 
 .container{
   position: absolute;
-  padding: 1rem;
   width: 100%;
 }
+
 
   h1 {
     text-align: center;
@@ -138,7 +161,10 @@ body p {
   }
   
   footer {
-    background-color: #EAE2CD;
+    background-color: #122f44;
+    text-align: center;
+    margin-top: 166px;
+    padding: 15px;
 }
 
 .main-footer {
