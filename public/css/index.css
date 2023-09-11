@@ -133,6 +133,7 @@ nav {
 /* secciones productos destacados y nueva colección (productCard) */
 h2 {
     text-align: center;
+    padding-top: 35px;
 }
 
 .container-product {
