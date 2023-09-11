@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-09-2023 a las 02:26:13
+-- Tiempo de generación: 11-09-2023 a las 03:45:41
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -112,20 +112,13 @@ INSERT INTO `items_carrito` (`id_carrito`, `id_producto`, `cantidad`, `precio_to
 
 CREATE TABLE `stock` (
   `id_producto` bigint(15) NOT NULL,
-  `nombre` varchar(15) DEFAULT NULL,
-  `categoria` varchar(15) DEFAULT NULL,
+  `nombre` varchar(100) DEFAULT NULL,
+  `categoria` varchar(100) DEFAULT NULL,
   `imagen` varchar(1000) NOT NULL,
-  `descripcion` varchar(15) DEFAULT NULL,
+  `descripcion` varchar(1000) DEFAULT NULL,
   `cantidad` int(15) DEFAULT NULL,
   `precio` decimal(15,0) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `stock`
---
-
-INSERT INTO `stock` (`id_producto`, `nombre`, `categoria`, `imagen`, `descripcion`, `cantidad`, `precio`) VALUES
-(1, 'Unity1', 'mesa', 'img-mesa-unity2.jpg', 'madera roja', 2, 50000);
 
 -- --------------------------------------------------------
 
@@ -224,7 +217,7 @@ ALTER TABLE `items_carrito`
 -- AUTO_INCREMENT de la tabla `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `id_producto` bigint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_producto` bigint(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
