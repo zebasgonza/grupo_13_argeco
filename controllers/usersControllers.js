@@ -111,7 +111,7 @@ const controllers = {
 
     getLogin: (req, res) => {
         res.render("login", {
-            title: 'Registro'
+            title: 'login'
         });
     },
 loginUser: async (req, res) => {
