@@ -16,7 +16,7 @@ const controllers = {
         try {
             let datos = req.body;
             datos.price = Number(datos.precio);
-            datos.img = req.files.map(file => '/img/users/' + file.filename);
+            datos.image = req.files[0].filename;
 
             // Encriptación contraseña
             const hashedPassword = bcrypt.hashSync(datos.password, 10);
