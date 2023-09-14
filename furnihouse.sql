@@ -57,7 +57,7 @@ CREATE TABLE `categoria_usuario` (
 
 --
 -- Volcado de datos para la tabla `categoria_usuario`
---
+-- 
 
 INSERT INTO `categoria_usuario` (`id_categoria_usuario`, `nombre`) VALUES
 (1, NULL),
