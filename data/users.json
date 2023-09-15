@@ -99,16 +99,6 @@
   "first_name": "sasa",
   "last_name": "asas",
   "email": "shebitas45@gmail.com",
-  "password": "$2b$10$xlpagW9w/YUPBSWMdP3gA.u6Cyv5JiZBRsxGdAnyVEaTld7DBq7qG",
-  "confirm-password": "$2b$10$f/i.0NGR0AK89ShHn3R10eIgHGu7c6MSA0dZy6X4N.oCg0jfJc4GS",
-  "price": null,
-  "img": [],
-  "id": 13
- },
- {
-  "first_name": "sasa",
-  "last_name": "asas",
-  "email": "shebitas45@gmail.com",
   "password": "$2b$10$bI5wFarBCMYRvk1i0fqGpegvRpE6hmQ3or6n6op6FgvC8197B/idu",
   "confirm-password": "$2b$10$fAUlVGJUDKk54lfBxFwhvevcqS0NMUTGexQrztLrHyq/6heCncgye",
   "price": null,
