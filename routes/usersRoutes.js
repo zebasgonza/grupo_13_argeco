@@ -8,12 +8,29 @@ const multer = require("multer");
 const usersControllers = require('../controllers/usersControllers');
 //express-validatior
 const { body } = require("express-validator");
-//validaciones inserbibles de momento,borrar si esta demas
-// const validaciones = [
-//     body("email").notEmpty().withMessage("El campo de correo electrónico es obligatorio"),
-//     body("contraseña").notEmpty().withMessage("El campo de contraseña es obligatorio"),
-//   ];
 
+const validaciones = [
+	body('nombre').notEmpty().withMessage('Tienes que escribir un nombre'),
+    body('apellido').notEmpty().withMessage('Tienes que escribir un nombre'),
+	body('email').notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
+		.isEmail().withMessage('Debes escribir un formato de correo válido'),
+	body('contrasena').notEmpty().withMessage('Tienes que escribir una contraseña'),
+    body('image').custom((value, { req }) => {
+		let file = req.file;
+		let acceptedExtensions = ['.jpg', '.png', '.gif'];
+		
+		if (!file) {
+			throw new Error('Tienes que subir una imagen');
+		} else {
+			let fileExtension = path.extname(file.originalname);
+			if (!acceptedExtensions.includes(fileExtension)) {
+				throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+			}
+		}
+
+		return true;
+	})
+]
 
 
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
@@ -42,7 +59,7 @@ router.post('/login', usersControllers.loginUser);//Omar
 router.get('/register', usersControllers.getRegister);//Sebas
 
 // users/register (POST) permite que el usuario pueda CREAR y ENVIAR la info del registro al servidor 
-router.post('/', upload.any('img'), usersControllers.postRegister);//Sebas
+router.post('/', upload.any('image'), validaciones, usersControllers.postRegister);//Sebas
 
 // // users/usersProfile' (GET) nos MUESTRA la vista del perfil en especifico de acuerdo a su ID 
 router.get('/usersProfile/:id', usersControllers.getUsersProfile); //Mawe

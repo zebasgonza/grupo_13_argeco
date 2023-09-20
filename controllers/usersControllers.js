@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const usersModel = require('../models/users');
 const bcrypt = require('bcrypt');
 const DB = require('../database/models');
@@ -10,9 +11,24 @@ const controllers = {
             title: 'Registro'
         });
     },
+    
 
     // @Post users/registera 
     postRegister: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+		
+		if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
+		return res.send('Ok, las validaciones se pasaron y no tienes errores');
+       
+       
+       
         try {
             let datos = req.body;
             datos.price = Number(datos.precio);
