@@ -11,73 +11,70 @@ const controllers = {
             title: 'Registro'
         });
     },
-    
 
-    // @Post users/registera 
+
+    // @Post users/register
     postRegister: async (req, res) => {
 
         const resultValidation = validationResult(req);
-		
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+        console.log(resultValidation.errors)
+        if (resultValidation.errors.length > 0) {
+            return res.render('register', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                title: 'Registro'
+            });
+        }
 
-		return res.send('Ok, las validaciones se pasaron y no tienes errores');
-       
-       
-       
+        let datos = req.body;
+
+        datos.image = req.files[0].filename;
+        console.log(datos);
+        // Encriptación contraseña
+        const hashedPassword = bcrypt.hashSync(datos.contrasena, 10);
+        datos.contrasena = hashedPassword;
+
         try {
-            let datos = req.body;
-            datos.price = Number(datos.precio);
-            datos.image = req.files[0].filename;
-
-            // Encriptación contraseña
-            const hashedPassword = bcrypt.hashSync(datos.password, 10);
-            datos.password = hashedPassword;
-
-            // Encriptación confirmación contraseña
-            const hashedConfirmPassword = bcrypt.hashSync(datos['confirm-password'], 10);
-            datos['confirm-password'] = hashedConfirmPassword;
 
             // Utiliza Sequelize para crear un nuevo usuario en la base de datos
             const newUser = await DB.Usuarios.create(datos);
 
             // Redirige a la vista del perfil del usuario
             const userId = newUser.id_usuario; // Asegúrate de que este sea el nombre correcto del campo ID en tu modelo.
-            res.redirect('/users/usersProfile/' + userId);
+            return res.redirect('/users/usersProfile/' + userId);
         } catch (error) {
             console.error('Error al crear un nuevo usuario:', error);
             // Aquí puedes manejar errores de manera adecuada, por ejemplo, mostrar un mensaje de error al usuario o redirigir a una página de error.
+
+            return res.send('Error no se pudo  el usuario');
         }
-    
+
+
     },
     /* Mawe */
     getUsersProfile: async (req, res) => {
 
         try {
 
-        console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
-        const userId = Number(req.params.id);
-        console.log(req.params)
-        console.log('user id: ' + userId);
-        const user = await DB.Usuarios.findOne({
-            where: {
-                id_usuario: userId
-            }
+            console.log('SE ESTA EJECUTANDO LA FUNCION de get users');
+            const userId = Number(req.params.id);
+            console.log(req.params)
+            console.log('user id: ' + userId);
+            const user = await DB.Usuarios.findOne({
+                where: {
+                    id_usuario: userId
+                }
 
-        });
+            });
 
-        res.render('usersProfile', {
-            title: 'Perfil de Usuario',
-            user
-            
-        });
+            res.render('usersProfile', {
+                title: 'Perfil de Usuario',
+                user
 
-        }catch(error){
-        console.error('error al consultar por usuario:',error)
+            });
+
+        } catch (error) {
+            console.error('error al consultar por usuario:', error)
 
         }
     },
@@ -94,7 +91,7 @@ const controllers = {
     },
 
 
-/*Mawe */   getEdit: async (req, res) => {
+    getEdit: async (req, res) => {
         const id = req.params.id;
         const usersToModify = await DB.Usuarios.findByPk(id)
 
@@ -130,7 +127,7 @@ const controllers = {
             title: 'login'
         });
     },
-loginUser: async (req, res) => {
+    loginUser: async (req, res) => {
         try {
             const { email, password } = req.body;
 
