@@ -13,7 +13,7 @@ const { request } = require("http");
 
 const validaciones = [
 	body('nombre').notEmpty().withMessage('Tienes que escribir un nombre'),
-	body('apellido').notEmpty().withMessage('Tienes que escribir un nombre'),
+	body('apellido').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('email').notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
 	body('contrasena').notEmpty().withMessage('Tienes que escribir una contraseña'),

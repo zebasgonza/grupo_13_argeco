@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const productModel = require('../models/products');
 const DB = require('../database/models');
 /* const stock = require('../database/models/stock');  */
@@ -167,6 +168,16 @@ const controllers = {
     // // post/products
 
     postProduct: async (req, res) => {
+        const resultValidation = validationResult(req);
+        console.log(resultValidation.errors)
+        if (resultValidation.errors.length > 0) {
+            return res.render('creacionProductos', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                title: 'creacionProductos'
+            });
+            }
+
         try {
             let datos = req.body;
             datos.price = Number(datos.precio);
@@ -178,7 +189,7 @@ const controllers = {
 /*             productModel.create(datos); */
             res.redirect('/products');
         } catch (error) {
-            console.error('Se produjo un error al crearel producto:', error),
+            console.error('Se produjo un error al crear el producto:', error),
             res.status(400).send('Se produjo un error al crear el producto :(');
 
         }
