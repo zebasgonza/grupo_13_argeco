@@ -34,6 +34,21 @@ const controllers = {
         const hashedPassword = bcrypt.hashSync(datos.contrasena, 10);
         datos.contrasena = hashedPassword;
 
+        
+        // Validar la longitud de la contraseña
+        if (datos.contrasena.length < 8) {
+            console.log(datos)
+            return res.render('register', {
+                errors: {
+                    contrasena: {
+                        msg: 'La contraseña debe tener al menos 8 caracteres.'
+                    }
+                },
+                oldData: req.body,
+                title: 'Registro'
+            });
+        }
+
         try {
 
             // Utiliza Sequelize para crear un nuevo usuario en la base de datos
