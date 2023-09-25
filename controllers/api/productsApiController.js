@@ -2,19 +2,27 @@ const DB = require("../../database/models");
 
 const productsController = {
 
-  getUsers: async (req, res) => {
+  getProducts: async (req, res) => {
 
     try {
 
-        const products = await DB.stock.findAll({
-            attributes: ['id_producto', 'nombre', 'descripcion', 'categoria',]
-        });
+      const products = await DB.Stock.findAll({
+        attributes: [
+          'id_producto',
+          'nombre',
+          'categoria',
+          'descripcion'
+        ]
+      });
+
+        products.map((product) => console.log(product));
 
         const listProducts = products.map((product) => {
             return {
-                id: product.id,
-                name: product.nombre,
-                email: product.email,
+                id: product.id_producto,
+                nombre: product.nombre,
+                descripcion: product.descripcion,
+                categoria: product.categoria,
                 detail: `/api/products/${product.id_producto}`
             }
         })
@@ -44,7 +52,7 @@ const productsController = {
         ],
       });
 
-      stock.imagen = `http://localhost:3000/img/${stock.imagen}`;
+      stock.imagen = `http://localhost:3001/img/${stock.imagen}`;
 
       if (!stock) {
         return res.status(404).json({
