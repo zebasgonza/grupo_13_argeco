@@ -7,7 +7,9 @@ const mainRoutes = require('./routes/mainRoutes');
 const productRoutes = require('./routes/productRoutes');
 const usersRoutes = require('./routes/usersRoutes');
 const cookieParser = require('cookie-parser');
-const expressSession = require('express-session')
+const expressSession = require('express-session');
+const apiUsersRoutes = require('./routes/api/userApiRoutes');
+const apiProductsRoutes = require('./routes/api/productsApiRoutes');
 
 /* ---- Configuración vistas EJS ---- */
 app.set("view engine", "ejs")
@@ -33,13 +35,17 @@ app.use(expressSession({
     saveUninitialized: true
 }))
 
+const publicPath = path.join(__dirname, './public');
+app.use(express.static(publicPath));
+
 /* ---- Routers ---- */
 app.use(mainRoutes);
 app.use('/products', productRoutes);
 app.use('/users', usersRoutes);
+app.use('/api/users', apiUsersRoutes); 
+app.use('/api/products', apiProductsRoutes); 
 
-
-app.listen(3000, () => console.log("servidor corriendo en el puerto http://localhost:3000"));
+app.listen(3001, () => console.log("servidor corriendo en el puerto http://localhost:3001"));
 
 
 /* 
