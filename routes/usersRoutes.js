@@ -57,7 +57,7 @@ const upload = multer({ storage }); //nos habilita para guardar el archivo y usa
 router.get('/login', usersControllers.getLogin);//Omar
 
 //ruta de express-validator
-router.post('/login', usersControllers.loginUser);//Omar
+router.post('/login',validaciones, usersControllers.loginUser);//Omar
 
 // users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas

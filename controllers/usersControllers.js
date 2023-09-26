@@ -128,6 +128,16 @@ const controllers = {
         });
     },
     loginUser: async (req, res) => {
+
+        const resultValidation = validationResult(req);
+        console.log(resultValidation.errors)
+        if (resultValidation.errors.length > 0) {
+            return res.render('login', {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                title: 'login'
+            });
+        }
         try {
             const { email, password } = req.body;
 
