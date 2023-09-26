@@ -8,7 +8,7 @@ function TotalProductos(){
         const fetchData = async () => {
           try {
     
-            const productsCountResponse = await fetch('http://localhost:3001/api/products');
+            const productsCountResponse = await fetch('http://localhost:3000/api/products');
             const productsCountNumber = await productsCountResponse.json();
     
             if (productsCountNumber) {

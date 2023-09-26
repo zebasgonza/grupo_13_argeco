@@ -16,7 +16,7 @@ const validaciones = [
 	body('apellido').notEmpty().withMessage('Tienes que escribir un apellido'),
 	body('email').notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
 		.isEmail().withMessage('Debes escribir un formato de correo válido'),
-	body('contrasena').notEmpty().withMessage('Tienes que escribir una contraseña'),
+	body('contrasena').notEmpty().withMessage('Tienes que escribir una contraseña').isLength({ min: 7 }).withMessage('La contraseña debe tener al menos 7 caracteres'),
 	body('image').custom((value, { req }) => {
 		let file = req.files[0];
 		let acceptedExtensions = ['.jpg', '.png', '.gif'];

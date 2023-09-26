@@ -15,7 +15,7 @@ const validaciones = [
 	body('nombre').notEmpty().withMessage('Tienes que escribir un nombre').isLength({ min: 5 }).withMessage('El nombre debe tener al menos 5 caracteres'),
 	body('precio').notEmpty().withMessage('Tienes que escribir un numero(precio)'),
 	body('categoria').notEmpty().withMessage('Tienes que escribir una categoria(silla,mesa,etc)'),
-    body('descripcion').notEmpty().withMessage('Tienes que dar algún detalle de por qué estás creando el producto o para qué').isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
+    body('descripcion').notEmpty().withMessage('Tiene que escribir una descripcion').isLength({ min: 20 }).withMessage('La descripción debe tener al menos 20 caracteres'),
 
     body('cantidad').notEmpty().withMessage('Tienes que escribir algun numero'),
 	body('imagen').custom((value, { req }) => {

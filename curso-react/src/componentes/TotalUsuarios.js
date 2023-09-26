@@ -8,7 +8,7 @@ function TotalUsuarios(){
         const fetchData = async () => {
           try {
     
-            const usersCountResponse = await fetch('http://localhost:3001/api/users/');
+            const usersCountResponse = await fetch('http://localhost:3000/api/users/');
             const usersCountNumber = await usersCountResponse.json();
     
             if (usersCountNumber) {

@@ -52,7 +52,7 @@ const productsController = {
         ],
       });
 
-      stock.imagen = `http://localhost:3001/img/${stock.imagen}`;
+      stock.imagen = `http://localhost:3000/img/${stock.imagen}`;
 
       if (!stock) {
         return res.status(404).json({
