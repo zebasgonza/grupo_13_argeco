@@ -45,7 +45,7 @@ app.use('/users', usersRoutes);
 app.use('/api/users', apiUsersRoutes); 
 app.use('/api/products', apiProductsRoutes); 
 
-app.listen(3001, () => console.log("servidor corriendo en el puerto http://localhost:3001"));
+app.listen(3000, () => console.log("servidor corriendo en el puerto http://localhost:3000"));
 
 
 /* 

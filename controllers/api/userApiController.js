@@ -50,7 +50,7 @@ const userController = {
             }
             
             let response = {
-                userImage: `http://localhost:3001/img/users/${user.image}`
+                userImage: `http://localhost:3000/img/users/${user.image}`
             }
 
             return res.json(response);
@@ -70,7 +70,7 @@ const userController = {
                 }
             );
 
-            user.image = `http://localhost:3001/img/users/${user.image}`;
+            user.image = `http://localhost:3000/img/users/${user.image}`;
 
             if(!user){
                 return res.status(404).json(
