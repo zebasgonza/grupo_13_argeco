@@ -19,7 +19,7 @@
                     <label>Email</label>
                     <input 
                     type="email" 
-                    id="" 
+                    id="email" 
                     name="email"
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>">
@@ -36,7 +36,7 @@
                     <label>Contraseña</label>
                     <input 
                     type="password" 
-                    id="" 
+                    id="contrasena" 
                     name="contrasena"
                     class="form-control <%= locals.errors && errors.contrasena ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.contrasena : null %>">
@@ -67,7 +67,7 @@
         </main>
 
         <%- include('../partials/footer')%>
-
+        <script src="/js/validationFrontLogin.js"></script>
 </body>
 
 </html>

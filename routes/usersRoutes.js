@@ -37,6 +37,7 @@ const validaciones = [
 ]
 
 
+
 // configuración de multer para administra la carga de los archivos y especificar su ubicación de guardado
 // TIP: Cada uno debe instalarlo en su pc (npm i multer)
 const storage = multer.diskStorage({
