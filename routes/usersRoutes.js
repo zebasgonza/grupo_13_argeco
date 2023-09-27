@@ -33,8 +33,25 @@ const validaciones = [
 		}
 
 		return true;
-	})
+	}),
+		// Agrega esta función para la validación de inicio de sesión:
+	function loginValidation(req, res, next) {
+		// Realiza la validación de inicio de sesión aquí
+		req.checkBody("email", "Campo EMAIL incompleto").notEmpty();
+		req.checkBody("password", "Campo PASSWORD incompleto").notEmpty();
+		
+		const errors = req.validationErrors();
+		
+		if (errors) {
+			// Maneja los errores de validación, por ejemplo, envía una respuesta de error
+			return res.status(400).json({ errors });
+		}
+		
+		// Si la validación es exitosa, continúa con el siguiente middleware
+		next();
+	},
 ]
+
 
 
 
@@ -58,7 +75,7 @@ const upload = multer({ storage }); //nos habilita para guardar el archivo y usa
 router.get('/login', usersControllers.getLogin);//Omar
 
 //ruta de express-validator
-router.post('/login',validaciones, usersControllers.loginUser);//Omar
+router.post('/login',validaciones,loginValidation, usersControllers.loginUser);//Omar
 
 // users/register (GET) nos MUESTRA la vista del register
 router.get('/register', usersControllers.getRegister);//Sebas

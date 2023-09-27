@@ -1,67 +1,52 @@
-const emailCampo = document.getElementById('email');
-const contrasenaCampo = document.getElementById('contrasena');
+// Espera a que se cargue completamente el contenido de la página.
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtiene los elementos de correo electrónico y contraseña por su ID.
+    const emailCampo = document.querySelector('#email');
+    const contrasenaCampo = document.querySelector('#contrasena');
 
-// Declara un objeto llamado "errors" para almacenar errores de validación.
-let errors = {};
+    // Agrega un evento que se dispara cuando el usuario escribe en el campo de correo electrónico.
+    emailCampo.addEventListener('input', (e) => {
+        // Obtiene el valor actual del campo de correo electrónico.
+        const value = e.target.value;
+        // Obtiene la longitud del valor (cuántos caracteres tiene).
+        const length = value.length; 
 
-// Agrega un escuchador de eventos que se activa cuando el usuario ingresa algo en el campo de correo electrónico.
-emailCampo.addEventListener('input', () => {
-    // Obtiene el valor del campo de correo electrónico y lo almacena en la variable "email", eliminando espacios en blanco innecesarios.
-    const email = emailCampo.value.trim();
+        // Verifica si el correo electrónico es correcto (contiene "@" y tiene más de 6 caracteres).
+        const isEmailCorrect = value.includes('@') && value.length > 12; 
 
-    // Verifica si el campo de correo electrónico está vacío.
-    if (!email) {
-        // Si está vacío, agrega un mensaje de error al objeto "errors".
-        errors.email = { msg: 'El campo de email/usuario es requerido.' };
+        // Si el correo electrónico no es correcto o está vacío, muestra un mensaje de error.
+        if (!isEmailCorrect || length < 1) { 
+            // Cambia el contenido del siguiente elemento HTML (párrafo) para mostrar un mensaje de error.
+            e.target.nextElementSibling.innerHTML = 'Email es inválido'; 
+        } else {
+            // Si el correo electrónico es válido, borra el mensaje de error.
+            e.target.nextElementSibling.innerHTML = '';
+        }
+        
+      
+    });
 
-        // Remueve la clase "is-valid" del campo de correo electrónico y agrega la clase "not-valid" para indicar que no es válido.
-        emailCampo.classList.remove('is-valid');
-        emailCampo.classList.add('not-valid');
-    } else {
-        // Si el campo de correo electrónico no está vacío, marca que es válido.
-        emailCampo.classList.add('is-valid');
-        emailCampo.classList.remove('not-valid');
+    // Agrega un evento que se dispara cuando el usuario escribe en el campo de contraseña.
+    contrasenaCampo.addEventListener('input', (e) => {
+        // Obtiene el valor actual del campo de contraseña.
+        const value = e.target.value;
+        // Obtiene la longitud del valor (cuántos caracteres tiene).
 
-        // Elimina cualquier error previamente asociado con el correo electrónico en "errors".
-        delete errors.email;
+        const length = value.length; 
 
-        // Llama a una función llamada "verifyEmail" pasando el valor del correo electrónico como argumento.
-        verifyEmail(email);
-    }
-
-    // Llama a una función llamada "validateForm" para validar todo el formulario.
-    validateForm();
+        // Verifica si la contraseña tiene al menos 8 caracteres.
+        if (length < 8) { 
+            // Cambia el contenido del siguiente elemento HTML (párrafo) para mostrar un mensaje de error.
+            e.target.nextElementSibling.innerHTML = 'La contraseña debe contener al menos 8 caracteres';
+        } else {
+            // Si la contraseña es válida, borra el mensaje de error.
+            e.target.nextElementSibling.innerHTML = '';
+        }
+        
+    
+    });
 });
 
 
 
-// contrasenaCampo.addEventListener('input', () => {
-//     const password = passwordInput.value.trim();
-//     if (!password) {
-
-//         errors.password = { msg: 'El campo de contraseña es requerido.' };
-    
-          
-//         passwordInput.classList.remove('is-valid');
-//         passwordInput.classList.add('not-valid');
-
-//     } else {
-
-//         passwordInput.classList.add('is-valid');
-//         passwordInput.classList.remove('not-valid');
-
-//         delete errors.password;
-
-//         errorSpanPass.textContent ='';
-//     }
-//     validateForm();
-// });
-
-// let validateForm = () => {
-//     if (Object.keys(errors).length === 0) {
-//         loginButton.removeAttribute('disabled');
-//     } else {
-//         loginButton.setAttribute('disabled', 'disabled');
-//     }
-// };
 

@@ -1,4 +1,4 @@
-const emal = document.querySelector('#email');
+//const emal = document.querySelector('#email');
 // const emai = document.querySelector('#email');
 // const email = document.querySelector('#email');
 // const emil = document.querySelector('#email');
