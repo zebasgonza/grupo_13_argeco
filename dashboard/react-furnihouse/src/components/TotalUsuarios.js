@@ -30,4 +30,4 @@ function TotalUsuarios(){
     )
 }
 
-export default TotalUsuarios;
+export default TotalUsuarios;
