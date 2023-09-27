@@ -23,7 +23,7 @@ const userController = {
                 count: users.length,
                 users: listUsers,
             }
-
+            res.setHeader('Access-Control-Allow-Origin', '*');
             return res.json(response);
 
         } catch (error) {
