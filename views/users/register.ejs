@@ -25,7 +25,8 @@
             value="<%= locals.oldData ? oldData.nombre : null %>">
             
             <% if (locals.errors && errors.nombre) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.nombre.msg %> 
                 </div>
             <% } %>
@@ -39,7 +40,8 @@
             value="<%= locals.oldData ? oldData.apellido : null %>">
 
             <% if (locals.errors && errors.apellido) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.apellido.msg %> 
                 </div>
             <% } %>
@@ -53,7 +55,8 @@
             value="<%= locals.oldData ? oldData.email : null %>">
 
             <% if (locals.errors && errors.email) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.email.msg %> 
                 </div>
             <% } %>
@@ -68,7 +71,8 @@
             value="<%= locals.oldData ? oldData.image : null %>">
 
             <% if (locals.errors && errors.image) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.image.msg %> 
                 </div>
             <% } %>
@@ -82,7 +86,8 @@
             value="<%= locals.oldData ? oldData.contrasena : null %>">
 
             <% if (locals.errors && errors.contrasena) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.contrasena.msg %> 
                 </div>
             <% } %>
@@ -90,6 +95,7 @@
 
             <input type="submit" value="Registrarse">
         </form>
+        <!-- <script src="/js/validacionFrontRegister.js"></script> -->
 </body>
 
 </main>
