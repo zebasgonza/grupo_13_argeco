@@ -1,6 +1,6 @@
 const { log } = require('console');
 const path = require('path');
-const DB = require('../database/models'); // Importa el modelo de Sequelize
+const DB = require('../../database/models'); // Importa el modelo de Sequelize
 
 const controllers = {
     /* configuración para vista EJS */

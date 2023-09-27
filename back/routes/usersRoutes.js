@@ -5,7 +5,7 @@ const router = express.Router();
 //requerimos multer para que el usuario pueda subir archivos.
 const multer = require("multer");
 //requerimos para llamar a los controladores de products
-const usersControllers = require('../controllers/usersControllers');
+const usersControllers = require('../back/controllers/usersControllers');
 //express-validatior
 const { body } = require("express-validator");
 const { Console } = require("console");

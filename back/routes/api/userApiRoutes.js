@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const router = express.Router();
-const userApiController = require('../../controllers/api/userApiController');
+const userApiController = require('../../back/controllers/api/userApiController');
 
 
 router.get('/', userApiController.getUsers);
