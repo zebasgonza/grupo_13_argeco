@@ -24,7 +24,8 @@
             value="<%= locals.oldData ? oldData.nombre : null %>">
 
             <% if (locals.errors && errors.nombre) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.nombre.msg %> 
                 </div>
             <% } %>
@@ -41,7 +42,8 @@
             value="<%= locals.oldData ? oldData.precio : null %>">
 
             <% if (locals.errors && errors.precio) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.precio.msg %> 
                 </div>
             <% } %>
@@ -55,7 +57,8 @@
             value="<%= locals.oldData ? oldData.categoria : null %>">
 
             <% if (locals.errors && errors.categoria) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.categoria.msg %> 
                 </div>
             <% } %>
@@ -70,7 +73,8 @@
             value="<%= locals.oldData ? oldData.imagen : null %>">
 
             <% if (locals.errors && errors.imagen) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.imagen.msg %> 
                 </div>
             <% } %>
@@ -84,7 +88,8 @@
           
 
             <% if (locals.errors && errors.descripcion) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.descripcion.msg %> 
                 </div>
             <% } %>
@@ -99,7 +104,8 @@
             value="<%= locals.oldData ? oldData.cantidad : null %>">
 
             <% if (locals.errors && errors.cantidad) { %>
-                <div class="text-danger">
+                <div class="text-danger"
+                style="color: red;">
                     <%= errors.cantidad.msg %> 
                 </div>
             <% } %>
