@@ -31,7 +31,7 @@ const productsController = {
             count: products.length,
             products: listProducts,
         }
-
+        res.setHeader('Access-Control-Allow-Origin', '*');
         return res.json(response);
 
     } catch (error) {
