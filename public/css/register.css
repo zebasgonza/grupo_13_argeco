@@ -17,6 +17,10 @@ h1 {
   color: #091a26;
 }
 
+.text-danger {
+  color: red;
+}
+
 form {
   max-width: 400px;
   margin: 20px auto;

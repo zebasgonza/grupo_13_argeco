@@ -115,6 +115,10 @@ body p {
     margin-bottom: 10px;
   }
   
+  .text-danger {
+    color: red;
+  }
+  
   input[type="submit"] {
     background-color: #EAE2CD;
     color: #b40303;
