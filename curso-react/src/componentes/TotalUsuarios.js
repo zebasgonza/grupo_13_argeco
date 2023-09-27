@@ -10,7 +10,7 @@ function TotalUsuarios(){
     
             const usersCountResponse = await fetch('http://localhost:3000/api/users/');
             const usersCountNumber = await usersCountResponse.json();
-    
+              console.log(usersCountResponse)
             if (usersCountNumber) {
                 setUsersCount(usersCountNumber.count);
             };
